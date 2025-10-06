@@ -284,39 +284,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Integration Note for Admin */}
-      <section className="py-12 px-4 bg-gray-50 border-t-4 border-[#AEA1EA]">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="border-2 border-[#B2EBF9]/30">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#AEA1EA] to-[#B2EBF9] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <BookOpen className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#AEA1EA]">GoHighLevel Blog Integration</h3>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    <strong>For Content Management:</strong> Write and manage all blog posts in your GoHighLevel dashboard. 
-                    You can link individual blog post URLs from GHL to this page, or embed GHL blog feeds directly.
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-600">• <strong>Option 1:</strong> Update mock.js with blog post data from GHL API</p>
-                    <p className="text-sm text-gray-600">• <strong>Option 2:</strong> Embed GHL blog widget in designated sections</p>
-                    <p className="text-sm text-gray-600">• <strong>Option 3:</strong> Link cards directly to GHL-hosted blog post URLs</p>
-                  </div>
-                  <Button 
-                    className="mt-6 bg-[#FB2C15] hover:bg-[#d92515] text-white rounded-full"
-                    onClick={() => alert('Contact your developer to set up GoHighLevel API integration or embed codes.')}
-                  >
-                    Setup Integration Guide
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

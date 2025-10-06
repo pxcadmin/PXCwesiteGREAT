@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Blog from "./pages/Blog";
 
-// Placeholder components for routes not yet built
-const Blog = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Blog Page - Coming Soon</h1></div>;
+// Placeholder for Contact page
 const Contact = () => <div className="min-h-screen flex items-center justify-center"><h1 className="text-4xl">Contact Page - Coming Soon</h1></div>;
 
 function App() {

@@ -1,49 +1,20 @@
 import React, { useState } from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { heroData, painPoints, frameworks, unifiedSystem, aboutJennifer, mastercourse } from '../mock';
-import { ArrowRight, CheckCircle, Puzzle, Award, BookOpen, Users } from 'lucide-react';
+import { heroData, painPoints, frameworks, unifiedSystem } from '../mock';
+import { ArrowRight, CheckCircle, Puzzle, Award, Play } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import TestimonialsSection from '../components/TestimonialsSection';
-import CaseStudiesSection from '../components/CaseStudiesSection';
-import BlogSection from '../components/BlogSection';
-import BookingForm from '../components/BookingForm';
 
 const Home = () => {
-  const [showBooking, setShowBooking] = useState(false);
-
-  const scrollToBooking = () => {
-    setShowBooking(true);
-    setTimeout(() => {
-      document.getElementById('booking-section')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+  const scrollToContact = () => {
+    window.location.href = '/contact';
   };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_05098993-4059-4a1d-a237-305f60e8d292/artifacts/yxfmdpsc_LOGOs%20PUZZLE%20PXC%20-%202%282%29.png" 
-              alt="PXC Logo" 
-              className="h-12 w-auto"
-            />
-          </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#about" className="text-sm font-medium hover:text-[#FB2C15] transition-colors">About</a>
-            <a href="#frameworks" className="text-sm font-medium hover:text-[#FB2C15] transition-colors">Frameworks</a>
-            <a href="#testimonials" className="text-sm font-medium hover:text-[#FB2C15] transition-colors">Results</a>
-            <a href="#blog" className="text-sm font-medium hover:text-[#FB2C15] transition-colors">Blog</a>
-            <Button 
-              onClick={scrollToBooking}
-              className="bg-[#FB2C15] hover:bg-[#d92515] text-white font-medium rounded-full px-6"
-            >
-              Book Strategy Session
-            </Button>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-[#B2EBF9]/20 via-white to-[#AEA1EA]/10">

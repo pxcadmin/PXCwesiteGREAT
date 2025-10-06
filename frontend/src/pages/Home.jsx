@@ -17,39 +17,62 @@ const Home = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-[#B2EBF9]/20 via-white to-[#AEA1EA]/10">
-        <div className="container mx-auto max-w-6xl text-center">
-          <div className="inline-flex items-center gap-2 bg-white border-2 border-[#FB2C15] rounded-full px-4 py-2 mb-6">
-            <Award className="w-4 h-4 text-[#FB2C15]" />
-            <span className="text-sm font-semibold text-[#FB2C15] uppercase tracking-wide">{heroData.announcement}</span>
-          </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            {heroData.headline.split(' ').map((word, i) => {
-              if (word === "Broken." || word === "Is.") {
-                return <span key={i} className="text-[#FB2C15]">{word} </span>;
-              }
-              return <span key={i}>{word} </span>;
-            })}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-            {heroData.subheadline}
-          </p>
-          <Button 
-            onClick={scrollToBooking}
-            size="lg" 
-            className="bg-[#FB2C15] hover:bg-[#d92515] text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
-          >
-            {heroData.cta} <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
-            {heroData.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-[#FB2C15] mb-2">{stat.number}</div>
-                <div className="text-sm md:text-base text-gray-600 font-medium">{stat.label}</div>
+      <section className="pt-32 pb-16 px-4 relative overflow-hidden">
+        {/* Background with blue/purple gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#B2EBF9]/30 via-white to-[#AEA1EA]/20 z-0" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white border-2 border-[#AEA1EA] rounded-full px-4 py-2 mb-6 shadow-sm">
+                <Award className="w-4 h-4 text-[#AEA1EA]" />
+                <span className="text-sm font-semibold text-[#AEA1EA] uppercase tracking-wide">{heroData.announcement}</span>
               </div>
-            ))}
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                {heroData.headline.split(' ').map((word, i) => {
+                  if (word === "Broken." || word === "Is.") {
+                    return <span key={i} className="text-[#FB2C15]">{word} </span>;
+                  }
+                  return <span key={i}>{word} </span>;
+                })}
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+                {heroData.subheadline}
+              </p>
+              <Button 
+                onClick={scrollToContact}
+                size="lg" 
+                className="bg-[#FB2C15] hover:bg-[#d92515] text-white font-bold text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+              >
+                {heroData.cta} <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mt-12">
+                {heroData.stats.map((stat, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-gradient-to-br from-[#B2EBF9]/10 to-[#AEA1EA]/10 border border-[#B2EBF9]/30">
+                    <div className="text-4xl font-bold text-[#FB2C15] mb-2">{stat.number}</div>
+                    <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Hero Image */}
+            <div className="relative">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#B2EBF9]/30">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_ai-health-transform/artifacts/dxb5gt26_ADMIN%20AND%20MA.jpg" 
+                  alt="Healthcare Consultant and Provider" 
+                  className="w-full h-auto"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+              {/* Floating accent elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#AEA1EA] rounded-full blur-3xl opacity-40 animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#B2EBF9] rounded-full blur-3xl opacity-40 animate-pulse" />
+            </div>
           </div>
         </div>
       </section>

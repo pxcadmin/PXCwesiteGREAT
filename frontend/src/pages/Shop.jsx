@@ -228,40 +228,6 @@ const Shop = () => {
         </div>
       </section>
 
-      {/* Integration Note */}
-      <section className="py-12 px-4 bg-white border-t-4 border-[#AEA1EA]">
-        <div className="container mx-auto max-w-4xl">
-          <Card className="border-2 border-[#B2EBF9]/30">
-            <CardContent className="p-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#AEA1EA] to-[#B2EBF9] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <ShoppingCart className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#AEA1EA]">Stripe + GoHighLevel Integration</h3>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    <strong>For Easy Product Management:</strong> Add, edit, or remove products through GoHighLevel product management. 
-                    Connect Stripe for secure payment processing and instant digital delivery.
-                  </p>
-                  <div className="space-y-2">
-                    <p className="text-sm text-gray-600">• <strong>Step 1:</strong> Connect Stripe account in GoHighLevel dashboard</p>
-                    <p className="text-sm text-gray-600">• <strong>Step 2:</strong> Upload digital products with pricing</p>
-                    <p className="text-sm text-gray-600">• <strong>Step 3:</strong> Set up automatic delivery and email sequences</p>
-                    <p className="text-sm text-gray-600">• <strong>Step 4:</strong> Update mock.js with product data or use GHL API</p>
-                  </div>
-                  <Button 
-                    className="mt-6 bg-[#FB2C15] hover:bg-[#d92515] text-white rounded-full"
-                    onClick={() => alert('Contact your developer to connect Stripe payment gateway and GoHighLevel product catalog.')}
-                  >
-                    Setup Payment Integration
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#AEA1EA] via-[#B2EBF9] to-[#AEA1EA] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />

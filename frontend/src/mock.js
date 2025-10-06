@@ -291,3 +291,107 @@ export const intakeQuestions = [
     options: ["Exploring options", "Important but not urgent", "Need help within 3 months", "Critical - need immediate help"]
   }
 ];
+
+// Digital Products for The Puzzle Shop
+export const digitalProducts = [
+  {
+    id: 1,
+    type: 'book',
+    title: 'The Patient Experience Playbook',
+    subtitle: 'Transform Your Practice in 90 Days',
+    author: 'Jennifer Radu',
+    price: 29.99,
+    description: 'A comprehensive guide to building patient-centric medical practices. Learn the proven frameworks used by 200+ successful practices.',
+    features: ['250+ pages', 'Downloadable worksheets', 'Case studies', 'Implementation checklists'],
+    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600',
+    category: 'Books',
+    bestseller: true
+  },
+  {
+    id: 2,
+    type: 'course',
+    title: 'AI Integration Masterclass',
+    subtitle: 'Automate Without Losing the Human Touch',
+    instructor: 'Jennifer Radu',
+    price: 497.00,
+    description: 'Step-by-step video course on integrating AI into your medical practice workflows. 8 weeks of content with live Q&A sessions.',
+    features: ['8 video modules', '50+ templates', 'Live coaching calls', 'Lifetime access', 'Certificate of completion'],
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600',
+    category: 'Courses',
+    bestseller: false
+  },
+  {
+    id: 3,
+    type: 'template',
+    title: 'Patient Journey Mapping Kit',
+    subtitle: 'Visualize & Optimize Every Touchpoint',
+    price: 47.00,
+    description: 'Complete toolkit for mapping patient journeys with editable templates, worksheets, and implementation guides.',
+    features: ['10+ templates', 'Editable Canva files', 'Video tutorials', 'Best practice guides'],
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600',
+    category: 'Templates',
+    bestseller: false
+  },
+  {
+    id: 4,
+    type: 'resource',
+    title: 'The IMPACT Framework Toolkit',
+    subtitle: 'Complete Implementation System',
+    price: 197.00,
+    description: 'Everything you need to implement the IMPACT System in your practice. Includes all 6 pillars with detailed guides.',
+    features: ['6 pillar workbooks', 'Assessment tools', 'ROI calculators', 'Video walkthroughs', '90-day action plan'],
+    image: 'https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600',
+    category: 'Resources',
+    bestseller: true
+  },
+  {
+    id: 5,
+    type: 'book',
+    title: 'Leadership in Healthcare',
+    subtitle: 'Building High-Performing Medical Teams',
+    author: 'Jennifer Radu',
+    price: 34.99,
+    description: 'Master the art of mindful leadership in healthcare. Transform your management style and build teams that thrive.',
+    features: ['300+ pages', 'Leadership assessments', 'Team-building exercises', 'Real-world case studies'],
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600',
+    category: 'Books',
+    bestseller: false
+  },
+  {
+    id: 6,
+    type: 'course',
+    title: 'Patient Engagement Mastery',
+    subtitle: 'Turn Patients into Raving Fans',
+    instructor: 'Jennifer Radu',
+    price: 297.00,
+    description: '6-week intensive course on patient engagement strategies that build loyalty and drive referrals.',
+    features: ['6 weeks of content', 'Engagement playbook', 'Email templates', 'Group coaching', 'Bonus: Social media toolkit'],
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600',
+    category: 'Courses',
+    bestseller: true
+  },
+  {
+    id: 7,
+    type: 'template',
+    title: 'Staff Training Module Bundle',
+    subtitle: '20+ Ready-to-Use Training Modules',
+    price: 147.00,
+    description: 'Complete staff training library covering patient experience, communication, AI tools, and operational excellence.',
+    features: ['20+ modules', 'PowerPoint slides', 'Handouts & quizzes', 'Implementation guide', 'Customizable content'],
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600',
+    category: 'Templates',
+    bestseller: false
+  },
+  {
+    id: 8,
+    type: 'resource',
+    title: 'Puzzle Pyramid Deployment Guide',
+    subtitle: 'The 3-Step Practice Transformation System',
+    price: 97.00,
+    description: 'Master the Puzzle Pyramid deployment methodology with this comprehensive guide and toolkit.',
+    features: ['Deployment workbook', 'Phase checklists', 'Success metrics dashboard', 'Video guides', 'Email support'],
+    image: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=600',
+    category: 'Resources',
+    bestseller: false
+  }
+];

@@ -78,19 +78,23 @@ const Home = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 px-4 bg-black text-white">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-20 px-4 bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
+        {/* Purple/Blue accent overlays */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#AEA1EA]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#B2EBF9]/10 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Does This Sound <span className="text-[#FB2C15]">Familiar?</span>
+            Does This Sound <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FB2C15] to-[#AEA1EA]">Familiar?</span>
           </h2>
           <p className="text-xl text-gray-300 text-center mb-12 max-w-3xl mx-auto">
             You're not alone. These are the symptoms of a broken system—not a broken practice.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {painPoints.map((point) => (
-              <Card key={point.id} className="bg-white/5 border-[#FB2C15]/30 hover:border-[#FB2C15] transition-all hover:scale-105">
+              <Card key={point.id} className="bg-gradient-to-br from-white/5 to-white/10 border-2 border-[#AEA1EA]/20 hover:border-[#B2EBF9] transition-all hover:scale-105 backdrop-blur-sm">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-[#FB2C15] rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#B2EBF9] to-[#AEA1EA] rounded-lg flex items-center justify-center mb-4">
                     <Puzzle className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">{point.title}</h3>
@@ -98,6 +102,43 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Introduction Section - Jennifer & PXC */}
+      <section className="py-20 px-4 bg-gradient-to-br from-[#B2EBF9]/10 via-white to-[#AEA1EA]/10">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Meet Jennifer & Discover <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#AEA1EA] to-[#B2EBF9]">The PXC Difference</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Watch this video to learn about the Unified PX System, what to expect in your strategy session, and how we transform medical practices.
+            </p>
+          </div>
+
+          {/* Video Player Placeholder */}
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#AEA1EA]/30 bg-gradient-to-br from-[#B2EBF9]/20 to-[#AEA1EA]/20">
+            <div className="aspect-video flex items-center justify-center bg-black/80">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#FB2C15] to-[#AEA1EA] rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-110 transition-transform shadow-lg">
+                  <Play className="w-10 h-10 text-white ml-1" />
+                </div>
+                <p className="text-white font-semibold text-lg">Introduction to PXC & The Unified PX System</p>
+                <p className="text-gray-300 text-sm mt-2">Click to play (Embed your video here)</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <Button 
+              onClick={scrollToContact}
+              size="lg"
+              className="bg-[#FB2C15] hover:bg-[#d92515] text-white font-bold rounded-full px-8"
+            >
+              Ready to Transform Your Practice? <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
           </div>
         </div>
       </section>

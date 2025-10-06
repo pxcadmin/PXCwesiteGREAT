@@ -32,7 +32,7 @@ const Contact = () => {
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-[#AEA1EA]">Phone</h3>
-                <p className="text-gray-600">(123) 456-7890</p>
+                <a href="tel:+19412974070" className="text-gray-600 hover:text-[#AEA1EA] transition-colors">(941) 297-4070</a>
               </CardContent>
             </Card>
 
@@ -42,7 +42,7 @@ const Contact = () => {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-[#B2EBF9]">Email</h3>
-                <p className="text-gray-600">info@pxconsulting.com</p>
+                <a href="mailto:impact@patientexperienceconsulting.com" className="text-gray-600 hover:text-[#B2EBF9] transition-colors text-sm">impact@patientexperienceconsulting.com</a>
               </CardContent>
             </Card>
 
@@ -52,7 +52,7 @@ const Contact = () => {
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-[#AEA1EA]">Location</h3>
-                <p className="text-gray-600">Nationwide Services</p>
+                <p className="text-gray-600 text-sm">Manatee County, FL<br/>Serving Nationwide</p>
               </CardContent>
             </Card>
           </div>

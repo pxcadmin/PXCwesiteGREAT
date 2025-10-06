@@ -48,17 +48,17 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-[#AEA1EA]">Get In Touch</h4>
             <div className="space-y-3">
-              <a href="mailto:info@pxconsulting.com" className="flex items-center gap-2 text-gray-400 hover:text-[#B2EBF9] text-sm transition-colors">
+              <a href="mailto:impact@patientexperienceconsulting.com" className="flex items-center gap-2 text-gray-400 hover:text-[#B2EBF9] text-sm transition-colors">
                 <Mail className="w-4 h-4" />
-                info@pxconsulting.com
+                impact@patientexperienceconsulting.com
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-gray-400 hover:text-[#B2EBF9] text-sm transition-colors">
+              <a href="tel:+19412974070" className="flex items-center gap-2 text-gray-400 hover:text-[#B2EBF9] text-sm transition-colors">
                 <Phone className="w-4 h-4" />
-                (123) 456-7890
+                (941) 297-4070
               </a>
               <div className="flex items-start gap-2 text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0 mt-1" />
-                <span>Nationwide Services</span>
+                <span>Manatee County, FL • Serving Nationwide</span>
               </div>
             </div>
           </div>

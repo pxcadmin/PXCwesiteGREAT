@@ -12,7 +12,7 @@ const Footer = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_05098993-4059-4a1d-a237-305f60e8d292/artifacts/yxfmdpsc_LOGOs%20PUZZLE%20PXC%20-%202%282%29.png" 
               alt="PXC Logo" 
-              className="h-12 w-auto mb-4 brightness-0 invert"
+              className="h-12 w-auto mb-4"
             />
             <p className="text-gray-400 text-sm mb-4 max-w-md">
               AI-Fueled, People-Powered patient experience transformation for medical practices. 

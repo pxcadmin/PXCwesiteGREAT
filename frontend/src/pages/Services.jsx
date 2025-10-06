@@ -134,9 +134,9 @@ const Services = () => {
               </p>
               
               <div className="space-y-4 mb-8">
-                <h3 className="text-xl font-bold text-[#AEA1EA]">What You'll Walk Away With:</h3>
+                <h3 className="text-xl font-bold text-[#AEA1EA]">What You Will Walk Away With:</h3>
                 {[
-                  'Comprehensive analysis of your practice's current state',
+                  'Comprehensive analysis of your practice current state',
                   'Identification of critical bottlenecks and workflow issues',
                   'Custom roadmap for immediate improvement',
                   'Quick wins you can implement right away',

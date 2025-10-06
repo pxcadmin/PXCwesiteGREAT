@@ -148,7 +148,7 @@ const Home = () => {
                 The Unified PX System isn't another band-aid fix. It's a complete transformation framework that addresses the root causes—not just the symptoms.
               </p>
               <div className="space-y-4">
-                {['Stop the chaos that's draining your practice', 'End staff burnout and turnover', 'Transform patient satisfaction ratings', 'Reclaim your time and joy in medicine'].map((item, i) => (
+                {['Stop the chaos that is draining your practice', 'End staff burnout and turnover', 'Transform patient satisfaction ratings', 'Reclaim your time and joy in medicine'].map((item, i) => (
                   <div key={i} className="flex items-start gap-3 p-4 rounded-lg bg-gradient-to-r from-[#B2EBF9]/10 to-[#AEA1EA]/10 border border-[#B2EBF9]/30">
                     <CheckCircle className="w-6 h-6 text-[#AEA1EA] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700 font-medium">{item}</span>

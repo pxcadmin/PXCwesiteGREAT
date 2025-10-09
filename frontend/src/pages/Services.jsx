@@ -483,6 +483,88 @@ const Services = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <HelpCircle className="w-16 h-16 text-[#AEA1EA] mx-auto mb-4" />
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#AEA1EA] to-[#B2EBF9]">Questions</span>
+            </h2>
+            <p className="text-xl text-gray-600">Everything you need to know about transforming your practice</p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <Card key={index} className="border-2 border-gray-200 hover:border-[#AEA1EA] transition-all">
+                <CardContent className="p-0">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full text-left p-6 flex items-center justify-between"
+                  >
+                    <span className="font-bold text-lg pr-4">{faq.q}</span>
+                    <ArrowRight className={`w-5 h-5 text-[#AEA1EA] flex-shrink-0 transition-transform ${openFaq === index ? 'rotate-90' : ''}`} />
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-6 pb-6 text-gray-700 leading-relaxed border-t border-gray-100 pt-4">
+                      {faq.a}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Guarantee Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-[#AEA1EA]/10 to-[#B2EBF9]/10">
+        <div className="container mx-auto max-w-5xl">
+          <Card className="border-4 border-[#AEA1EA]/30 shadow-2xl">
+            <CardContent className="p-12">
+              <div className="text-center mb-8">
+                <Shield className="w-20 h-20 text-[#AEA1EA] mx-auto mb-4" />
+                <h2 className="text-4xl font-bold mb-4 text-[#AEA1EA]">Our Iron-Clad Guarantee</h2>
+                <p className="text-xl text-gray-700">Your success is our commitment</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-white rounded-xl p-6 border-2 border-[#B2EBF9]/30">
+                  <h3 className="text-xl font-bold mb-3 text-[#B2EBF9]">30-Day Money-Back Guarantee</h3>
+                  <p className="text-gray-700 mb-4">If you're not completely satisfied within the first 30 days, we'll refund your entire investment\u2014no questions asked.</p>
+                  <div className="flex items-center gap-2 text-sm text-[#B2EBF9] font-semibold">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>100% Risk-Free</span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 border-2 border-[#AEA1EA]/30">
+                  <h3 className="text-xl font-bold mb-3 text-[#AEA1EA]">Results Guarantee</h3>
+                  <p className="text-gray-700 mb-4">We guarantee measurable improvements in efficiency, satisfaction, or profitability within 16 weeks, or we'll continue working with you at no additional cost until you see results.</p>
+                  <div className="flex items-center gap-2 text-sm text-[#AEA1EA] font-semibold">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Performance Backed</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-lg text-gray-700 mb-6">
+                  <strong>Plus:</strong> Free 30-day tier upgrade option with rollover credit • Lifetime access to resources • Ongoing community support
+                </p>
+                <Button 
+                  onClick={() => window.location.href = '/contact'}
+                  size="lg"
+                  className="bg-[#FB2C15] hover:bg-[#d92515] text-white font-bold rounded-full px-10 py-6 text-lg"
+                >
+                  Claim Your Spot Now <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#B2EBF9] via-[#AEA1EA] to-[#B2EBF9] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />

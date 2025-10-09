@@ -2,9 +2,10 @@ import React from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { heroData, painPoints, frameworks, unifiedSystem } from '../mock';
-import { ArrowRight, CheckCircle, Puzzle, Award, Play } from 'lucide-react';
+import { ArrowRight, CheckCircle, Puzzle, Award, Play, Star, Shield, TrendingUp, Clock } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ScarcityBanner from '../components/ScarcityBanner';
 import TestimonialsSection from '../components/TestimonialsSection';
 
 const Home = () => {
@@ -15,9 +16,14 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      
+      {/* Scarcity Banner */}
+      <div className="fixed top-[80px] left-0 right-0 z-40">
+        <ScarcityBanner type="sessions" />
+      </div>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 relative overflow-hidden">
+      <section className="pt-48 pb-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#B2EBF9]/30 via-white to-[#AEA1EA]/20 z-0" />
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -38,6 +44,16 @@ const Home = () => {
               <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
                 {heroData.subheadline}
               </p>
+              
+              {/* Urgency Element */}
+              <div className="bg-[#FB2C15]/10 border-l-4 border-[#FB2C15] p-4 rounded-r-lg mb-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Clock className="w-5 h-5 text-[#FB2C15] animate-pulse" />
+                  <span className="font-bold text-[#FB2C15]">Limited Availability Alert</span>
+                </div>
+                <p className="text-sm text-gray-700">Only <strong>7 strategy sessions</strong> and <strong>2 client spots</strong> remaining this quarter</p>
+              </div>
+              
               <Button 
                 onClick={scrollToContact}
                 size="lg" 
@@ -67,6 +83,33 @@ const Home = () => {
               </div>
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#AEA1EA] rounded-full blur-3xl opacity-40 animate-pulse" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#B2EBF9] rounded-full blur-3xl opacity-40 animate-pulse" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges Section */}
+      <section className="py-12 px-4 bg-white border-y-2 border-gray-100">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8">
+            <p className="text-sm text-gray-500 uppercase tracking-wide mb-4">Trusted by Leading Healthcare Organizations</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div className="text-center">
+              <Shield className="w-12 h-12 text-[#AEA1EA] mx-auto mb-2" />
+              <p className="text-sm font-semibold">HIPAA Compliant</p>
+            </div>
+            <div className="text-center">
+              <Award className="w-12 h-12 text-[#B2EBF9] mx-auto mb-2" />
+              <p className="text-sm font-semibold">Award-Winning</p>
+            </div>
+            <div className="text-center">
+              <Star className="w-12 h-12 text-[#FB2C15] mx-auto mb-2" />
+              <p className="text-sm font-semibold">5-Star Rated</p>
+            </div>
+            <div className="text-center">
+              <TrendingUp className="w-12 h-12 text-[#AEA1EA] mx-auto mb-2" />
+              <p className="text-sm font-semibold">Proven ROI</p>
             </div>
           </div>
         </div>
@@ -210,10 +253,14 @@ const Home = () => {
       {/* Testimonials */}
       <TestimonialsSection />
 
-      {/* CTA Section */}
+      {/* Final CTA with Scarcity */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#B2EBF9] via-[#AEA1EA] to-[#B2EBF9] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-[#FB2C15] rounded-full px-4 py-2 mb-6 animate-pulse">
+            <Clock className="w-4 h-4" />
+            <span className="text-sm font-bold">ONLY 7 STRATEGY SESSIONS LEFT THIS QUARTER</span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Transform Your Practice?
           </h2>
@@ -227,6 +274,7 @@ const Home = () => {
           >
             Book Your Free Strategy Session <ArrowRight className="ml-2 w-6 h-6" />
           </Button>
+          <p className="text-sm mt-4 opacity-75">⚡ 100% Risk-Free • No Obligation • Pure Value Guaranteed</p>
         </div>
       </section>
 

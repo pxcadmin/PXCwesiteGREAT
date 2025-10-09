@@ -57,6 +57,26 @@ const About = () => {
       {/* Meet Jennifer Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#AEA1EA]/10 to-[#B2EBF9]/10">
         <div className="container mx-auto max-w-6xl">
+          {/* Featured In / Media Recognition */}
+          <div className="text-center mb-16">
+            <p className="text-sm text-gray-500 uppercase tracking-wide mb-6">As Featured In & Recognized By</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center mb-8">
+              <div className="flex items-center justify-center">
+                <Award className="w-16 h-16 text-[#FB2C15]" />
+              </div>
+              <div className="flex items-center justify-center">
+                <BookOpen className="w-16 h-16 text-[#AEA1EA]" />
+              </div>
+              <div className="flex items-center justify-center">
+                <Users className="w-16 h-16 text-[#B2EBF9]" />
+              </div>
+              <div className="flex items-center justify-center">
+                <Target className="w-16 h-16 text-[#AEA1EA]" />
+              </div>
+            </div>
+            <p className="text-sm text-gray-600 italic">Published author, industry speaker, and award-winning consultant trusted by healthcare leaders nationwide</p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">

@@ -68,6 +68,17 @@ const Shop = () => {
       {/* Bestsellers Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-[#AEA1EA]/10 to-[#B2EBF9]/10">
         <div className="container mx-auto max-w-6xl">
+          {/* Customer Review Banner */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-white rounded-full px-6 py-3 shadow-md mb-4">
+              <div className="flex gap-1">
+                {[1,2,3,4,5].map(i => <Star key={i} className="w-5 h-5 fill-[#FB2C15] text-[#FB2C15]" />)}
+              </div>
+              <span className="font-bold text-gray-700">4.9/5 from 200+ customers</span>
+            </div>
+            <p className="text-gray-600 italic">"These resources transformed how we approach patient experience" - Dr. Sarah M.</p>
+          </div>
+
           <div className="flex items-center gap-3 mb-12">
             <Star className="w-8 h-8 text-[#FB2C15]" />
             <h2 className="text-4xl font-bold">

@@ -1,11 +1,14 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ScarcityBanner from '../components/ScarcityBanner';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { CheckCircle, ArrowRight, Star, TrendingUp, Users, Target, Zap, Award, Calendar, Sparkles } from 'lucide-react';
+import { CheckCircle, ArrowRight, Star, TrendingUp, Users, Target, Zap, Award, Calendar, Sparkles, Shield, HelpCircle, Clock } from 'lucide-react';
 
 const Services = () => {
+  const [openFaq, setOpenFaq] = React.useState(null);
+
   const tiers = [
     {
       name: 'Starter',

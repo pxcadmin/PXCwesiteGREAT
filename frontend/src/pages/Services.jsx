@@ -104,9 +104,57 @@ const Services = () => {
     }
   ];
 
+  const faqs = [
+    {
+      q: "How quickly can I expect to see results?",
+      a: "Most practices see measurable improvements within the first 4 weeks. Quick wins from the strategy session can be implemented immediately, with full transformation typically achieved within 16 weeks."
+    },
+    {
+      q: "Do I need to have technical expertise to implement AI solutions?",
+      a: "Absolutely not. We handle all technical implementation and training. Our AI solutions are designed to be user-friendly, and we provide comprehensive staff training and ongoing support."
+    },
+    {
+      q: "What if I'm not satisfied with the services?",
+      a: "We offer a 30-day money-back guarantee. If you're not completely satisfied within the first month, we'll refund your investment—no questions asked. Additionally, you can upgrade tiers within 30 days with your initial payment applied."
+    },
+    {
+      q: "How is this different from other consulting services?",
+      a: "We're not typical consultants. Jennifer has 20+ years of hands-on practice management experience. Our proprietary frameworks (Puzzle Pyramid™, IMPACT System™, AI-Fueled PX Cycle™) are proven with 200+ practices and focus on sustainable, long-term transformation—not temporary fixes."
+    },
+    {
+      q: "Can I start with just the strategy session?",
+      a: "Yes! The complimentary strategy session provides immediate value with actionable insights and a custom roadmap. There's no obligation to purchase services, though most practices choose to continue after experiencing the value."
+    },
+    {
+      q: "Why do you only accept 4 clients per quarter?",
+      a: "Quality over quantity. We provide white-glove, hands-on transformation that requires significant dedicated attention. Limiting client acceptance ensures every practice receives the personalized support needed for true, sustainable change."
+    },
+    {
+      q: "What happens after the 16-week program?",
+      a: "You'll have built sustainable systems that continue delivering results. Ongoing support options include community access, quarterly strategy sessions, and on-demand consulting for continued optimization."
+    },
+    {
+      q: "Do you work with practices of all sizes?",
+      a: "Yes. We've successfully transformed solo practices to large multi-location groups. Our frameworks scale to fit your specific needs, challenges, and growth goals."
+    },
+    {
+      q: "Is the investment tax-deductible?",
+      a: "Consulting services for business improvement are typically tax-deductible business expenses. Consult with your accountant for specific guidance based on your situation."
+    },
+    {
+      q: "What if I need more time than 16 weeks?",
+      a: "The 16-week timeframe is designed for comprehensive transformation, but we're flexible. If your practice needs extended support, we offer customized timelines and ongoing coaching options."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
+      
+      {/* Scarcity Banner */}
+      <div className="fixed top-[80px] left-0 right-0 z-40">
+        <ScarcityBanner type="clients" />
+      </div>
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-[#B2EBF9]/20 via-white to-[#AEA1EA]/15">

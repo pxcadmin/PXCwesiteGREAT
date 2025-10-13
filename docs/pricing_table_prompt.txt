@@ -1,0 +1,29 @@
+Create a modern, futuristic three-tier pricing section for the PXC brand that can be embedded in a Go High Level site using custom HTML and CSS. Use Nunito and Comfortaa fonts and the color palette #000000, #FB0000, #AEA1EA, and #00f2ff.
+
+Requirements:
+1. Section Layout
+   - Background: solid black (#000000).
+   - Three tiered rectangles aligned horizontally on desktop, stacked on mobile. Each rectangle has a black background with a neon red (#ff0000) outline.
+   - On hover, each tier displays a 3D neon red glow and slightly elevates.
+   - Middle tier (Tier 2) must include an upper-right "Most Popular" tag in #05f2ff.
+   - Incorporate subtle puzzle-piece and medical-themed icons in the brand palette.
+
+2. Interactivity
+   - Hover state should create a bright red glow radiating from the outline and make the card appear to pop forward.
+   - Buttons beneath each pricing tier should lead to a conditional flow:
+     * If user selects "No" to having a Puzzle Pyramid Strategy Session, direct to an embedded Go High Level booking calendar branded with the palette.
+     * If user selects "Yes," direct to a payment page requiring at least a 50% deposit and includes an embedded Go High Level calendar for scheduling the client kick-off call.
+
+3. Content & Copy
+   - Provide package names, included services/products, value price, actual price, and a CTA button for each tier.
+   - Ensure Tier 2 and Tier 3 copy subtly persuades users by emphasizing premium outcomes and the inclusion of the Practice Professionals Playground.
+   - Highlight outcomes: improved patient experience and satisfaction, staff retention, higher profits, better workplace culture, more personal time, and reduced burnout/admin chaos.
+
+4. Styling & Assets
+   - Maintain consistent branding with Nunito for body text and Comfortaa for headings.
+   - Use dopamine-inducing, attention-grabbing microcopy and visuals that still align with PXC’s brand.
+   - Ensure hover effects and glowing outlines feel immersive and 3D.
+
+Deliverables:
+- Complete HTML and CSS for the section, ready to embed in Go High Level.
+- Include any necessary JavaScript for hover/interactive effects and conditional navigation to booking or payment experiences.

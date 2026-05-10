@@ -50,19 +50,19 @@ export function AnswerCapsule({
   return (
     <BeamCard cyan className={className}>
       <aside
-        className="relative rounded-xl bg-black/85 p-6 sm:p-8 pxc-halo-pulse"
+        className="relative rounded-xl bg-black/85 px-5 py-4 sm:px-6 sm:py-5 pxc-halo-pulse"
         data-testid="answer-capsule"
         itemScope
         itemType="https://schema.org/Question"
       >
-        <div className="flex items-center gap-2 mb-3">
-          <Sparkles className="h-4 w-4 text-[#47d8ff]" />
-          <span className="text-[10px] uppercase tracking-[0.18em] font-bold text-[#47d8ff]">
+        <div className="flex items-center gap-2 mb-2">
+          <Sparkles className="h-3.5 w-3.5 text-[#47d8ff]" />
+          <span className="text-[9px] uppercase tracking-[0.18em] font-bold text-[#47d8ff]">
             Direct Answer
           </span>
         </div>
         <h3
-          className="text-lg sm:text-xl font-bold text-white mb-3 leading-snug"
+          className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug"
           itemProp="name"
         >
           {question}
@@ -73,7 +73,7 @@ export function AnswerCapsule({
           itemType="https://schema.org/Answer"
         >
           <p
-            className="text-sm sm:text-base text-[#AEA1EA] leading-relaxed"
+            className="text-xs sm:text-sm text-[#AEA1EA] leading-snug line-clamp-3"
             itemProp="text"
           >
             {answer}

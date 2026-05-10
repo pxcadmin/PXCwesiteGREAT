@@ -130,11 +130,11 @@ export default function Home() {
         </div>
         <AuroraBackdrop opacity={0.12} />
 
-        {/* Floating beating stethoscope (~2 inches at desktop) */}
+        {/* Floating beating stethoscope (~2 inches) — bottom-left, away from copy */}
         <motion.img
           src="/assets/stethoscope.gif"
           alt="Beating stethoscope"
-          className="absolute hidden md:block w-[180px] h-auto pointer-events-none z-20 left-[2%] top-[18%] opacity-90 drop-shadow-[0_0_20px_rgba(251,0,0,0.4)]"
+          className="absolute hidden md:block w-[160px] h-auto pointer-events-none z-30 left-[2%] bottom-[12%] opacity-90 drop-shadow-[0_0_20px_rgba(251,0,0,0.4)]"
           animate={{ scale: [1, 1.06, 1], rotate: [0, -3, 0] }}
           transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
           data-testid="hero-stethoscope"
@@ -365,29 +365,36 @@ export default function Home() {
           </div>
         </div>
 
-        {/* PULSATING HEARTBEAT DIVIDER — visible at bottom of hero without scroll */}
+        {/* PULSATING HEARTBEAT DIVIDER — large EKG separator visible at bottom of hero without scroll */}
         <div className="absolute bottom-0 left-0 right-0 z-30 pointer-events-none" data-testid="hero-heartbeat-divider">
-          <div className="relative h-[60px] sm:h-[72px] w-full overflow-hidden">
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full h-full">
+          <div className="relative h-[110px] sm:h-[130px] w-full overflow-hidden">
+            <svg viewBox="0 0 1440 130" preserveAspectRatio="none" className="w-full h-full">
               <defs>
                 <linearGradient id="hbGrad" x1="0" x2="1">
-                  <stop offset="0%" stopColor="#47d8ff" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="#47d8ff" stopOpacity="0.4" />
                   <stop offset="50%" stopColor="#FB0000" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#AEA1EA" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#AEA1EA" stopOpacity="0.4" />
+                </linearGradient>
+                <linearGradient id="hbGradFade" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stopColor="#000" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#000" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
+              <rect width="1440" height="130" fill="url(#hbGradFade)" />
               <polyline
                 fill="none"
                 stroke="url(#hbGrad)"
-                strokeWidth="2.5"
-                points="0,40 200,40 240,40 260,15 280,65 300,40 500,40 540,40 560,5 580,75 600,40 800,40 840,40 860,15 880,65 900,40 1100,40 1140,40 1160,5 1180,75 1200,40 1440,40"
-                style={{ filter: "drop-shadow(0 0 8px #FB0000)" }}
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                points="0,65 200,65 240,65 260,15 285,115 310,65 500,65 540,65 560,5 590,125 615,65 800,65 840,65 860,15 885,115 910,65 1100,65 1140,65 1160,5 1190,125 1215,65 1440,65"
+                style={{ filter: "drop-shadow(0 0 14px #FB0000) drop-shadow(0 0 4px #FB0000)" }}
               />
             </svg>
             <motion.div
-              className="absolute top-1/2 left-0 h-[3px] bg-gradient-to-r from-transparent via-[#FB0000] to-transparent"
-              style={{ filter: "drop-shadow(0 0 12px #FB0000)" }}
-              animate={{ x: ["-30%", "100%"], width: ["20%", "20%"] }}
+              className="absolute top-1/2 -translate-y-1/2 left-0 h-[5px] bg-gradient-to-r from-transparent via-[#FB0000] to-transparent rounded-full"
+              style={{ filter: "drop-shadow(0 0 18px #FB0000)" }}
+              animate={{ x: ["-30%", "100%"], width: ["25%", "25%"] }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             />
           </div>

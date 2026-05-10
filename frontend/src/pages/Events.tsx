@@ -76,14 +76,20 @@ export default function Events() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-              <Badge className="bg-[#FB0000]/15 text-[#FB0000] border border-[#FB0000]/40 px-3 py-1 mb-4" data-testid="badge-events-eyebrow">
-                <Mic className="h-3.5 w-3.5 mr-1.5" /> Speaking & Live Events
-              </Badge>
+              <div className="flex items-center gap-3 mb-5">
+                <img src="/assets/ai-blueprint-day-dark.jpeg" alt="AI Blueprint Day by PXC" className="h-14 w-14 rounded-md object-cover border border-[#FB0000]/30" data-testid="events-logo" />
+                <div>
+                  <Badge className="bg-[#FB0000]/15 text-[#FB0000] border border-[#FB0000]/40 px-3 py-1" data-testid="badge-events-eyebrow">
+                    <Mic className="h-3.5 w-3.5 mr-1.5" /> AI Blueprint Day™ · Speaking & Live Events
+                  </Badge>
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA] mt-1">by Patient eXperience Consulting</p>
+                </div>
+              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] mb-5" style={{ fontFamily: "Nunito, sans-serif" }} data-testid="events-headline">
-                Bring Jennifer to Your <span className="text-[#FB0000]">Stage,</span> <span className="text-[#47d8ff]">Boardroom,</span> or <span className="text-[#AEA1EA]">Team.</span>
+                Bring <span className="text-[#FB0000]">AI Blueprint Day™</span> to your <span className="text-[#47d8ff]">stage</span> or <span className="text-[#AEA1EA]">team.</span>
               </h1>
               <p className="text-lg text-[#AEA1EA] max-w-xl leading-relaxed mb-7">
-                Healthcare leaders are tired of generic AI talks delivered by people who've never touched a patient chart. Jennifer Radu, fCAIOX, brings 21+ years of in-the-trenches practice leadership and a sparkly, mic-drop delivery to every stage.
+                Healthcare leaders are tired of generic AI talks delivered by people who've never touched a patient chart. Jennifer Radu, fCAIOX, brings 21+ years of in-the-trenches practice leadership and a sparkly, mic-drop delivery — packaged as keynotes, workshops, and signature AI Blueprint Day™ intensives.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button size="lg" className="cta-bounce bg-[#FB0000] text-white font-black px-7 py-6" style={{ fontFamily: "Nunito, sans-serif" }} asChild data-testid="events-cta-book">
@@ -95,7 +101,7 @@ export default function Events() {
               </div>
             </motion.div>
 
-            {/* Hero card with rotating glowing rings + speaker visual */}
+            {/* Hero card with rotating glowing rings + AI Blueprint Day logo */}
             <motion.div className="relative flex items-center justify-center min-h-[480px]" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9 }}>
               <motion.div
                 className="absolute w-[420px] h-[360px] rounded-full pointer-events-none hero-orbit-cyan-lg"
@@ -113,13 +119,9 @@ export default function Events() {
                 animate={{ x: [0, 8, 8, -8, -8, 0], y: [-8, -8, 8, 8, -8, -8] }}
                 transition={{ duration: 9, repeat: Infinity, ease: "linear" }}
               />
-              <div className="relative z-10 w-[260px] h-[360px] rounded-2xl overflow-hidden bg-black" style={{ border: "2px solid rgba(251,0,0,0.45)", boxShadow: "0 0 40px rgba(251,0,0,0.35)" }}>
-                <img src="/assets/jen-consulting.png" alt="Jennifer Radu speaking" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-black text-base" style={{ fontFamily: "Nunito, sans-serif" }}>Jennifer Radu, CPPM</p>
-                  <p className="text-[#47d8ff] text-xs">fCAIOX · Founder, PXC</p>
-                </div>
+              <div className="relative z-10 w-[260px] h-[360px] rounded-2xl overflow-hidden bg-black flex items-center justify-center" style={{ border: "2px solid rgba(251,0,0,0.45)", boxShadow: "0 0 40px rgba(251,0,0,0.35)" }}>
+                <img src="/assets/ai-blueprint-day-dark.jpeg" alt="AI Blueprint Day by PXC" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute top-3 left-3 flex items-center gap-2 bg-black/70 backdrop-blur px-3 py-1.5 rounded-full border border-[#47d8ff]/40">
                   <Play className="h-3 w-3 text-[#FB0000]" />
                   <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white">Speaker Reel</span>
@@ -135,11 +137,11 @@ export default function Events() {
         <div className="text-center mb-3">
           <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-[#AEA1EA]">Trusted on stages including</span>
         </div>
-        <MarqueeStrip>
-          {[...PAST_VENUES, ...PAST_VENUES].map((v, i) => (
-            <span key={i} className="mx-8 text-white/70 text-sm font-bold tracking-wider" data-testid={`venue-${i}`}>{v}</span>
+        <MarqueeStrip
+          items={PAST_VENUES.map((v, i) => (
+            <span key={i} className="text-white/70 text-sm font-bold tracking-wider" data-testid={`venue-${i}`}>{v}</span>
           ))}
-        </MarqueeStrip>
+        />
       </section>
 
       {/* SIGNATURE TALKS */}

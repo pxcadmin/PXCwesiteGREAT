@@ -1,0 +1,58 @@
+It looks like you’re bringing your PXC Homepage to life! 
+
+Just a quick heads-up before we dive in: Google Fonts doesn't have a font called exactly "La Aurora," but based on the beautiful blue script in your document, I'm certain you're looking for **La Belle Aurore**. I've used that in the code below!
+
+Here is the exact set of instructions and code you can copy and paste into your Replit project to get those fonts looking perfect.
+
+### Step 1: "Download" the Fonts (HTML)
+In web development, you don't actually need to download the font files to your Replit workspace. Instead, you link to Google's servers. 
+
+Open your `index.html` file and paste this code inside the `<head>` section (usually right above the closing `</head>` tag):
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&family=La+Belle+Aurore&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+```
+
+### Step 2: Apply the Conditions (CSS)
+Next, open your `style.css` file (or wherever you are writing your CSS) and paste the following rules. I have mapped your requests to standard HTML tags, but you can adjust the class names if you're using custom ones:
+
+```css
+/* --- BODY TEXT --- */
+/* All body text in Comfortaa Regular (400) */
+body, p {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 400;
+}
+
+/* --- HEADINGS --- */
+/* Main headings in Nunito Extra Bold (800) */
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+}
+
+/* --- SUBHEADINGS --- */
+/* Subheadings in Nunito Bold (700) */
+h2, h3, h4 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+/* --- QUOTES & STATEMENTS --- */
+/* Quotes in La Belle Aurore */
+blockquote, .quote, .statement {
+  font-family: 'La Belle Aurore', cursive;
+  font-weight: 400;
+  /* Optional: Bump up the font size slightly, as script fonts often read smaller */
+  font-size: 1.2rem; 
+}
+```
+
+---
+
+**How to use the quotes:**
+Whenever you want to make a statement or quote look like that blue script from your document, just wrap it in a blockquote or use the classes provided in the CSS above. For example: `<blockquote class="quote">That moment is exactly why...</blockquote>`.
+
+Would you like me to draft a quick HTML template so you can preview exactly how these fonts look together on the page?

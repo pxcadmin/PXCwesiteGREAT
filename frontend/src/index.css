@@ -1,0 +1,722 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================
+   PXC GLOBAL TYPOGRAPHY SYSTEM
+   ================================================
+   h1              → Nunito Extra Bold (800)
+   h2, h3, h4      → Nunito Bold (700)
+   h5, h6          → Nunito Semi Bold (600)
+   body / p / li   → Comfortaa Regular (400)
+   blockquote /
+   .quote /
+   .statement      → La Belle Aurore (400)
+   ================================================ */
+
+@layer base {
+  body, p, li, span, td, th, label, input, textarea, select, button {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+  }
+
+  h2, h3, h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+  }
+
+  h5, h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+  }
+
+  blockquote, .quote, .statement {
+    font-family: 'La Belle Aurore', cursive;
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+}
+
+/* ================================================
+   PXC TYPOGRAPHY UTILITY CLASSES
+   (use these when HTML tags alone aren't enough)
+   ================================================ */
+
+.font-heading {
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 800 !important;
+}
+
+.font-subheading {
+  font-family: 'Nunito', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+.font-body {
+  font-family: 'Comfortaa', sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.font-quote {
+  font-family: 'La Belle Aurore', cursive !important;
+  font-weight: 400 !important;
+  font-size: 1.2em !important;
+}
+
+/* 
+  PXC BRAND COLORS - EXACT PALETTE
+  ================================
+  #FB0000 - Pure Red (ALL buttons, CTAs, glowing shapes)
+  #47d8ff - Cyan (text accent on black backgrounds)
+  #AEA1EA - Light Violet (text accent on black backgrounds)
+  #000000 - Pure Black (primary background)
+  #FFFFFF - White (secondary background, text on dark)
+  
+  BACKGROUND RULES:
+  - Black background: use cyan (#47d8ff) and violet (#AEA1EA) text
+  - Blue background: use black and red text
+  - White background: use dark/black text
+  - RED = Always buttons/CTAs only
+*/
+
+:root {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .06);
+  --elevate-2: rgba(255,255,255, .12);
+
+  /* PXC Brand Colors in HSL format */
+  --pxc-red: 0 100% 49%;
+  --pxc-cyan: 193 100% 64%;
+  --pxc-violet: 260 58% 78%;
+  --pxc-black: 0 0% 0%;
+  --pxc-white: 0 0% 100%;
+  --pxc-blue-bg: 193 100% 64%;
+
+  /* Pure Black Background */
+  --background: 0 0% 0%;
+  /* White text on black - but we'll use cyan/violet accents */
+  --foreground: 0 0% 100%;
+  
+  /* Borders - subtle on dark */
+  --border: 0 0% 20%;
+  
+  /* Card backgrounds - slightly elevated from pure black */
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 0% 15%;
+  
+  /* Sidebar - dark theme */
+  --sidebar: 0 0% 4%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 0 0% 15%;
+  --sidebar-primary: 0 100% 49%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 10%;
+  --sidebar-accent-foreground: 193 100% 64%;
+  --sidebar-ring: 0 100% 49%;
+  
+  /* Popover */
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 0 0% 20%;
+  
+  /* Primary - Bold Red for ALL CTAs and Buttons */
+  --primary: 0 100% 49%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary - For secondary elements (not buttons) */
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Muted - Darker elements */
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 65%;
+  
+  /* Accent - Cyan accent color */
+  --accent: 193 100% 64%;
+  --accent-foreground: 0 0% 0%;
+  
+  /* Destructive - Red for errors (same as primary since red is brand) */
+  --destructive: 0 100% 49%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Input fields */
+  --input: 0 0% 15%;
+  --ring: 0 100% 49%;
+  
+  /* Charts - using brand colors */
+  --chart-1: 0 100% 49%;
+  --chart-2: 193 100% 64%;
+  --chart-3: 260 58% 78%;
+  --chart-4: 0 0% 50%;
+  --chart-5: 195 60% 60%;
+
+  /* Fonts */
+  --font-heading: 'Nunito', sans-serif;
+  --font-heading-weight: 900;
+  --font-heading-size: 60px;
+
+  --font-title: 'Comfortaa', sans-serif;
+  --font-title-weight: 700;
+  --font-title-size: 45px;
+
+  --font-subheading: 'Nunito', sans-serif;
+  --font-subheading-weight: 700;
+  --font-subheading-size: 32px;
+
+  --font-body: 'Comfortaa', sans-serif;
+  --font-body-weight: 400;
+  --font-body-size: 24px;
+  
+  --radius: 0.5rem;
+  
+  /* Shadows - subtle red glow for brand elements */
+  --shadow-2xs: 0px 1px 2px 0px rgba(0,0,0,0.3);
+  --shadow-xs: 0px 1px 3px 0px rgba(0,0,0,0.4);
+  --shadow-sm: 0px 2px 4px 0px rgba(0,0,0,0.4);
+  --shadow: 0px 4px 6px -1px rgba(0,0,0,0.5);
+  --shadow-md: 0px 6px 10px -2px rgba(0,0,0,0.5);
+  --shadow-lg: 0px 10px 15px -3px rgba(0,0,0,0.5);
+  --shadow-xl: 0px 20px 25px -5px rgba(0,0,0,0.5);
+  --shadow-2xl: 0px 25px 50px -12px rgba(0,0,0,0.6);
+  
+  /* Red glow for CTAs */
+  --glow-red: 0px 0px 20px rgba(251, 0, 0, 0.4);
+  --glow-red-intense: 0px 0px 30px rgba(251, 0, 0, 0.6);
+  
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --primary-border: hsl(0 100% 55%);
+  --secondary-border: hsl(0 0% 25%);
+  --muted-border: hsl(0 0% 20%);
+  --accent-border: hsl(195 85% 90%);
+  --destructive-border: hsl(0 100% 55%);
+  --sidebar-primary-border: hsl(0 100% 55%);
+  --sidebar-accent-border: hsl(0 0% 20%);
+}
+
+.dark {
+  /* Same as root - this is a dark-only website */
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .06);
+  --elevate-2: rgba(255,255,255, .12);
+  
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --border: 0 0% 20%;
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 0% 15%;
+  --sidebar: 0 0% 4%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 0 0% 15%;
+  --sidebar-primary: 0 100% 49%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 0 0% 10%;
+  --sidebar-accent-foreground: 193 100% 64%;
+  --sidebar-ring: 0 100% 49%;
+  --popover: 0 0% 5%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 0 0% 20%;
+  --primary: 0 100% 49%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 12%;
+  --muted-foreground: 0 0% 65%;
+  --accent: 193 100% 64%;
+  --accent-foreground: 0 0% 0%;
+  --destructive: 0 100% 49%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 0 0% 15%;
+  --ring: 0 100% 49%;
+  --chart-1: 0 100% 49%;
+  --chart-2: 193 100% 64%;
+  --chart-3: 260 58% 78%;
+  --chart-4: 0 0% 50%;
+  --chart-5: 195 60% 60%;
+  
+  --radius: 0.5rem;
+  --spacing: 0.25rem;
+  --font-mono: 'Oxanium', monospace;
+  --font-sans: 'Open Sans', sans-serif;
+  --font-serif: 'Nunito', sans-serif;
+  --tracking-normal: 0em;
+  
+  --primary-border: hsl(0 100% 55%);
+  --secondary-border: hsl(0 0% 25%);
+  --muted-border: hsl(0 0% 20%);
+  --accent-border: hsl(195 85% 90%);
+  --destructive-border: hsl(0 100% 55%);
+  --sidebar-primary-border: hsl(0 100% 55%);
+  --sidebar-accent-border: hsl(0 0% 20%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 5%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 25%);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 35%);
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* PXC Brand Text Colors */
+  .text-pxc-cyan {
+    color: #47d8ff;
+  }
+  
+  .text-pxc-violet {
+    color: #AEA1EA;
+  }
+  
+  .text-pxc-red {
+    color: #FB0000;
+  }
+  
+  /* PXC Brand Background Colors */
+  .bg-pxc-black {
+    background-color: #000000;
+  }
+  
+  .bg-pxc-white {
+    background-color: #FFFFFF;
+  }
+  
+  .bg-pxc-blue {
+    background-color: #47d8ff;
+  }
+  
+  .bg-pxc-red {
+    background-color: #FB0000;
+  }
+
+  /* Red CTA Button with Glow and Jump Effect */
+  .btn-pxc-red {
+    @apply bg-[#FB0000] text-white font-semibold px-6 py-3 rounded-md transition-all duration-200;
+    box-shadow: 0px 0px 15px rgba(251, 0, 0, 0.3);
+  }
+  
+  .btn-pxc-red:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0px 8px 25px rgba(251, 0, 0, 0.5);
+  }
+  
+  .btn-pxc-red:active {
+    transform: translateY(-2px) scale(1.01);
+  }
+
+  /* Red Glow Effect */
+  .glow-red {
+    box-shadow: 0px 0px 20px rgba(251, 0, 0, 0.4);
+  }
+  
+  .glow-red-intense {
+    box-shadow: 0px 0px 30px rgba(251, 0, 0, 0.6);
+  }
+  
+  /* Subtle red border glow */
+  .border-glow-red {
+    border: 1px solid rgba(251, 0, 0, 0.3);
+    box-shadow: 0px 0px 10px rgba(251, 0, 0, 0.2);
+  }
+
+  /* CTA Button Bounce Animation */
+  @keyframes ctaBounce {
+    0%, 100% { transform: translateY(0px) scale(1); box-shadow: 0 5px 20px rgba(251,0,0,0.4); }
+    50% { transform: translateY(-7px) scale(1.015); box-shadow: 0 18px 40px rgba(251,0,0,0.65); }
+  }
+  .cta-bounce {
+    animation: ctaBounce 2.8s ease-in-out infinite;
+  }
+  .cta-bounce:hover {
+    animation-play-state: paused;
+    transform: translateY(-9px) scale(1.07) !important;
+    box-shadow: 0 22px 55px rgba(251,0,0,0.85) !important;
+    background-color: #FB0000 !important;
+    color: #ffffff !important;
+  }
+
+  /* CTA Lilac Bounce Animation */
+  @keyframes ctaBounceLilac {
+    0%, 100% { transform: translateY(0px) scale(1); box-shadow: 0 5px 20px rgba(174,161,234,0.35); }
+    50% { transform: translateY(-7px) scale(1.015); box-shadow: 0 18px 40px rgba(174,161,234,0.6); }
+  }
+  .cta-bounce-lilac {
+    animation: ctaBounceLilac 2.8s ease-in-out infinite;
+  }
+  .cta-bounce-lilac:hover {
+    animation-play-state: paused;
+    transform: translateY(-9px) scale(1.07) !important;
+    box-shadow: 0 22px 55px rgba(174,161,234,0.9) !important;
+    background-color: #AEA1EA !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+
+  /* Lilac Card Glow */
+  .card-glow-lilac {
+    box-shadow: 0 0 28px rgba(174,161,234,0.22), 0 0 60px rgba(174,161,234,0.10);
+    transition: box-shadow 0.4s ease;
+  }
+  .card-glow-lilac:hover {
+    box-shadow: 0 0 44px rgba(174,161,234,0.42), 0 0 90px rgba(174,161,234,0.20);
+  }
+
+  /* Cyan glow accent */
+  .glow-cyan {
+    box-shadow: 0 0 22px rgba(71,216,255,0.35);
+  }
+
+  /* Hero orbital ring glows (Home hero rotating ellipses) */
+  .hero-orbit-cyan-lg {
+    border: 3px solid rgba(71,216,255,0.55);
+    box-shadow: 0 0 28px rgba(71,216,255,0.45), 0 0 60px rgba(71,216,255,0.2), inset 0 0 28px rgba(71,216,255,0.15);
+  }
+  .hero-orbit-cyan-md {
+    border: 3px solid rgba(71,216,255,0.40);
+    box-shadow: 0 0 22px rgba(71,216,255,0.35), 0 0 45px rgba(71,216,255,0.15), inset 0 0 22px rgba(71,216,255,0.10);
+  }
+  .hero-orbit-cyan-sm {
+    border: 3px solid rgba(71,216,255,0.25);
+    box-shadow: 0 0 16px rgba(71,216,255,0.25), inset 0 0 16px rgba(71,216,255,0.08);
+  }
+  .hero-orbit-red {
+    border: 3px solid #FB0000;
+    box-shadow: 0 0 55px rgba(251,0,0,0.70), 0 0 110px rgba(251,0,0,0.32), inset 0 0 18px rgba(251,0,0,0.12);
+  }
+
+  /* Soft stat-card glows used by floating overlay cards */
+  .glow-stat-cyan { box-shadow: 0 0 20px rgba(71,216,255,0.25); }
+  .glow-stat-red { box-shadow: 0 0 20px rgba(251,0,0,0.25); }
+  .glow-stat-lilac { box-shadow: 0 0 20px rgba(174,161,234,0.25); }
+
+  /* Floating parallax element animation */
+  @keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+  }
+  .float-slow { animation: floatY 5s ease-in-out infinite; }
+  .float-medium { animation: floatY 3.5s ease-in-out infinite; }
+  .float-fast { animation: floatY 2.5s ease-in-out infinite; }
+
+  /* Shimmer effect for stat numbers */
+  @keyframes shimmer {
+    0% { text-shadow: 0 0 10px currentColor; }
+    50% { text-shadow: 0 0 30px currentColor, 0 0 60px currentColor; }
+    100% { text-shadow: 0 0 10px currentColor; }
+  }
+  .stat-glow { animation: shimmer 2.5s ease-in-out infinite; }
+
+  /* Carousel transition */
+  .carousel-track { display: flex; transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+  /* ================================================
+     PXC LAUNCH MOTION LAYER
+     All effects respect prefers-reduced-motion.
+     ================================================ */
+
+  /* Rotating conic-gradient border (BeamCard) */
+  @property --beam-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  /* Full-border glow + lift on hover. Color = accent (red default, cyan w/ .pxc-beam-cyan) */
+  @keyframes beamGlowPulse {
+    0%, 100% {
+      box-shadow:
+        0 0 0 1.5px var(--beam-accent, #FB0000),
+        0 0 18px -2px color-mix(in srgb, var(--beam-accent, #FB0000) 65%, transparent),
+        0 18px 32px -12px color-mix(in srgb, var(--beam-accent, #FB0000) 55%, transparent);
+    }
+    50% {
+      box-shadow:
+        0 0 0 1.5px var(--beam-accent, #FB0000),
+        0 0 32px -2px color-mix(in srgb, var(--beam-accent, #FB0000) 90%, transparent),
+        0 22px 40px -12px color-mix(in srgb, var(--beam-accent, #FB0000) 75%, transparent);
+    }
+  }
+  .pxc-beam-card {
+    --beam-accent: #FB0000;
+    position: relative;
+    border-radius: 0.85rem;
+    box-shadow:
+      0 0 0 1.5px color-mix(in srgb, var(--beam-accent) 55%, transparent),
+      0 0 0 0 transparent;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.35s ease;
+    will-change: transform, box-shadow;
+  }
+  .pxc-beam-card.pxc-beam-cyan { --beam-accent: #47d8ff; }
+  .pxc-beam-card:hover {
+    transform: translateY(-6px);
+    animation: beamGlowPulse 2.4s ease-in-out infinite;
+  }
+
+  /* AuroraBackdrop — slow drifting blurred orbs */
+  @keyframes auroraDrift1 {
+    0%, 100% { transform: translate(-15%, -10%) scale(1); }
+    50% { transform: translate(15%, 10%) scale(1.15); }
+  }
+  @keyframes auroraDrift2 {
+    0%, 100% { transform: translate(20%, 15%) scale(1.1); }
+    50% { transform: translate(-10%, -15%) scale(0.95); }
+  }
+  @keyframes auroraDrift3 {
+    0%, 100% { transform: translate(0%, 25%) scale(1); }
+    50% { transform: translate(-25%, -5%) scale(1.2); }
+  }
+  .pxc-aurora-orb-1 { animation: auroraDrift1 14s ease-in-out infinite; }
+  .pxc-aurora-orb-2 { animation: auroraDrift2 18s ease-in-out infinite; }
+  .pxc-aurora-orb-3 { animation: auroraDrift3 22s ease-in-out infinite; }
+
+  /* AnswerCapsule halo pulse */
+  @keyframes haloPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(71,216,255,0.0), 0 0 30px rgba(71,216,255,0.15); }
+    50% { box-shadow: 0 0 0 12px rgba(71,216,255,0.0), 0 0 55px rgba(71,216,255,0.35); }
+  }
+  .pxc-halo-pulse { animation: haloPulse 6s ease-in-out infinite; }
+
+  /* Marquee strip — horizontal infinite scroll */
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .pxc-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeScroll 38s linear infinite;
+  }
+  .pxc-marquee-track:hover { animation-play-state: paused; }
+
+  /* Animated SVG divider sweep */
+  @keyframes dividerSweep {
+    0% { stroke-dashoffset: 1000; opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0.4; }
+  }
+  .pxc-divider-path {
+    stroke-dasharray: 1000;
+    animation: dividerSweep 9s ease-in-out infinite;
+  }
+
+  /* DrawInSVG — generic stroke-draw utility for inline SVG paths */
+  @keyframes drawInPath {
+    from { stroke-dashoffset: var(--pxc-draw-len, 1200); opacity: 0.3; }
+    to   { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .pxc-draw-in {
+    stroke-dasharray: var(--pxc-draw-len, 1200);
+    stroke-dashoffset: var(--pxc-draw-len, 1200);
+    animation: drawInPath 2.6s ease-out forwards;
+  }
+
+  /* Subtle grain overlay — apply to relative parents via .pxc-grain::after */
+  .pxc-grain { position: relative; }
+  .pxc-grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+    background-size: 160px 160px;
+  }
+
+  /* Card lift utility — non-overflow-hidden alternative */
+  .pxc-card-lift {
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  }
+  .pxc-card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(71,216,255,0.18), 0 0 0 1px rgba(71,216,255,0.35);
+  }
+
+  /* 3D tilt wrapper — perspective container */
+  .pxc-tilt-wrapper {
+    perspective: 900px;
+    transform-style: preserve-3d;
+  }
+  .pxc-tilt-target {
+    transition: transform 0.18s ease-out;
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* Sticky scroll-CTA pill entrance */
+  @keyframes stickyCtaIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.9); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .pxc-sticky-cta-in { animation: stickyCtaIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+
+  /* Top scroll-progress bar */
+  .pxc-scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FB0000 0%, #47d8ff 100%);
+    z-index: 100;
+    box-shadow: 0 0 12px rgba(71,216,255,0.5);
+    transform-origin: left center;
+    will-change: transform;
+    pointer-events: none;
+  }
+
+  /* Cursor-proximity glow (CSS variables driven by JS).
+     No overflow:hidden on the wrapper — would clip a child card's
+     hover lift / glow. The radial is rendered on a child ::after with
+     inset:0 + border-radius:inherit so it's already self-bounded. */
+  .pxc-cursor-glow {
+    position: relative;
+    border-radius: 0.85rem;
+  }
+  .pxc-cursor-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      280px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(71,216,255,0.18),
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .pxc-cursor-glow:hover::after { opacity: 1; }
+
+  /* Reduced-motion guard — kill all decorative motion */
+  @media (prefers-reduced-motion: reduce) {
+    .pxc-beam-card,
+    .pxc-aurora-orb-1,
+    .pxc-aurora-orb-2,
+    .pxc-aurora-orb-3,
+    .pxc-halo-pulse,
+    .pxc-marquee-track,
+    .pxc-divider-path,
+    .pxc-draw-in,
+    .pxc-sticky-cta-in,
+    .cta-bounce,
+    .cta-bounce-lilac,
+    .float-slow,
+    .float-medium,
+    .float-fast,
+    .stat-glow {
+      animation: none !important;
+    }
+    .pxc-draw-in {
+      stroke-dashoffset: 0 !important;
+      opacity: 1 !important;
+    }
+    .pxc-card-lift:hover,
+    .pxc-tilt-target {
+      transform: none !important;
+    }
+  }
+
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

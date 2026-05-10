@@ -1,0 +1,123 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Nunito",
+      "role": "body"
+    }
+  ],
+  "colors": {
+    "primary": "#AEA1EA",
+    "secondary": "#605981",
+    "accent": "#580000",
+    "background": "#000000",
+    "textPrimary": "#000000",
+    "link": "#580000"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Nunito",
+      "heading": "Nunito"
+    },
+    "fontStacks": {
+      "heading": [
+        "Nunito",
+        "system-ui",
+        "-apple-system",
+        "sans-serif"
+      ],
+      "body": [
+        "Nunito",
+        "system-ui",
+        "-apple-system",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Nunito",
+        "system-ui",
+        "-apple-system",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "84px",
+      "h2": "48px",
+      "body": "21.6px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "14px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#15131C",
+      "textColor": "#AEA1EA",
+      "borderColor": "#605981",
+      "borderRadius": "999px",
+      "borderRadiusCorners": {
+        "topLeft": "999px",
+        "topRight": "999px",
+        "bottomRight": "999px",
+        "bottomLeft": "999px"
+      },
+      "shadow": "rgba(174, 161, 234, 0.18) 0px 0px 18px 0px"
+    },
+    "buttonSecondary": {
+      "background": "#000000",
+      "textColor": "#FFFFFF",
+      "borderColor": "#206173",
+      "borderRadius": "18px",
+      "borderRadiusCorners": {
+        "topLeft": "18px",
+        "topRight": "18px",
+        "bottomRight": "18px",
+        "bottomLeft": "18px"
+      },
+      "shadow": "rgba(71, 216, 255, 0.18) 0px 0px 0px 1px inset, rgba(71, 216, 255, 0.25) 0px 20px 60px 0px"
+    }
+  },
+  "images": {
+    "logo": null,
+    "favicon": "https://hyperagent.com/static/favicons/icon.svg",
+    "ogImage": "https://hyperagent.com/static/og-card/hyperagent-icon-1024.png"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Take the 2-Min AI Readiness Quiz",
+      "reasoning": "Button #0, 'Take the 2-Min AI Readiness Quiz', is selected as the primary CTA due to its action-oriented text and distinct call-to-action nature. It stands out as a key engagement point for users."
+    },
+    "secondary": {
+      "index": 2,
+      "text": "Video Placeholder · Replace\n        \n          \n        \n        A 90-second message from Jennifer\n ",
+      "reasoning": "Button #2, 'Video Placeholder · Replace A 90-second mes', is chosen as secondary because it has a different background color (#000000) and serves a supportive role, likely leading to additional content."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "Florida medical practices"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": false,
+      "llmSucceeded": false,
+      "finalSource": "none"
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

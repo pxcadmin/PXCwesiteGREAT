@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PXC AI Readiness Score™ | Patient eXperience Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Comfortaa:wght@300;400;500;600;700&family=La+Belle+Aurore&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #0A0A0E;
+    --card: #1A1A1E;
+    --card-alt: #111115;
+    --ink: #FFFFFF;
+    --ink-soft: #D0D5DA;
+    --mid: #8A95A0;
+    --rule: #2A2A30;
+    --hairline: #222228;
+    --accent: #FF0000;
+    --teal: #05F2FF;
+    --gold: #CB9EFF;
+    --green: #00C27A;
+    --yellow: #FFD166;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* GLOBAL */
+  .script { font-family: 'La Belle Aurore', cursive; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .comfortaa { font-family: 'Comfortaa', cursive; }
+
+  a { color: var(--teal); text-decoration: none; }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* LAYOUT */
+  .app {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--hairline);
+    margin-bottom: 0;
+  }
+
+  .logo-text {
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink-soft);
+    letter-spacing: 0.5px;
+  }
+
+  .logo-text span {
+    color: var(--accent);
+  }
+
+  .header-phone {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--mid);
+  }
+
+  /* SCREENS */
+  .screen {
+    display: none;
+    flex: 1;
+    padding: 48px 0 80px;
+    animation: fadeSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .screen.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeSlideOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-24px); }
+  }
+
+  .screen.exiting {
+    animation: fadeSlideOut 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* INTRO SCREEN */
+  .intro-eyebrow {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 28px;
+    color: var(--teal);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .intro-h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .intro-h1 .highlight {
+    color: var(--accent);
+  }
+
+  .intro-h2 {
+    font-family: 'Comfortaa', cursive;
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-weight: 400;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+
+  .trust-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--card-alt);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 48px;
+    max-width: 600px;
+  }
+
+  .trust-line-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .trust-line-text {
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .trust-line-text strong {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* DOMAIN BADGES */
+  .domain-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+  }
+
+  .domain-badge {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--mid);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 0 0 rgba(255,0,0,0);
+  }
+
+  .btn-primary:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(255,0,0,0.35);
+  }
+
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-teal {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+  }
+
+  .btn-teal:hover {
+    background: rgba(5,242,255,0.08);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--mid);
+    border: 1px solid var(--rule);
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .btn-ghost:hover {
+    color: var(--ink-soft);
+    border-color: var(--mid);
+  }
+
+  /* PROGRESS BAR */
+  .progress-container {
+    margin-bottom: 36px;
+  }
+
+  .progress-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--mid);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .progress-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .progress-track {
+    height: 4px;
+    background: var(--rule);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    border-radius: 99px;
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* QUESTION SCREEN */
+  .domain-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(5,242,255,0.08);
+    border: 1px solid rgba(5,242,255,0.2);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--teal);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .question-text {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(20px, 3.5vw, 28px);
+    font-weight: 800;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 36px;
+    max-width: 720px;
+  }
+
+  /* RATING OPTIONS */
+  .rating-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .rating-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--card);
+    border: 2px solid var(--rule);
+    border-radius: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: left;
+  }
+
+  .rating-option:hover {
+    border-color: rgba(5,242,255,0.4);
+    background: rgba(5,242,255,0.04);
+    transform: translateX(4px);
+  }
+
+  .rating-option.selected {
+    border-color: var(--teal);
+    background: rgba(5,242,255,0.07);
+    box-shadow: 0 0 0 1px var(--teal), 0 4px 20px rgba(5,242,255,0.12);
+  }
+
+  .rating-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--card-alt);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mid);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .rating-option.selected .rating-number {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: var(--paper);
+  }
+
+  .rating-content {
+    flex: 1;
+  }
+
+  .rating-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--teal);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .rating-option.selected .rating-label { color: var(--teal); }
+
+  .rating-desc {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .rating-option.selected .rating-desc { color: var(--ink); }
+
+  /* NAV BUTTONS */
+  .question-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* EMAIL CAPTURE */
+  .capture-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 32px;
+  }
+
+  .score-preview {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .score-preview-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 12px;
+  }
+
+  .score-preview-number {
+    font-family: 'Nunito', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+  }
+
+  .score-preview-sublabel {
+    font-family: 'Comfortaa', cursive;
+    font-size: 14px;
+    color: var(--mid);
+  }
+
+  .score-preview-bar {
+    width: 100%;
+    max-width: 320px;
+    margin: 16px auto 0;
+    height: 8px;
+    background: var(--rule);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .score-preview-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  .form-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--mid);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .form-input,
+  .form-select {
+    background: var(--card-alt);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: var(--ink);
+    font-family: 'Nunito', sans-serif;
+    font-size: 15px;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder { color: var(--mid); }
+
+  .form-input:focus,
+  .form-select:focus {
+    outline: none;
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(5,242,255,0.1);
+  }
+
+  .form-select option { background: var(--card); }
+
+  .capture-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(203,158,255,0.07);
+    border: 1px solid rgba(203,158,255,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 20px;
+  }
+
+  .capture-note-icon { font-size: 18px; flex-shrink: 0; }
+  .capture-note-text { font-size: 13px; color: var(--gold); line-height: 1.5; }
+
+  /* RESULTS */
+  .results-hero {
+    text-align: center;
+    padding: 48px 0 40px;
+  }
+
+  .score-ring-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 28px;
+  }
+
+  .score-ring-svg {
+    width: 200px;
+    height: 200px;
+    transform: rotate(-90deg);
+  }
+
+  .score-ring-bg {
+    fill: none;
+    stroke: var(--rule);
+    stroke-width: 10;
+  }
+
+  .score-ring-fill {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.5s;
+  }
+
+  .score-ring-number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .score-ring-val {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1;
+  }
+
+  .score-ring-of {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .results-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .results-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+
+  .results-description {
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+
+  /* DOMAIN BAR CHART */
+  .domain-chart {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+  }
+
+  .domain-chart-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+
+  .domain-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .domain-bar-label {
+    font-size: 12px;
+    color: var(--ink-soft);
+    width: 180px;
+    flex-shrink: 0;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .domain-bar-track {
+    flex: 1;
+    height: 8px;
+    background: var(--rule);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .domain-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    width: 0;
+    transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .domain-bar-score {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    width: 20px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  /* LOST REVENUE REPORT */
+  .revenue-report {
+    margin-bottom: 48px;
+  }
+
+  .section-eyebrow {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 26px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    color: var(--mid);
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .revenue-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .revenue-card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .revenue-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .revenue-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .revenue-card-body { flex: 1; }
+
+  .revenue-card-domain {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 4px;
+  }
+
+  .revenue-card-problem {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .revenue-card-amount {
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .revenue-card-amount-label {
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .revenue-total {
+    background: linear-gradient(135deg, rgba(255,0,0,0.08), rgba(203,158,255,0.08));
+    border: 1px solid rgba(255,0,0,0.25);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .revenue-total-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 4px;
+  }
+
+  .revenue-total-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink-soft);
+  }
+
+  .revenue-total-amount {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .revenue-disclaimer {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    font-style: italic;
+  }
+
+  /* CTAs */
+  .results-cta {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+  }
+
+  .results-cta-eyebrow {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 24px;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+
+  .results-cta-title {
+    font-family: 'Nunito', sans-serif;
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+
+  .results-cta-sub {
+    font-size: 15px;
+    color: var(--mid);
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .micro-cta {
+    font-size: 13px;
+    color: var(--mid);
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  .results-footer {
+    border-top: 1px solid var(--hairline);
+    padding: 24px 0;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-brand {
+    font-family: 'Comfortaa', cursive;
+    font-size: 13px;
+    color: var(--mid);
+  }
+
+  .footer-brand span { color: var(--accent); }
+
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-links a {
+    font-size: 13px;
+    color: var(--mid);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--teal); }
+
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 8px 14px;
+    color: var(--mid);
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .print-btn:hover { border-color: var(--mid); color: var(--ink-soft); }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: #fff; color: #000; }
+    body::before { display: none; }
+    .screen:not(#results-screen) { display: none !important; }
+    #results-screen { display: flex !important; color: #000; }
+    .results-cta, .site-header, .results-footer .print-btn { display: none; }
+    .card, .revenue-card, .domain-chart, .revenue-total { background: #f5f5f5; border-color: #ddd; }
+    .score-ring-val, .revenue-card-amount, .revenue-total-amount { color: #cc0000; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .domain-bar-label { width: 130px; font-size: 11px; }
+    .revenue-total { flex-direction: column; text-align: center; }
+    .results-cta { padding: 28px 20px; }
+    .capture-card { padding: 28px 20px; }
+    .domain-chart { padding: 24px 16px; }
+    .question-nav { flex-wrap: wrap; }
+    .site-header { flex-direction: column; gap: 8px; text-align: center; }
+    .btn { width: 100%; }
+    .cta-buttons .btn { width: auto; min-width: 200px; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes countUp {
+    from { opacity: 0; transform: scale(0.85); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-count { animation: countUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  /* SCORE COLORS */
+  .score-green { color: var(--green); }
+  .score-yellow { color: var(--yellow); }
+  .score-red { color: var(--accent); }
+
+  /* STAR DECORATION */
+  .star-divider {
+    text-align: center;
+    color: var(--rule);
+    font-size: 18px;
+    letter-spacing: 12px;
+    margin: 32px 0;
+    font-family: 'La Belle Aurore', cursive;
+  }
+</style>
+<style>
+.ha-img-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;background:#f4f4f5;border:1px dashed #d4d4d8;border-radius:8px;color:#71717a;font-size:12px;font-family:system-ui,sans-serif;min-height:80px;padding:16px;box-sizing:border-box;animation:ha-img-pulse 1.5s ease-in-out infinite}
+.ha-img-placeholder.ha-failed{animation:none;opacity:.7}
+@keyframes ha-img-pulse{0%,100%{opacity:1}50%{opacity:.5}}
+@media(prefers-color-scheme:dark){.ha-img-placeholder{background:#27272a;border-color:#3f3f46;color:#a1a1aa}}
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo-text"><span>PXC</span> Patient eXperience Consulting</div>
+    <div class="header-phone">(941) 293-2903</div>
+  </header>
+
+  <!-- ==================== INTRO SCREEN ==================== -->
+  <section id="intro-screen" class="screen active">
+    <div class="intro-eyebrow script">Know Your AI Readiness</div>
+    <h1 class="intro-h1">The PXC <span class="highlight">AI Readiness</span><br>Score™</h1>
+    <p class="intro-h2">10 questions. 5 minutes. A personalized report showing exactly where AI can save your practice time, money, and burnout — and what it's costing you to wait.</p>
+
+    <div class="trust-line">
+      <div class="trust-line-icon">✦</div>
+      <div class="trust-line-text">Used by <strong>Jennifer Radu, CEO of Patient eXperience Consulting</strong>, as the foundation of every Practice Clarity &amp; AI Readiness Assessment™</div>
+    </div>
+
+    <div class="domain-preview">
+      <span class="domain-badge">Documentation Burden</span>
+      <span class="domain-badge">Phone &amp; Communication</span>
+      <span class="domain-badge">No-Show Management</span>
+      <span class="domain-badge">Staff AI Literacy</span>
+      <span class="domain-badge">EHR Friction</span>
+      <span class="domain-badge">Patient Automation</span>
+      <span class="domain-badge">Scheduling</span>
+      <span class="domain-badge">Reputation</span>
+      <span class="domain-badge">AI Governance</span>
+      <span class="domain-badge">Leadership Capacity</span>
+    </div>
+
+    <div>
+      <button class="btn btn-primary" onclick="startAssessment()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Take the Assessment
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== QUESTION SCREEN ==================== -->
+  <section id="question-screen" class="screen">
+    <div class="progress-container">
+      <div class="progress-meta">
+        <span class="progress-label" id="progress-label">Domain 1 of 10</span>
+        <span class="progress-count" id="progress-count">10%</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill" style="width:10%"></div>
+      </div>
+    </div>
+
+    <div class="domain-tag" id="domain-tag">DOMAIN 1 — DOCUMENTATION BURDEN</div>
+    <div class="question-text" id="question-text">Question text loads here</div>
+
+    <div class="rating-grid" id="rating-grid">
+      <!-- Options injected by JS -->
+    </div>
+
+    <div class="question-nav">
+      <button class="btn btn-ghost" id="back-btn" onclick="goBack()" style="display:none">← Back</button>
+      <button class="btn btn-primary" id="next-btn" onclick="goNext()" disabled>
+        Continue
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ==================== EMAIL CAPTURE SCREEN ==================== -->
+  <section id="capture-screen" class="screen">
+    <div class="capture-card">
+      <div class="score-preview">
+        <div class="score-preview-label">Your AI Readiness Score</div>
+        <div class="score-preview-number" id="preview-score">—</div>
+        <div class="score-preview-sublabel" id="preview-tier">Enter your details to unlock your full report</div>
+        <div class="score-preview-bar">
+          <div class="score-preview-fill" id="preview-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <form id="capture-form" onsubmit="submitCapture(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="f-name">First Name</label>
+            <input class="form-input" type="text" id="f-name" placeholder="Jennifer" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-email">Work Email</label>
+            <input class="form-input" type="email" id="f-email" placeholder="jennifer@practice.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-providers">Number of Providers</label>
+            <select class="form-select" id="f-providers" required>
+              <option value="">Select...</option>
+              <option value="1.5">1–2 providers</option>
+              <option value="4">3–5 providers</option>
+              <option value="8">6–10 providers</option>
+              <option value="14">11+ providers</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-revenue">Annual Revenue Range</label>
+            <select class="form-select" id="f-revenue" required>
+              <option value="">Select...</option>
+              <option value="500000">Under $1M</option>
+              <option value="1500000">$1M – $2M</option>
+              <option value="3500000">$2M – $5M</option>
+              <option value="7500000">$5M – $10M</option>
+              <option value="12000000">$10M+</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label" for="f-specialty">Practice Specialty</label>
+            <select class="form-select" id="f-specialty" required>
+              <option value="">Select...</option>
+              <option value="primary_care">Primary Care</option>
+              <option value="urgent_care">Urgent Care</option>
+              <option value="specialty">Specialty</option>
+              <option value="behavioral_health">Behavioral Health</option>
+              <option value="multi_specialty">Multi-specialty</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="capture-note" style="margin-top: 20px;">
+          <div class="capture-note-icon">✦</div>
+          <div class="capture-note-text">Your provider count and revenue are used to calculate <strong>personalized dollar figures</strong> in your Lost Revenue &amp; Wasted Time Report. We don't share your data.</div>
+        </div>
+
+        <div style="margin-top: 24px; text-align: center;">
+          <button type="submit" class="btn btn-primary" style="padding: 20px 56px; font-size: 17px;">
+            Unlock My Full Report
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS SCREEN ==================== -->
+  <section id="results-screen" class="screen">
+
+    <!-- SCORE HERO -->
+    <div class="results-hero">
+      <div class="score-ring-container">
+        <svg class="score-ring-svg" viewBox="0 0 200 200">
+          <circle class="score-ring-bg" cx="100" cy="100" r="85"/>
+          <circle class="score-ring-fill" id="ring-fill" cx="100" cy="100" r="85"
+            stroke-dasharray="534"
+            stroke-dashoffset="534"/>
+        </svg>
+        <div class="score-ring-number">
+          <div class="score-ring-val" id="ring-val">0</div>
+          <div class="score-ring-of">out of 50</div>
+        </div>
+      </div>
+
+      <div class="results-tier" id="results-tier">AI READINESS TIER</div>
+      <h2 class="results-title" id="results-title">Your Result</h2>
+      <p class="results-description" id="results-description">Description here.</p>
+    </div>
+
+    <!-- DOMAIN BREAKDOWN -->
+    <div class="domain-chart">
+      <div class="domain-chart-title">Domain Breakdown — Score by Category</div>
+      <div id="domain-bars"></div>
+    </div>
+
+    <!-- LOST REVENUE REPORT -->
+    <div class="revenue-report">
+      <div class="section-eyebrow script">Your Personalized Report</div>
+      <h3 class="section-title">Lost Revenue &amp; Wasted Time</h3>
+      <p class="section-subtitle">Based on your answers, provider count, and revenue — here's what friction is costing your practice annually.</p>
+
+      <div class="revenue-cards" id="revenue-cards">
+        <!-- Injected by JS -->
+      </div>
+
+      <div class="revenue-total">
+        <div>
+          <div class="revenue-total-label">Total Estimated Annual Opportunity</div>
+          <div class="revenue-total-title">What addressing your pain points is worth</div>
+        </div>
+        <div class="revenue-total-amount" id="total-amount">$0</div>
+      </div>
+
+      <p class="revenue-disclaimer">"This is not what PXC will 'save' you. This is what addressing these domains systematically is worth to your practice — and it's what the Self-Funding Guarantee is built on."</p>
+    </div>
+
+    <!-- CTAs -->
+    <div class="results-cta">
+      <div class="results-cta-eyebrow script">Ready to Move?</div>
+      <h3 class="results-cta-title">Your next step is a conversation.</h3>
+      <p class="results-cta-sub">Jennifer personally reviews every assessment and brings a specific, data-backed roadmap to each session.</p>
+
+      <div class="cta-buttons">
+        <a href="https://patientexperienceconsulting.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 15px; padding: 18px 36px; text-decoration:none;">
+          Book Your Practice Clarity &amp; AI Readiness Assessment™
+        </a>
+        <a href="https://patientexperienceconsulting.com" target="_blank" rel="noopener noreferrer" class="btn btn-teal" style="font-size: 15px; padding: 16px 36px; text-decoration:none;">
+          Book a Free Puzzle Pyramid™ Strategy Session
+        </a>
+      </div>
+      <div class="micro-cta">No obligation. Jennifer personally reviews every assessment.</div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="results-footer">
+      <div class="footer-brand"><span>PXC</span> Patient eXperience Consulting</div>
+      <div class="footer-links">
+        <a href="tel:9412932903">(941) 293-2903</a>
+        <a href="https://patientexperienceconsulting.com" target="_blank" rel="noopener noreferrer">patientexperienceconsulting.com</a>
+        <button class="print-btn" onclick="window.print()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+          Print Report
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+</div><!-- /app -->
+
+<script>
+// ============================================================
+//  DATA
+// ============================================================
+const DOMAINS = [
+  {
+    name: "Documentation Burden",
+    tag: "DOMAIN 1 — DOCUMENTATION BURDEN",
+    question: "How much time do your providers spend on documentation AFTER hours — charting, completing notes, catching up on records?",
+    options: [
+      { label: "Under Control", desc: "Under 30 min/day — well within clinic hours" },
+      { label: "Manageable", desc: "30–60 min/day — manageable but noticeable" },
+      { label: "Affecting Balance", desc: "1–2 hours/day — affecting work-life balance" },
+      { label: "Burnout Factor", desc: "2–3 hours/day — significant burnout factor" },
+      { label: "Crisis", desc: "3+ hours/day — it's a crisis" }
+    ]
+  },
+  {
+    name: "Phone & Communication Overload",
+    tag: "DOMAIN 2 — PHONE & COMMUNICATION OVERLOAD",
+    question: "How well does your front desk manage incoming call volume — hold times, missed calls, after-hours messages?",
+    options: [
+      { label: "Excellent", desc: "Most calls answered promptly, minimal hold times" },
+      { label: "Good", desc: "Occasional backlog during busy periods" },
+      { label: "Moderate", desc: "Hold times regularly exceed 5 minutes" },
+      { label: "Poor", desc: "Missed calls daily, frustrated patients common" },
+      { label: "Crisis", desc: "Communication chaos, staff overwhelmed by call volume" }
+    ]
+  },
+  {
+    name: "No-Show & Cancellation Management",
+    tag: "DOMAIN 3 — NO-SHOW & CANCELLATION MANAGEMENT",
+    question: "How efficiently does your practice recover from no-shows and last-minute cancellations?",
+    options: [
+      { label: "Excellent", desc: "Automated reminders, waitlist fills slots quickly" },
+      { label: "Good", desc: "Reminders in place but recovery is manual and inconsistent" },
+      { label: "Moderate", desc: "No-show rate ~10–12%, no systematic recovery" },
+      { label: "Poor", desc: "No-show rate above 12%, limited follow-up system" },
+      { label: "Crisis", desc: "No-show rate above 15%, revenue loss is significant and accepted" }
+    ]
+  },
+  {
+    name: "Staff AI Literacy & Adoption",
+    tag: "DOMAIN 4 — STAFF AI LITERACY & ADOPTION",
+    question: "How comfortable is your team with using technology tools, and how open are they to AI adoption?",
+    options: [
+      { label: "Highly Ready", desc: "Staff uses multiple digital tools confidently, embraces new technology" },
+      { label: "Ready", desc: "Most staff comfortable with tech, some resistance but manageable" },
+      { label: "Mixed", desc: "Tech-savvy staff and resistant staff in equal measure" },
+      { label: "Low Readiness", desc: "Most staff prefers manual processes, significant change resistance" },
+      { label: "Not Ready", desc: "Team actively resists technology change, AI feels threatening" }
+    ]
+  },
+  {
+    name: "EHR & Technology Friction",
+    tag: "DOMAIN 5 — EHR & TECHNOLOGY FRICTION",
+    question: "How much time and frustration do your providers and staff lose to EHR pain points, slow systems, or disconnected tools?",
+    options: [
+      { label: "Minimal", desc: "EHR works well, integrations function, low friction" },
+      { label: "Low", desc: "Occasional friction but manageable workarounds" },
+      { label: "Moderate", desc: "EHR is a daily source of frustration for at least some staff" },
+      { label: "High", desc: "Providers regularly complain about EHR burden, workarounds are the norm" },
+      { label: "Severe", desc: "EHR friction is a major burnout factor, considering switching" }
+    ]
+  },
+  {
+    name: "Patient Communication Automation",
+    tag: "DOMAIN 6 — PATIENT COMMUNICATION AUTOMATION",
+    question: "How automated is your patient communication — reminders, follow-ups, pre-visit instructions, post-visit surveys?",
+    options: [
+      { label: "Fully Automated", desc: "All key communications triggered automatically" },
+      { label: "Mostly Automated", desc: "Reminders and some follow-ups automated, gaps exist" },
+      { label: "Partially Automated", desc: "Some automation but significant manual work remains" },
+      { label: "Mostly Manual", desc: "Staff manually manages most patient communications" },
+      { label: "Fully Manual", desc: "All patient communication requires staff time" }
+    ]
+  },
+  {
+    name: "Scheduling & Access Optimization",
+    tag: "DOMAIN 7 — SCHEDULING & ACCESS OPTIMIZATION",
+    question: "How efficiently does your scheduling system utilize provider time — few gaps, appropriate slot lengths, waitlist management?",
+    options: [
+      { label: "Highly Optimized", desc: "Minimal scheduling gaps, waitlist managed, appropriate template" },
+      { label: "Good", desc: "Occasional gaps but overall solid utilization" },
+      { label: "Moderate", desc: "Scheduling inefficiencies visible but not tracked systematically" },
+      { label: "Poor", desc: "Significant scheduling waste, under-utilized blocks common" },
+      { label: "Crisis", desc: "Scheduling is chaotic, patient access bottlenecked, provider time wasted" }
+    ]
+  },
+  {
+    name: "Reputation & Feedback Management",
+    tag: "DOMAIN 8 — REPUTATION & FEEDBACK MANAGEMENT",
+    question: "How proactively does your practice collect, respond to, and act on patient feedback and online reviews?",
+    options: [
+      { label: "Excellent", desc: "Automated feedback collection, prompt review responses, data-driven improvement" },
+      { label: "Good", desc: "Some feedback systems in place, inconsistent follow-through" },
+      { label: "Moderate", desc: "Awareness of online reputation but no systematic management" },
+      { label: "Poor", desc: "Reviews go unmonitored, negative feedback often unaddressed" },
+      { label: "Critical", desc: "Negative reviews accumulating, no response strategy, reputation declining" }
+    ]
+  },
+  {
+    name: "AI Governance & HIPAA Safeguards",
+    tag: "DOMAIN 9 — AI GOVERNANCE & HIPAA SAFEGUARDS",
+    question: "How clearly defined are your policies around AI tool use — what staff can use, how, and with what patient data?",
+    options: [
+      { label: "Fully Defined", desc: "Written AI policy, approved tools list, staff trained, compliance documented" },
+      { label: "Mostly Defined", desc: "Some policies in place, gaps exist, training informal" },
+      { label: "Partially Defined", desc: "Awareness of need but no formal policy" },
+      { label: "Poorly Defined", desc: "Ad-hoc AI use by some staff, no official guidance" },
+      { label: "No Governance", desc: "Staff may already be using unauthorized AI tools, no policy at all" }
+    ]
+  },
+  {
+    name: "Leadership Capacity for AI",
+    tag: "DOMAIN 10 — LEADERSHIP CAPACITY FOR AI TRANSFORMATION",
+    question: "How equipped is your leadership team (physician-owner, administrator, medical director) to evaluate, select, and champion AI adoption?",
+    options: [
+      { label: "Fully Equipped", desc: "Leadership informed on AI landscape, clear AI strategy, champions adoption" },
+      { label: "Mostly Equipped", desc: "General AI awareness, willing to adopt but need guidance" },
+      { label: "Mixed", desc: "Some interest but limited knowledge, decisions deferred or delegated" },
+      { label: "Low Capacity", desc: "Leadership skeptical or overwhelmed, AI is low priority" },
+      { label: "No Capacity", desc: "Leadership actively resistant to AI or too burned out to focus on it" }
+    ]
+  }
+];
+
+// ============================================================
+//  STATE
+// ============================================================
+let currentQ = 0;
+let answers = new Array(10).fill(null);
+let userData = {};
+
+// ============================================================
+//  SCREEN NAV
+// ============================================================
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function startAssessment() {
+  currentQ = 0;
+  answers = new Array(10).fill(null);
+  renderQuestion(0);
+  showScreen('question-screen');
+}
+
+// ============================================================
+//  QUESTION RENDERER
+// ============================================================
+function renderQuestion(index) {
+  const d = DOMAINS[index];
+  const pct = Math.round(((index + 1) / 10) * 100);
+
+  document.getElementById('progress-label').textContent = `Domain ${index + 1} of 10`;
+  document.getElementById('progress-count').textContent = `${pct}%`;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('domain-tag').textContent = d.tag;
+  document.getElementById('question-text').textContent = d.question;
+  document.getElementById('back-btn').style.display = index > 0 ? 'inline-flex' : 'none';
+  document.getElementById('next-btn').disabled = answers[index] === null;
+  document.getElementById('next-btn').textContent = index === 9 ? 'See My Score →' : 'Continue →';
+
+  const grid = document.getElementById('rating-grid');
+  grid.innerHTML = '';
+
+  d.options.forEach((opt, i) => {
+    const num = i + 1;
+    const selected = answers[index] === num;
+    const div = document.createElement('div');
+    div.className = 'rating-option' + (selected ? ' selected' : '');
+    div.setAttribute('data-value', num);
+    div.innerHTML = `
+      <div class="rating-number">${num}</div>
+      <div class="rating-content">
+        <div class="rating-label">${opt.label}</div>
+        <div class="rating-desc">${opt.desc}</div>
+      </div>
+    `;
+    div.addEventListener('click', () => selectOption(index, num));
+    grid.appendChild(div);
+  });
+}
+
+function selectOption(qIndex, value) {
+  answers[qIndex] = value;
+  document.querySelectorAll('.rating-option').forEach(el => {
+    el.classList.toggle('selected', parseInt(el.dataset.value) === value);
+  });
+  document.getElementById('next-btn').disabled = false;
+}
+
+function goNext() {
+  if (answers[currentQ] === null) return;
+
+  if (currentQ < 9) {
+    currentQ++;
+    animateTransition(() => renderQuestion(currentQ));
+  } else {
+    // Go to capture screen
+    showCapturePreview();
+    animateTransition(() => {});
+    setTimeout(() => showScreen('capture-screen'), 350);
+  }
+}
+
+function goBack() {
+  if (currentQ > 0) {
+    currentQ--;
+    animateTransition(() => renderQuestion(currentQ));
+  }
+}
+
+function animateTransition(callback) {
+  const screen = document.getElementById('question-screen');
+  screen.classList.add('exiting');
+  setTimeout(() => {
+    screen.classList.remove('exiting');
+    callback();
+  }, 300);
+}
+
+// ============================================================
+//  CAPTURE PREVIEW
+// ============================================================
+function showCapturePreview() {
+  const total = answers.reduce((a, b) => a + (b || 0), 0);
+  const pct = ((total - 10) / 40) * 100;
+
+  const scoreEl = document.getElementById('preview-score');
+  scoreEl.textContent = total;
+
+  let tierText, color, fillColor;
+  if (total <= 20) {
+    tierText = 'HIGH AI READINESS — Ready to Accelerate';
+    color = 'var(--green)';
+    fillColor = 'var(--green)';
+  } else if (total <= 35) {
+    tierText = 'MODERATE AI READINESS — Significant Opportunity';
+    color = 'var(--yellow)';
+    fillColor = 'var(--yellow)';
+  } else {
+    tierText = 'LOW AI READINESS — Most Urgent Opportunity';
+    color = 'var(--accent)';
+    fillColor = 'var(--accent)';
+  }
+
+  scoreEl.style.color = color;
+  document.getElementById('preview-tier').textContent = tierText;
+
+  const fill = document.getElementById('preview-fill');
+  fill.style.background = fillColor;
+  setTimeout(() => {
+    fill.style.width = Math.max(5, 100 - pct) + '%';
+  }, 100);
+}
+
+// ============================================================
+//  FORM SUBMIT
+// ============================================================
+function submitCapture(e) {
+  e.preventDefault();
+  userData = {
+    name: document.getElementById('f-name').value,
+    email: document.getElementById('f-email').value,
+    providers: parseFloat(document.getElementById('f-providers').value),
+    revenue: parseFloat(document.getElementById('f-revenue').value),
+    specialty: document.getElementById('f-specialty').value
+  };
+  buildResults();
+  showScreen('results-screen');
+  setTimeout(animateResults, 200);
+}
+
+// ============================================================
+//  RESULTS
+// ============================================================
+function buildResults() {
+  const total = answers.reduce((a, b) => a + (b || 0), 0);
+  const { providers, revenue, specialty } = userData;
+
+  // TIER
+  let tier, titleText, desc, tierColor, ringColor;
+  if (total <= 20) {
+    tier = 'HIGH AI READINESS';
+    titleText = 'Ready to Accelerate';
+    desc = "Your practice has strong foundational systems and is positioned to benefit significantly from AI integration. The opportunity isn't about fixing broken processes — it's about amplifying what's already working and capturing revenue and time that you're currently leaving on the table.";
+    tierColor = 'var(--green)';
+    ringColor = '#00C27A';
+  } else if (total <= 35) {
+    tier = 'MODERATE AI READINESS';
+    titleText = 'Significant Opportunity';
+    desc = "Your practice has pockets of efficiency and areas of real friction. AI integration at this stage can systematically address your highest-burden areas while building the foundation for sustainable transformation.";
+    tierColor = 'var(--yellow)';
+    ringColor = '#FFD166';
+  } else {
+    tier = 'LOW AI READINESS';
+    titleText = 'Most Urgent Opportunity';
+    desc = "Your practice is experiencing significant friction across multiple domains. The good news: this means the opportunity for AI-driven improvement is substantial — and the ROI from solving even 2–3 of these pain points will exceed any investment.";
+    tierColor = 'var(--accent)';
+    ringColor = '#FF0000';
+  }
+
+  document.getElementById('results-tier').textContent = tier;
+  document.getElementById('results-tier').style.color = tierColor;
+  document.getElementById('results-title').textContent = titleText;
+  document.getElementById('results-title').style.color = tierColor;
+  document.getElementById('results-description').textContent = desc;
+  document.getElementById('ring-fill').style.stroke = ringColor;
+  document.getElementById('ring-val').style.color = ringColor;
+
+  // Store for animation
+  window._resultsData = { total, ringColor };
+
+  // DOMAIN BARS
+  buildDomainBars();
+
+  // REVENUE REPORT
+  buildRevenueReport(providers, revenue, specialty);
+}
+
+function buildDomainBars() {
+  const container = document.getElementById('domain-bars');
+  container.innerHTML = '';
+
+  const domainColors = {
+    1: '#00C27A',
+    2: '#FFD166',
+    3: '#05F2FF',
+    4: '#CB9EFF',
+    5: '#FF6B6B'
+  };
+
+  DOMAINS.forEach((d, i) => {
+    const score = answers[i] || 1;
+    const pct = (score / 5) * 100;
+    let barColor;
+    if (score <= 2) barColor = '#00C27A';
+    else if (score === 3) barColor = '#FFD166';
+    else barColor = '#FF0000';
+
+    const row = document.createElement('div');
+    row.className = 'domain-bar-row';
+    row.innerHTML = `
+      <div class="domain-bar-label">${d.name}</div>
+      <div class="domain-bar-track">
+        <div class="domain-bar-fill" data-pct="${pct}" style="background:${barColor};"></div>
+      </div>
+      <div class="domain-bar-score" style="color:${barColor};">${score}</div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+function buildRevenueReport(providers, revenue, specialty) {
+  const cards = [];
+  const revenuePerProvider = revenue / Math.max(providers, 1);
+
+  // ---- Documentation Burden (Domain 0) ----
+  const docScore = answers[0];
+  if (docScore >= 3) {
+    const hoursPerDay = docScore === 3 ? 1.5 : docScore === 4 ? 2.5 : 3.5;
+    const weeklyHours = hoursPerDay * 5 * providers;
+    const annualCost = Math.round(weeklyHours * 52 * 150);
+    cards.push({
+      domain: "Documentation Burden",
+      icon: "📋",
+      iconBg: "rgba(255,107,107,0.12)",
+      problem: `Your providers are spending approximately ${Math.round(weeklyHours)} hours/week on after-hours charting. At a physician time value of $150/hour, that's real money walking out the door every single week.`,
+      amount: annualCost,
+      label: "Annual opportunity cost of after-hours charting"
+    });
+  }
+
+  // ---- Phone & Communication (Domain 1) ----
+  const phoneScore = answers[1];
+  if (phoneScore >= 3) {
+    const adminHrsPerWeek = phoneScore === 3 ? 8 : phoneScore === 4 ? 14 : 20;
+    const totalAdminHrs = adminHrsPerWeek * providers;
+    const annualCost = Math.round(totalAdminHrs * 52 * 22);
+    cards.push({
+      domain: "Phone & Communication Overload",
+      icon: "📞",
+      iconBg: "rgba(255,209,102,0.12)",
+      problem: `Manual communication management is consuming approximately ${Math.round(totalAdminHrs)} admin hours/week — calls, callbacks, after-hours messages, and coordination that could be automated.`,
+      amount: annualCost,
+      label: "Annual admin cost of unautomated communication"
+    });
+  }
+
+  // ---- No-Show Management (Domain 2) ----
+  const noShowScore = answers[2];
+  if (noShowScore >= 3) {
+    const noShowRate = noShowScore === 3 ? 0.11 : noShowScore === 4 ? 0.13 : 0.17;
+    const visitsPerProviderPerYear = specialty === 'urgent_care' ? 3500 : specialty === 'behavioral_health' ? 1200 : 2000;
+    const totalVisits = visitsPerProviderPerYear * providers;
+    const avgVisitValue = revenue / totalVisits;
+    const lostVisits = Math.round(totalVisits * noShowRate * 0.6);
+    const annualCost = Math.round(lostVisits * avgVisitValue);
+    cards.push({
+      domain: "No-Show & Cancellation Management",
+      icon: "📅",
+      iconBg: "rgba(5,242,255,0.1)",
+      problem: `At an estimated ${Math.round(noShowRate * 100)}% no-show rate, approximately ${lostVisits} appointment slots go unfilled annually with no systematic recovery. At your average visit value, those empty chairs represent significant lost revenue.`,
+      amount: annualCost,
+      label: "Annual revenue from unrecovered no-shows"
+    });
+  }
+
+  // ---- EHR Friction (Domain 4) ----
+  const ehrScore = answers[4];
+  if (ehrScore >= 3) {
+    const hoursLostPerProvider = ehrScore === 3 ? 4 : ehrScore === 4 ? 7 : 10;
+    const annualHours = hoursLostPerProvider * 50 * providers;
+    const annualCost = Math.round(annualHours * 120);
+    cards.push({
+      domain: "EHR & Technology Friction",
+      icon: "💻",
+      iconBg: "rgba(203,158,255,0.1)",
+      problem: `EHR friction and disconnected systems are consuming roughly ${hoursLostPerProvider} hours/week per provider in workarounds, duplicate entry, and slow workflows — time that should be spent on patient care.`,
+      amount: annualCost,
+      label: "Annual provider time lost to EHR friction"
+    });
+  }
+
+  // ---- Patient Comm Automation (Domain 5) ----
+  const automationScore = answers[5];
+  if (automationScore >= 3) {
+    const hoursPerWeek = automationScore === 3 ? 6 : automationScore === 4 ? 12 : 20;
+    const annualCost = Math.round(hoursPerWeek * providers * 52 * 20);
+    cards.push({
+      domain: "Patient Communication Automation",
+      icon: "💬",
+      iconBg: "rgba(0,194,122,0.1)",
+      problem: `Manual patient communication — reminders, follow-ups, instructions, surveys — consumes approximately ${Math.round(hoursPerWeek * providers)} staff hours/week. Each of these touchpoints is automatable with the right tools.`,
+      amount: annualCost,
+      label: "Annual staff time cost of manual patient communication"
+    });
+  }
+
+  // ---- Scheduling (Domain 6) ----
+  const schedScore = answers[6];
+  if (schedScore >= 3) {
+    const utilizationLoss = schedScore === 3 ? 0.06 : schedScore === 4 ? 0.10 : 0.15;
+    const annualCost = Math.round(revenue * utilizationLoss);
+    cards.push({
+      domain: "Scheduling & Access Optimization",
+      icon: "🗓️",
+      iconBg: "rgba(255,209,102,0.1)",
+      problem: `Scheduling inefficiencies — gaps, poor slot utilization, unmanaged waitlists — are estimated to reduce provider productivity by ${Math.round(utilizationLoss * 100)}%. That's unfilled appointment time that disappears permanently each day.`,
+      amount: annualCost,
+      label: "Annual revenue impact of scheduling inefficiency"
+    });
+  }
+
+  // ---- Reputation (Domain 7) ----
+  const repScore = answers[7];
+  if (repScore >= 3) {
+    const newPatientImpact = repScore === 3 ? 0.03 : repScore === 4 ? 0.06 : 0.10;
+    const annualCost = Math.round(revenue * newPatientImpact);
+    cards.push({
+      domain: "Reputation & Feedback Management",
+      icon: "⭐",
+      iconBg: "rgba(255,0,0,0.08)",
+      problem: `Unmanaged online reputation and patient feedback directly impacts new patient acquisition. Practices with poor review management see 3–10% lower new patient volume — a soft loss that compounds over time.`,
+      amount: annualCost,
+      label: "Estimated annual new patient acquisition impact"
+    });
+  }
+
+  // Render cards
+  const container = document.getElementById('revenue-cards');
+  container.innerHTML = '';
+
+  let grandTotal = 0;
+
+  if (cards.length === 0) {
+    container.innerHTML = `<div style="background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:28px;text-align:center;color:var(--mid);font-size:15px;line-height:1.7;">
+      Your scores indicate strong operational health across key domains. Your AI opportunity is primarily about <strong style="color:var(--teal)">amplification</strong> — using AI to go from good to exceptional — rather than fixing broken systems.
+    </div>`;
+  } else {
+    cards.forEach((card, idx) => {
+      grandTotal += card.amount;
+      const el = document.createElement('div');
+      el.className = 'revenue-card';
+      el.style.transitionDelay = (idx * 0.1) + 's';
+      el.innerHTML = `
+        <div class="revenue-card-icon" style="background:${card.iconBg}">${card.icon}</div>
+        <div class="revenue-card-body">
+          <div class="revenue-card-domain">${card.domain}</div>
+          <div class="revenue-card-problem">${card.problem}</div>
+          <div class="revenue-card-amount" data-target="${card.amount}" style="color:var(--accent);">$0</div>
+          <div class="revenue-card-amount-label">${card.label}</div>
+        </div>
+      `;
+      container.appendChild(el);
+    });
+  }
+
+  document.getElementById('total-amount').dataset.target = grandTotal;
+}
+
+// ============================================================
+//  ANIMATIONS (on results load)
+// ============================================================
+function animateResults() {
+  const { total, ringColor } = window._resultsData;
+
+  // Animate ring
+  const circumference = 534;
+  const pct = (total - 10) / 40;
+  const offset = circumference - (pct * circumference);
+  const ring = document.getElementById('ring-fill');
+  setTimeout(() => {
+    ring.style.strokeDashoffset = offset;
+  }, 100);
+
+  // Animate score number
+  const ringVal = document.getElementById('ring-val');
+  animateNumber(ringVal, 0, total, 1400);
+
+  // Animate domain bars
+  setTimeout(() => {
+    document.querySelectorAll('.domain-bar-fill').forEach(bar => {
+      bar.style.width = bar.dataset.pct + '%';
+    });
+  }, 300);
+
+  // Animate revenue cards
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.revenue-card');
+    cards.forEach((card, i) => {
+      setTimeout(() => {
+        card.classList.add('visible');
+        const amountEl = card.querySelector('.revenue-card-amount');
+        if (amountEl && amountEl.dataset.target) {
+          animateDollar(amountEl, 0, parseInt(amountEl.dataset.target), 1200);
+        }
+      }, i * 150);
+    });
+
+    // Animate total
+    setTimeout(() => {
+      const totalEl = document.getElementById('total-amount');
+      if (totalEl.dataset.target) {
+        animateDollar(totalEl, 0, parseInt(totalEl.dataset.target), 1600);
+      }
+    }, cards.length * 150 + 200);
+
+  }, 600);
+}
+
+function animateNumber(el, start, end, duration) {
+  const startTime = performance.now();
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(start + (end - start) * ease);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+function animateDollar(el, start, end, duration) {
+  const startTime = performance.now();
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.round(start + (end - start) * ease);
+    el.textContent = '$' + val.toLocaleString();
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+</script>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && window.parent !== window) {
+    window.parent.postMessage({ type: 'close-fullscreen' }, '*');
+  }
+});
+</script>
+<!-- broken-img-handler -->
+<script>
+(function(){
+  if(window.__brokenImgHandler)return;
+  window.__brokenImgHandler=true;
+  var MAX=5,DELAYS=[2000,4000,8000,16000,32000];
+  document.addEventListener('error',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    var liveSrc=img.getAttribute('src');
+    var src=img.dataset.haOriginalSrc||liveSrc;
+    if(!src)return;
+    if(img.dataset.haOriginalSrc&&liveSrc&&liveSrc!==img.dataset.haOriginalSrc&&liveSrc.indexOf('_r=')<0){src=liveSrc;img.dataset.haOriginalSrc=src;img.dataset.haRetryCount='0'}
+    else if(!img.dataset.haOriginalSrc){img.dataset.haOriginalSrc=src}
+    var attempt=parseInt(img.dataset.haRetryCount||'0',10);
+    if(img.dataset.haPhId){var old=document.getElementById(img.dataset.haPhId);if(old)old.remove()}
+    var ph=document.createElement('div');
+    ph.className='ha-img-placeholder'+(attempt>=MAX?' ha-failed':'');
+    ph.id='ha-ph-'+Math.random().toString(36).slice(2,9);
+    var w=img.getAttribute('width');var h=img.getAttribute('height');
+    if(w)ph.style.width=w+(isNaN(Number(w))?'':'px');
+    else if(img.style.width)ph.style.width=img.style.width;
+    else if(img.width>1)ph.style.width=img.width+'px';
+    if(h)ph.style.height=h+(isNaN(Number(h))?'':'px');
+    else if(img.style.height)ph.style.height=img.style.height;
+    else if(img.height>1)ph.style.height=img.height+'px';
+    ph.textContent=attempt>=MAX?'Image unavailable':'Loading image\u2026';
+    img.dataset.haPhId=ph.id;
+    if(img.dataset.haOrigDisplay==null)img.dataset.haOrigDisplay=img.style.display||'';
+    img.style.display='none';
+    img.insertAdjacentElement('afterend',ph);
+    if(attempt<MAX){
+      img.dataset.haRetryCount=String(attempt+1);
+      setTimeout(function(){
+        if(!img.isConnected)return;
+        if(img.dataset.haOriginalSrc!==src)return;
+        if(img.complete&&img.naturalWidth>0)return;
+        var curSrc=img.getAttribute('src');
+        if(curSrc&&curSrc.indexOf(src)!==0)return;
+        var fresh=src+(src.indexOf('?')>=0?'&':'?')+'_r='+(attempt+1)+'_'+Date.now();
+        img.src=fresh;
+      },DELAYS[attempt]);
+    }
+  },true);
+  document.addEventListener('load',function(e){
+    var img=e.target;
+    if(!img||img.tagName!=='IMG')return;
+    if(img.dataset.haPhId){
+      var ph=document.getElementById(img.dataset.haPhId);
+      if(ph)ph.remove();
+      delete img.dataset.haPhId;
+      img.style.display=img.dataset.haOrigDisplay||'';
+      delete img.dataset.haOrigDisplay;
+      delete img.dataset.haOriginalSrc;
+      delete img.dataset.haRetryCount;
+    }
+  },true);
+})();
+</script>
+</body>
+</html>

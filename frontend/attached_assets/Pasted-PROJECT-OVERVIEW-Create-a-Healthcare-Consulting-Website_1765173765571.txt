@@ -1,0 +1,59 @@
+PROJECT OVERVIEW
+
+Create a Healthcare Consulting Website that Build a webpage for Patient eXperience Consulting a healthcare consulting boutique that specializes in integrating AI, leadership development and training, and Ai-Fueled, People-Powered culture to improve patient experience, staff engagement and retention, enhance reputation, increase profits, eliminate burnout, and reignite the passion that originally brought you to the medical industry. PXC built their proprietary framework, The Unified PXC System which includes their frameworks: The Puzzle Pyramid, IMPACT, and AI-Fueled, People Powered PX Cycle all aimed at the ideal client: medical practice owners, managers, and providers looking to gain back hours a week from eliminating administrative tasks and overtime hours charting, decreasing staff turnaround, improving the patients satisfaction rating, and once again enjoying treating patients. I have attached the services and products we offer in our coachsulting offer stack as well as an outline of the frameworks that we use to scale medical practices. . The target audience is medical practice owners, managers, and providers.
+
+KEY SECTIONS
+
+1. Homepage
+
+2. About
+
+3. Services
+
+4. Contact
+
+FUNCTIONAL COMPONENTS
+
+Multi-Step Strategy Session Application Funnel:
+
+- [Functionality detail]
+- [Functionality detail]
+- [Functionality detail]
+
+Dynamic Geo-Location Service Page Routing:
+
+- [Functionality detail]
+- [Functionality detail]
+- [Functionality detail]
+
+TECHNICAL REQUIREMENTS
+
+Frontend:
+
+- include dynamic and interactive elements with motion and
+- Mobile first approach with fast loading
+
+Backend:
+
+- Notive Go High-Level GHL API Integration
+- Trigger go-high-level-automation-workflows-based-on-form-submission.
+
+Data Collection:
+
+- Map all form fields to GHL custom fields.
+- Automatic contact tagging (e.g., tag: strategy-applicant).
+
+BUSINESS INTEGRATION
+
+- This page needs to convert leads into clients who apply for The Puzzle Pyramid Strategy Session
+- Need to capture email addresses to add to email list
+
+REFERENCE MATERIALS
+
+- ONLY use the color palette:  #FB0000, #B2EBF9, #AEA1EA, #000000 (do NOT use any gradient background unless I instruct you to) - Start with ONLY black, white or blue background and use dark text colors on light backgrounds and vice versa for example if background is blue use black and red text if background is black use blue and purple text RED is ALWAYS the buttons, CTA's, and shapes that glow or lightly transparent over color on top of black
+- The website should match style, and tone as attached demo sites and follow the attached branding guidelines
+
+DEVELOPMENT NOTES
+
+- The site must be mobile friendly, load fast, and be highly SEO, GEO, and AEO optimized. Include realistic photos of medical practices and consulting within the practices as well as include some of the attached images of Jennifer the CEO of Patient eXperience Consulting.
+- A subnavigation needs to be under SERVICES page which includes a [location] Services page with one page for every county in South and Central Florida as well as North Carolina within an hour of Asheville and Georgia counties within an hour of Atlanta (i.e.   Manatee Services) These pages will all follow the same templated format but include keywords pertaining to the county and cities within that county to get the local optimization for Google My Business Search. These pages must follow the local optimization requirements and no more.

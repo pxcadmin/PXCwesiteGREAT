@@ -66,6 +66,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // AI Blueprint Day palette swap on /events
+  const eventsTheme = location === "/events";
+  const accent = eventsTheme ? "#fca746" : "#47d8ff";
+  const accentSoft = eventsTheme ? "#fca746" : "#AEA1EA";
+  const ctaBg = eventsTheme ? "#fca746" : "#FB0000";
+  const ctaText = eventsTheme ? "#1a1a1a" : "#FFFFFF";
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -105,8 +112,8 @@ export function Header() {
                     <DropdownMenuTrigger asChild>
                       <Button
                         variant="ghost"
-                        className={`text-sm font-bold tracking-wide ${isActive ? "text-[#47d8ff] bg-[#47d8ff]/10" : "text-[#AEA1EA] hover:text-[#47d8ff] hover:bg-white/5"}`}
-                        style={{ fontFamily: "Nunito, sans-serif" }}
+                        className={`text-sm font-bold tracking-wide ${isActive ? "bg-white/5" : "hover:bg-white/5"}`}
+                        style={{ fontFamily: "Nunito, sans-serif", color: isActive ? accent : accentSoft }}
                         data-testid="button-services-menu"
                       >
                         {link.label}
@@ -180,8 +187,8 @@ export function Header() {
                 <Button
                   key={link.href}
                   variant="ghost"
-                  className={`text-sm font-bold tracking-wide ${isActive ? "text-[#47d8ff] bg-[#47d8ff]/10" : "text-[#AEA1EA] hover:text-[#47d8ff] hover:bg-white/5"}`}
-                  style={{ fontFamily: "Nunito, sans-serif" }}
+                  className={`text-sm font-bold tracking-wide ${isActive ? "bg-white/5" : "hover:bg-white/5"}`}
+                  style={{ fontFamily: "Nunito, sans-serif", color: isActive ? accent : accentSoft }}
                   asChild
                   data-testid={`link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
                 >
@@ -195,8 +202,13 @@ export function Header() {
           <div className="hidden lg:flex items-center ml-4">
             <MagneticButton>
               <Button
-                className="bg-[#FB0000] hover:bg-[#FB0000] text-sm font-extrabold tracking-wide transition-all duration-200 hover:-translate-y-1 hover:scale-105 shadow-[0_0_18px_rgba(251,0,0,0.55)] hover:shadow-[0_8px_30px_rgba(251,0,0,0.75)] text-white"
-                style={{ fontFamily: "Nunito, sans-serif" }}
+                className="text-sm font-extrabold tracking-wide transition-all duration-200 hover:-translate-y-1 hover:scale-105"
+                style={{
+                  background: ctaBg,
+                  color: ctaText,
+                  boxShadow: `0 0 18px ${ctaBg}88`,
+                  fontFamily: "Nunito, sans-serif",
+                }}
                 asChild
                 data-testid="button-book-session"
               >

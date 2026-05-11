@@ -38,6 +38,22 @@ const STATE_LINKS = [
   { name: "Nationwide (USA)", slug: "nationwide" },
 ];
 
+const SERVICE_DETAIL_LINKS = [
+  { name: "Puzzle Pyramid™ Strategy Session", slug: "puzzle-pyramid-strategy-session" },
+  { name: "PX Fast Pass™", slug: "px-fast-pass" },
+  { name: "PX Treatment Plan™", slug: "px-treatment-plan" },
+  { name: "From Patients to Profits MasterCourse™", slug: "mastercourse" },
+  { name: "Practice Professionals Playground™ (P3)", slug: "practice-professionals-playground" },
+  { name: "The Puzzle Shop", slug: "puzzle-shop" },
+  { name: "Leadership Development", slug: "leadership-development" },
+];
+
+const SCORING_TOOLS = [
+  { name: "AI Readiness Score™", path: "/ai-readiness-score" },
+  { name: "Practice Stability Scorecard™", path: "/practice-stability-scorecard" },
+  { name: "Discovery Questionnaire", path: "/discovery-questionnaire" },
+];
+
 export function Header() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,6 +73,7 @@ export function Header() {
     { href: "/results", label: "Results" },
     { href: "/events", label: "Events" },
     { href: "/med-ai-studio", label: "MED-AI Studio" },
+    { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -102,6 +119,24 @@ export function Header() {
                           <span className="font-semibold">Services Overview</span>
                         </Link>
                       </DropdownMenuItem>
+                      <DropdownMenuSeparator className="bg-white/10" />
+                      <div className="px-2 py-1.5">
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">Free Interactive Tools</div>
+                      </div>
+                      {SCORING_TOOLS.map((t) => (
+                        <DropdownMenuItem key={t.path} asChild className="text-white hover:text-[#FB0000] hover:bg-white/5 focus:bg-white/5 focus:text-[#FB0000]">
+                          <Link href={t.path} data-testid={`link-tool-${t.path}`}>{t.name}</Link>
+                        </DropdownMenuItem>
+                      ))}
+                      <DropdownMenuSeparator className="bg-white/10" />
+                      <div className="px-2 py-1.5">
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">Service Details</div>
+                      </div>
+                      {SERVICE_DETAIL_LINKS.map((s) => (
+                        <DropdownMenuItem key={s.slug} asChild className="text-white hover:text-[#47d8ff] hover:bg-white/5 focus:bg-white/5 focus:text-[#47d8ff]">
+                          <Link href={`/services/${s.slug}`} data-testid={`link-service-${s.slug}`}>{s.name}</Link>
+                        </DropdownMenuItem>
+                      ))}
                       <DropdownMenuSeparator className="bg-white/10" />
                       <div className="px-2 py-1.5">
                         <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">By Region — States</div>

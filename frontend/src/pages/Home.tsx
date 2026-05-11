@@ -123,12 +123,13 @@ export default function Home() {
     <div className="flex flex-col overflow-x-hidden">
       {/* ===== SECTION 1: HERO ===== */}
       <section className="pxc-grain relative min-h-screen bg-black flex items-center overflow-hidden" aria-label="Hero">
-        {/* AI-medical background with dark overlay */}
-        <div className="absolute inset-0 z-0">
-          <img src="/assets/ai-bg.png" alt="" className="w-full h-full object-cover opacity-15" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black" />
+        {/* Pure shiny black background — radial highlights only, no medical image */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <div className="absolute inset-0" style={{
+            background: "radial-gradient(ellipse at 25% 30%, rgba(71,216,255,0.06), transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(174,161,234,0.06), transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(251,0,0,0.04), transparent 60%)"
+          }} />
         </div>
-        <AuroraBackdrop opacity={0.12} />
+        <AuroraBackdrop opacity={0.10} />
 
         {/* Floating beating stethoscope (~2 inches) — bottom-left, away from copy */}
         <motion.img

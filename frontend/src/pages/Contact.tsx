@@ -702,14 +702,6 @@ export default function Contact() {
               Pick one of three on-ramps: take the free 2-minute <strong className="text-[#47d8ff]">Practice Stability Scorecard</strong>, complete the <strong className="text-[#47d8ff]">Discovery Questionnaire</strong> below, or call <a href="tel:+19412392309" className="text-[#47d8ff] font-bold underline">(941) 239-2309</a> / email <a href="mailto:impact@patientexperienceconsulting.com" className="text-[#47d8ff] font-bold underline">impact@patientexperienceconsulting.com</a> to book your complimentary 45-minute Strategy Session with Jennifer Radu, fCAIOX. From there you can step into the <strong className="text-[#47d8ff]">Practice Clarity &amp; AI Readiness Assessment™</strong>, <strong className="text-[#47d8ff]">PXC IMPACT Blueprint™</strong>, <strong className="text-[#47d8ff]">EXCEL Transformation Partnership™</strong> (<strong className="text-white">Self-Funding Guarantee — Contractual</strong>), <strong className="text-[#47d8ff]">Practice Professionals Playground™</strong>, or an <strong className="text-[#47d8ff]">AI Blueprint Day™</strong> workshop. Available virtually anywhere — and in person across <strong className="text-white">Bradenton, Sarasota, Manatee County</strong>, and the 16 Central + Southern Florida counties PXC serves.
             </p>
           </div>
-
-          <div className="mt-6 max-w-3xl mx-auto">
-            <AnswerCapsule
-              jsonLdId="contact-aeo"
-              question="How do I book a free patient experience strategy session for my medical practice?"
-              answer="Submit the contact form on this page (name, email, phone, practice name, inquiry type, and a short message), or call (941) 239-2309, or email impact@patientexperienceconsulting.com. Within one business day Jennifer Radu's team will reach out to schedule a 45-minute complimentary patient experience strategy session — no credit card, no pitch deck. On the call you'll get clarity on exactly what's costing your practice the most in patient retention and staff turnover and the precise next step. Sessions are available virtually or in person across Bradenton, Sarasota, Manatee County, and all 16 Central + Southern Florida counties PXC serves — plus nationwide. Every engagement is backed by the Self-Funding Guarantee — Contractual."
-            />
-          </div>
         </div>
       </section>
 
@@ -1177,6 +1169,17 @@ export default function Contact() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      {/* Second Direct Answer — moved here per content layout */}
+      <section className="py-12 bg-black border-t border-white/10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnswerCapsule
+            jsonLdId="contact-aeo"
+            question="How do I book a free patient experience strategy session for my medical practice?"
+            answer="Submit the contact form on this page (name, email, phone, practice name, inquiry type, and a short message), or call (941) 239-2309, or email impact@patientexperienceconsulting.com. Within one business day Jennifer Radu's team will reach out to schedule a 45-minute complimentary patient experience strategy session — no credit card, no pitch deck. On the call you'll get clarity on exactly what's costing your practice the most in patient retention and staff turnover and the precise next step. Sessions are available virtually or in person across Bradenton, Sarasota, Manatee County, and all 16 Central + Southern Florida counties PXC serves — plus nationwide. Every engagement is backed by the Self-Funding Guarantee — Contractual."
+          />
         </div>
       </section>
     </div>

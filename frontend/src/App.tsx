@@ -18,12 +18,38 @@ import StatePage from "@/pages/StatePage";
 import Results from "@/pages/Results";
 import Events from "@/pages/Events";
 import MedAiStudio from "@/pages/MedAiStudio";
+import ServiceDetail from "@/pages/ServiceDetail";
+import AiReadinessScore from "@/pages/AiReadinessScore";
+import PracticeStabilityScorecard from "@/pages/PracticeStabilityScorecard";
+import DiscoveryQuestionnaire from "@/pages/DiscoveryQuestionnaire";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [location]);
   return null;
+}
+
+// Service detail slugs (must match keys in ServiceDetail SERVICES record)
+const SERVICE_DETAIL_SLUGS = new Set([
+  "puzzle-pyramid-strategy-session",
+  "px-fast-pass",
+  "px-treatment-plan",
+  "mastercourse",
+  "practice-professionals-playground",
+  "puzzle-shop",
+  "leadership-development",
+]);
+
+// State slugs
+const STATE_SLUGS = new Set(["florida", "north-carolina", "georgia", "nationwide"]);
+
+function ServicesRouter() {
+  const [location] = useLocation();
+  const slug = location.split("/").filter(Boolean).pop() || "";
+  if (SERVICE_DETAIL_SLUGS.has(slug)) return <ServiceDetail />;
+  if (STATE_SLUGS.has(slug)) return <StatePage />;
+  return <CountyPage />;
 }
 
 function Router() {
@@ -37,14 +63,13 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
-          <Route path="/services/florida" component={StatePage} />
-          <Route path="/services/north-carolina" component={StatePage} />
-          <Route path="/services/georgia" component={StatePage} />
-          <Route path="/services/nationwide" component={StatePage} />
-          <Route path="/services/:county" component={CountyPage} />
+          <Route path="/services/:slug" component={ServicesRouter} />
           <Route path="/results" component={Results} />
           <Route path="/events" component={Events} />
           <Route path="/med-ai-studio" component={MedAiStudio} />
+          <Route path="/ai-readiness-score" component={AiReadinessScore} />
+          <Route path="/practice-stability-scorecard" component={PracticeStabilityScorecard} />
+          <Route path="/discovery-questionnaire" component={DiscoveryQuestionnaire} />
           <Route path="/contact" component={Contact} />
           <Route path="/blog" component={Blog} />
           <Route path="/blog/:slug" component={Blog} />

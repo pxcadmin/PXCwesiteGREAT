@@ -1,78 +1,85 @@
 # Patient eXperience Consulting (PXC) — Website Rebuild PRD
 
 ## Architecture
-- **Frontend**: Vite + React 18 + TypeScript + TailwindCSS + Wouter routing + Framer Motion + shadcn/ui — served on port 3000 via supervisor `yarn start`.
-- **Backend**: FastAPI on port 8001 (`/api/` health endpoint only — all forms are placecards bound to Go High Level workflows; no submission logic).
-- **Assets**: Brand logos (PXC + AI Blueprint Day), favicon, AI-medical imagery, heartbeat video/gif, stethoscope gif, founder + presenting photos, MED-AI Studio banner + thumbnails — all in `/public/assets/`.
+- **Frontend**: Vite + React 18 + TypeScript + TailwindCSS + Wouter + Framer Motion + shadcn/ui — port 3000 via supervisor `yarn start`.
+- **Backend**: FastAPI on 8001 (health endpoint only — all forms are GHL-bound placecards).
+- **Assets**: Brand logos, favicon, AI imagery (incl. new AI-hands hero bg), heartbeat video/gif, stethoscope gif, founder + presenting photos, MED-AI Studio banner + thumbnails — all in `/public/assets/`.
 
 ## Brand System
 - **PXC palette (global)**: Black `#000000`, Red `#FB0000`, Cyan `#47D8FF`, Lilac `#AEA1EA`, White.
-- **AI Blueprint Day palette (Events page only)**: Gold `#FCA746`, Charcoal `#1A1A1A`, Grey `#4A4A4A`, Silver `#C0C0C0`, White — NO red/cyan/lilac.
-- **Fonts**: Nunito (heading 800/700), Comfortaa (body 400), La Belle Aurore (signature quotes), JetBrains Mono (Events labels/data).
+- **AI Blueprint Day palette (Events only)**: Gold `#FCA746` / Charcoal / Grey / Silver / White — NO red/cyan/lilac.
+- **Fonts**: Nunito (headings), Comfortaa (body), La Belle Aurore (quotes), JetBrains Mono (Events labels).
 
-## Sitemap
+## Sitemap (Final)
 - `/` Home
 - `/about` About
 - `/services` Services hub
-- `/services/{puzzle-pyramid-strategy-session | px-fast-pass | px-treatment-plan | mastercourse | practice-professionals-playground | puzzle-shop | leadership-development}` — 7 per-service detail pages
-- `/services/{florida | north-carolina | georgia | nationwide}` — 4 state pages
-- `/services/{16 county slugs}` — Florida county pages (Sarasota, Manatee, Orange, Seminole, Lake, Polk, Volusia, Osceola, Miami-Dade, Broward, Palm Beach, Lee, Collier, Hillsborough, Pinellas, Charlotte)
-- `/results` Real practice transformation outcomes
-- `/events` AI Blueprint Day™ speaking & live events
-- `/med-ai-studio` Florida's healthcare AI channel
-- `/ai-readiness-score` Interactive 8-question AI assessment
-- `/practice-stability-scorecard` Interactive 10-question stability diagnostic
-- `/discovery-questionnaire` 4-section multi-step intake form
-- `/blog` Blog (placeholder route — linked to GHL externally per user)
-- `/contact` Contact / book session
+- `/services/practice-clarity-assessment` · Tier 1 (Free)
+- `/services/pxc-impact-blueprint` · Tier 2 (90-Day)
+- `/services/excel-transformation-partnership` · Tier 3 (12-Month, Self-Funding Guarantee)
+- `/services/mastercourse` · From Patients to Profits™ MasterCourse
+- `/services/practice-professionals-playground` · P3 Membership
+- `/services/puzzle-shop` · Digital products
+- `/services/leadership-development` · Sub-offering
+- `/services/{florida | north-carolina | georgia | nationwide}` · State pages
+- `/services/{16 FL county slugs}` · Florida county pages
+- `/results` · Outcomes + case studies
+- `/events` · AI Blueprint Day™ speaking & live events
+- `/med-ai-studio` · Florida's healthcare AI channel
+- `/ai-readiness-score` · Interactive 8-question scoring
+- `/practice-stability-scorecard` · Interactive 10-question diagnostic
+- `/discovery-questionnaire` · 4-section intake form
+- `/blog` · Placeholder (linked externally in GHL)
+- `/contact` · Contact / book session
 
 ## Iteration Log
 
-### Iteration 1
-- Ported user's GitHub foundation into Vite + React + TS stack on port 3000.
-- Built new Header with PXC logo, 7-item nav + state/county dropdown, new favicon.
-- Rebuilt Home hero with video-right + glowing rings, EKG card, beating stethoscope, pulsating heartbeat divider.
-- Created new pages: Results, Events (v1), MED-AI Studio (v1), state pages.
+### Iterations 1–3 (prior)
+- Vite foundation + new header, footer, favicon, logo.
+- Hero rebuild with video + rotating rings + EKG divider + stethoscope.
+- New Results, Events, MED-AI Studio, state pages.
+- Direct Answer 2nd-instance moves on About/Contact/County.
+- Events full AI Blueprint Day rebrand + header palette swap.
+- MED-AI Studio with banner + thumbnails.
+- 3 interactive scoring pages + 7 per-service detail pages.
+- Image preload + lazy-load + preconnect optimization.
+- Testing-agent regression: 100% routes pass.
 
-### Iteration 2
-- Fixed Events page runtime crash (MarqueeStrip prop API).
-- Moved stethoscope off the H1 copy to bottom-left of hero.
-- Compacted Direct Answer box; enlarged heartbeat-EKG divider.
-- Added AI Blueprint Day branding (v1) to Events.
-
-### Iteration 3 (current)
-- **Navigation**: Added Blog between MED-AI Studio and Contact (no external link wiring — per user, will link inside GHL).
-- **Home**: Removed medical-bg image from hero — pure shiny-black with radial highlights only.
-- **About**: Moved 2nd Direct Answer (AnswerCapsule) from hero down to AFTER the "Ready to Go From Burnout to Breakthrough" CTA section.
-- **CountyPage**: Moved 2nd Direct Answer from hero to AFTER "Ready to Transform Your [County] Practice?" CTA section (applies to all 16 Florida county pages).
-- **Contact**: Moved 2nd Direct Answer from hero to AFTER FAQ section.
-- **Events**: Complete rebrand — pure AI Blueprint Day palette (gold/charcoal/grey/silver/white, ZERO red/cyan/lilac). Jennifer-presenting image as hero background with yellow-gold semi-transparent overlay. AI Blueprint Day logo prominently centered (single instance). Tiny corner logo removed. **Header swaps to gold palette automatically on `/events` route** so the entire Events experience has zero red/cyan/lilac.
-- **MED-AI Studio**: Complete rewrite. Florida's healthcare AI channel branding, "Powered by AI. Driven by People. Designed for Impact." signature line, MED-AI Studio banner image full-bleed, 4 content pillars (Long-Form, Studio Cuts, Audio Podcast, Field Notes), 4 featured episodes with first episode using user's medai-thumb-1 image, "Why Tune In" reasons grid, platforms strip (YouTube/Spotify/Apple/Amazon/Overcast/RSS), GHL-bound subscribe placecard.
-- **AI Readiness Score™** (NEW): Interactive 8-question assessment across AI Awareness / Workflow Docs / Data Hygiene / Staff Buy-In / Top Pain / Tech Stack / Leadership Time / Budget. Animated radial gauge result, 3 tier recommendations (AI Curious / AI Ready / AI Accelerator), GHL email-capture placecard, retake button.
-- **Practice Stability Scorecard™** (NEW): Interactive 10-question diagnostic across 10 operational domains (Staff Retention, Patient Retention, Front Desk Load, Leadership Alignment, Reviews, Operational Clarity, Financial Visibility, Burnout, Patient Experience, Owner Time). Animated radial gauge, 3 tier results (Crisis / Strain / Solid Ground).
-- **Discovery Questionnaire** (NEW): 4-section multi-step form (About Practice / Friction Points / 12-Month Goals / Contact Info) with progress bar, success page.
-- **7 Per-Service Detail Pages** (NEW): Single dynamic `ServiceDetail.tsx` template renders all 7 services from a config record — Puzzle Pyramid Strategy Session, PX Fast Pass, PX Treatment Plan, From Patients to Profits MasterCourse, Practice Professionals Playground (P3), Puzzle Shop, Leadership Development. Each renders: hero with eyebrow badge + Best Fit card + Guarantee, outcomes grid, framework section, modules timeline (phases), FAQ, bottom CTA.
-- **Image optimization**: Added `<link rel="preload">` for critical above-the-fold assets (logo, favicon, heartbeat video) and `<link rel="preconnect">` for Google Fonts. All below-the-fold images use `loading="lazy"`.
-- **Testing-agent regression**: 100% routes load, all 20 verified routes render content + header + footer correctly. Services dropdown verified with all 30+ items. AI Readiness 8-question flow tested end-to-end (intro → 8 questions → tier result with radial gauge → email capture → CTA + retake). Mobile hamburger (375px) shows all 8 nav links + book CTA. Tablet (768px) verified no horizontal scroll. Events page body palette confirmed gold/black/grey/white only.
+### Iteration 4 (current)
+- **Home hero**: New AI-hands background (semi-transparent 35% + dark overlay for legibility). Hero height reduced to `calc(100vh-72px)` and top padding tightened to `pt-3/pt-4` — copy now sits closer to nav, EKG heartbeat divider clearly visible at bottom of hero **without scrolling**.
+- **Transformation table**: Image opacity raised to 0.20, black gradient overlay removed — image shows through naturally. Headings + section title got drop-shadow for legibility against the brighter background.
+- **Bright sections added** (1 per page where previously all-black):
+  - `/results` — cyan-violet overlay spotlight after case-studies grid ("One transformation. Years of compound returns.")
+  - `/contact` — lilac-cyan overlay spotlight after the moved Direct Answer ("One call. Three clarifying moves.")
+  - About / Home already had alternating white sections.
+- **Offer stack realigned to current business model**:
+  - "Puzzle Pyramid Strategy Session" → **Practice Clarity & AI Readiness Assessment™** (Tier 1, free)
+  - "PX Fast Pass" → **PXC IMPACT Blueprint™** (Tier 2, 90-day)
+  - "PX Treatment Plan" → **EXCEL Transformation Partnership™** (Tier 3, 12-month fractional fCAIOX, Self-Funding Guarantee — Contractual)
+  - URL slugs updated: `/services/practice-clarity-assessment`, `/services/pxc-impact-blueprint`, `/services/excel-transformation-partnership`
+  - Header dropdown + App.tsx route allow-list updated to match
+  - **From Patients to Profits™ MasterCourse** enhanced with 60+ template promise, AI prompt library callout, ROI tracker, P3 graduation path, monthly office hours, team licenses
+  - **Practice Professionals Playground™ (P3)** expanded to twice-monthly + bi-weekly Field Notes + always-on community + quarterly 1:1
 
 ## What's Working (Verified)
 - All 20+ routes return HTTP 200 with rendered content.
-- Header swaps to gold theme on `/events`; PXC theme on every other page.
-- All interactive flows work: AI Readiness scoring → tier → gauge → CTA; Practice Stability scoring → tier → gauge → CTA; Discovery 4-section → success page.
-- All 7 per-service detail pages render with unique config (icons, colors, modules, FAQs).
-- All 16 Florida county pages render with 2nd Direct Answer moved below the Ready-to-Transform CTA.
-- About/Contact 2nd Direct Answers correctly moved below their target sections.
-- Mobile + tablet responsive verified by testing agent.
+- Hero EKG divider clearly visible without scrolling at 1440×900.
+- AI-hands background semi-transparent — copy is fully legible.
+- Transformation-table section is brighter (image shows through 20%) with no black overlay.
+- Bright spotlight sections render with cyan/lilac overlay + readable black-on-color copy.
+- Header swaps to gold theme on `/events`; PXC theme everywhere else.
+- All 7 per-service pages render with new naming + new slugs.
+- All interactive scoring flows still functional after rename.
 
 ## P1 Backlog (Future)
-- 3D Three.js rotatable model on Home (libs installed).
-- Production WebP conversion of large hero PNGs (Lighthouse 95+).
-- About page deeper merge with founder timeline + values grid expansion.
-- Dedicated NC + GA county pages once user confirms metro lists.
-- Real client testimonial swap-ins on Results page.
+- AI Blueprint Day™ dedicated `/services/ai-blueprint-day` detail page (currently served via `/events`).
+- Per-service deliverables galleries (when user supplies asset thumbnails for each offer).
+- 3D Three.js rotatable healthcare model on Home (libs installed).
+- WebP conversion of large hero PNGs for Lighthouse 95+.
+- Real testimonial swap-ins on Results once user supplies them.
 
 ## Test Credentials
 None — site is fully public, no auth.
 
 ---
-_Last updated: Iteration 3 — all user-requested tasks complete._
+_Last updated: Iteration 4 — hero brightness + offer-stack realignment complete._

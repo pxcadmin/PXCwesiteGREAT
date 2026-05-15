@@ -184,6 +184,24 @@ export default function Results() {
         </div>
       </section>
 
+      {/* BRIGHT SECTION — image-with-overlay spotlight (cyan tint) */}
+      <section className="relative py-20 lg:py-24 overflow-hidden" aria-label="Results Spotlight">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/med-staff.jpg" alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(71,216,255,0.78) 0%, rgba(174,161,234,0.72) 50%, rgba(71,216,255,0.78) 100%)" }} />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="bg-white text-[#0a0a0a] border border-white mb-4 font-bold tracking-wider px-3 py-1">Compounding Outcomes</Badge>
+          <h2 className="text-3xl sm:text-5xl font-black mb-5 text-[#0a0a0a]" style={{ fontFamily: "Nunito, sans-serif" }}>
+            One transformation. <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">Years of compound returns.</span>
+          </h2>
+          <p className="text-lg text-[#0a0a0a] max-w-3xl mx-auto leading-relaxed mb-6 font-semibold">
+            Every metric you've seen above didn't stop on day 90. It kept compounding — staff who stayed referred more staff. Patients who came back brought their families. Reviews that climbed lifted SEO that lifted new-patient inflow. The Unified PXC System™ doesn't sell a moment — it installs a momentum.
+          </p>
+          <p className="font-quote text-2xl text-[#0a0a0a]">"We improve the inside first, so the experience on the outside becomes unforgettable."</p>
+        </div>
+      </section>
+
       {/* PROCESS — what makes results repeatable */}
       <section className="relative py-20 lg:py-24 border-y border-white/10 bg-[#050505]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

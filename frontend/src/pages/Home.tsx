@@ -122,20 +122,30 @@ export default function Home() {
   return (
     <div className="flex flex-col overflow-x-hidden">
       {/* ===== SECTION 1: HERO ===== */}
-      <section className="pxc-grain relative min-h-screen bg-black flex items-center overflow-hidden" aria-label="Hero">
-        {/* Pure shiny black background — radial highlights only, no medical image */}
-        <div className="absolute inset-0 z-0 bg-black">
+      <section className="pxc-grain relative min-h-[calc(100vh-72px)] bg-black flex items-start overflow-hidden" aria-label="Hero">
+        {/* AI-hands background with semi-transparent dark overlay so copy stays legible */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/ai-hands-bg.png"
+            alt=""
+            className="w-full h-full object-cover opacity-35"
+            loading="eager"
+            fetchPriority="high"
+          />
           <div className="absolute inset-0" style={{
-            background: "radial-gradient(ellipse at 25% 30%, rgba(71,216,255,0.06), transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(174,161,234,0.06), transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(251,0,0,0.04), transparent 60%)"
+            background: "linear-gradient(135deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.62) 40%, rgba(0,0,0,0.78) 100%)"
+          }} />
+          <div className="absolute inset-0" style={{
+            background: "radial-gradient(ellipse at 25% 30%, rgba(71,216,255,0.08), transparent 55%), radial-gradient(ellipse at 80% 70%, rgba(174,161,234,0.06), transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(251,0,0,0.05), transparent 60%)"
           }} />
         </div>
-        <AuroraBackdrop opacity={0.10} />
+        <AuroraBackdrop opacity={0.08} />
 
         {/* Floating beating stethoscope (~2 inches) — bottom-left, away from copy */}
         <motion.img
           src="/assets/stethoscope.gif"
           alt="Beating stethoscope"
-          className="absolute hidden md:block w-[160px] h-auto pointer-events-none z-30 left-[2%] bottom-[12%] opacity-90 drop-shadow-[0_0_20px_rgba(251,0,0,0.4)]"
+          className="absolute hidden md:block w-[150px] h-auto pointer-events-none z-30 left-[2%] bottom-[14%] opacity-90 drop-shadow-[0_0_20px_rgba(251,0,0,0.4)]"
           animate={{ scale: [1, 1.06, 1], rotate: [0, -3, 0] }}
           transition={{ duration: 1.1, repeat: Infinity, ease: "easeInOut" }}
           data-testid="hero-stethoscope"
@@ -147,7 +157,7 @@ export default function Home() {
         <motion.div className="absolute right-[3%] top-[20%] w-3 h-3 rounded-full bg-[#47d8ff]/40 blur-sm pointer-events-none"
           animate={{ y: [0, -18, 0] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }} />
 
-        <div className="relative z-10 max-w-[1700px] mx-auto px-3 sm:px-4 lg:px-6 py-8 lg:py-14 w-full">
+        <div className="relative z-10 max-w-[1700px] mx-auto px-3 sm:px-4 lg:px-6 pt-3 pb-20 lg:pt-4 lg:pb-24 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
             {/* LEFT: SEO/AEO/GEO-optimized copy — 3-second clarity */}
@@ -699,14 +709,13 @@ export default function Home() {
       <SectionDivider />
       {/* ===== SECTION 8: BEFORE / AFTER ===== */}
       <section className="relative py-24 overflow-hidden" aria-label="Before and After Transformation" id="before-after">
-        <div className="absolute inset-0">
-          <img src={twoFemaleDocsImage} alt="" className="w-full h-full object-cover opacity-35" aria-hidden />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/90" />
+        <div className="absolute inset-0 bg-black">
+          <img src={twoFemaleDocsImage} alt="" className="w-full h-full object-cover" style={{ opacity: 0.2 }} aria-hidden loading="lazy" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-[#AEA1EA] text-sm font-bold uppercase tracking-widest mb-4">The Transformation</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Nunito, sans-serif' }}>
+            <p className="text-[#AEA1EA] text-sm font-bold uppercase tracking-widest mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">The Transformation</p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" style={{ fontFamily: 'Nunito, sans-serif' }}>
               What Your Practice Looks Like{" "}
               <span className="text-[#47d8ff]">Before and After</span>{" "}
               the Unified PXC System™

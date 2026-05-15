@@ -39,10 +39,10 @@ const STATE_LINKS = [
 ];
 
 const SERVICE_DETAIL_LINKS = [
-  { name: "Puzzle Pyramid™ Strategy Session", slug: "puzzle-pyramid-strategy-session" },
-  { name: "PX Fast Pass™", slug: "px-fast-pass" },
-  { name: "PX Treatment Plan™", slug: "px-treatment-plan" },
-  { name: "From Patients to Profits MasterCourse™", slug: "mastercourse" },
+  { name: "Practice Clarity & AI Readiness Assessment™ (Free)", slug: "practice-clarity-assessment" },
+  { name: "PXC IMPACT Blueprint™ (90-Day)", slug: "pxc-impact-blueprint" },
+  { name: "EXCEL Transformation Partnership™ (12-Month)", slug: "excel-transformation-partnership" },
+  { name: "From Patients to Profits™ MasterCourse", slug: "mastercourse" },
   { name: "Practice Professionals Playground™ (P3)", slug: "practice-professionals-playground" },
   { name: "The Puzzle Shop", slug: "puzzle-shop" },
   { name: "Leadership Development", slug: "leadership-development" },

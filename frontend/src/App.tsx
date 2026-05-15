@@ -32,9 +32,9 @@ function ScrollToTop() {
 
 // Service detail slugs (must match keys in ServiceDetail SERVICES record)
 const SERVICE_DETAIL_SLUGS = new Set([
-  "puzzle-pyramid-strategy-session",
-  "px-fast-pass",
-  "px-treatment-plan",
+  "practice-clarity-assessment",
+  "pxc-impact-blueprint",
+  "excel-transformation-partnership",
   "mastercourse",
   "practice-professionals-playground",
   "puzzle-shop",

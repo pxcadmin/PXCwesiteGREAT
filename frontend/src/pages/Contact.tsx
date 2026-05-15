@@ -1182,6 +1182,23 @@ export default function Contact() {
           />
         </div>
       </section>
+
+      {/* BRIGHT SECTION — image-with-overlay spotlight (lilac tint) */}
+      <section className="relative py-20 lg:py-24 overflow-hidden" aria-label="Contact Spotlight">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/med-staff.jpg" alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(174,161,234,0.82) 0%, rgba(71,216,255,0.74) 100%)" }} />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-5xl font-black mb-5 text-[#0a0a0a]" style={{ fontFamily: "Nunito, sans-serif" }}>
+            One call. <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">Three clarifying moves.</span>
+          </h2>
+          <p className="text-lg text-[#0a0a0a] max-w-2xl mx-auto leading-relaxed mb-3 font-semibold">
+            Every free Strategy Session ends with three highest-leverage moves you can run yourself — even if you never engage further. That's how PXC earns trust before earning your business.
+          </p>
+          <p className="font-quote text-2xl text-[#0a0a0a]">"Strategy is the real self-care."</p>
+        </div>
+      </section>
     </div>
   );
 }

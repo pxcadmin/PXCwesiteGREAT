@@ -99,32 +99,36 @@ export default function About() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section - BLACK background */}
-      <section className="relative py-20 bg-black overflow-hidden">
-        <AuroraBackdrop opacity={0.1} />
+      {/* Hero Section — Jennifer training image bg with low-opacity red overlay */}
+      <section className="relative pt-16 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/jen-presenting.png" alt="" className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(251,0,0,0.60) 0%, rgba(20,0,0,0.78) 100%)" }} />
+        </div>
+        <AuroraBackdrop opacity={0.05} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             className="mb-6 justify-center flex"
             items={[{ label: "About", href: "/about" }]}
           />
           <div className="text-center">
-            <p className="text-lg text-[#AEA1EA] font-medium uppercase tracking-wider mb-4">
+            <p className="text-lg text-white font-bold uppercase tracking-wider mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               People First. AI Empowered. Results That Sustain.
             </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
-              Built by <span className="text-[#47d8ff]">Insiders</span>, Powered by <span className="text-[#FB0000]">Transformation</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]" style={{ fontFamily: 'Nunito, sans-serif' }}>
+              Built by <span className="text-[#47d8ff]">Insiders</span>, Powered by <span className="text-white">Transformation</span>
             </h1>
-            <p className="text-xl text-[#AEA1EA] mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
               From our home base in Bradenton, FL, we guide overwhelmed independent medical practice owners across Sarasota, Manatee County, the 16 Central + Southern Florida counties we serve — and nationwide — from burnout and breakdown to people-first, high-performing practices where staff stay, patients return, and the business runs without you.
             </p>
           </div>
 
           {/* Direct Answer capsule (above the fold) */}
-          <div className="mt-10 max-w-3xl mx-auto border-l-4 border-[#47d8ff] bg-[#47d8ff]/10 rounded-r-xl p-6">
+          <div className="mt-10 max-w-3xl mx-auto border-l-4 border-[#47d8ff] bg-black/65 backdrop-blur rounded-r-xl p-6">
             <p className="text-[#47d8ff] font-extrabold uppercase tracking-widest mb-3 text-xs">Direct Answer</p>
-            <p className="text-white/85 text-sm sm:text-base leading-relaxed">
+            <p className="text-white text-sm sm:text-base leading-relaxed">
               <strong className="text-white">Why do Florida's independent medical practices choose Jennifer Radu and PXC?</strong>{" "}
-              Because no other firm combines 21+ years of hands-on medical practice management with custom AI builds, the Triple Perspective lens (Educator, Operator, Patient — 6 surgeries), and a <strong className="text-[#47d8ff]">Self-Funding Guarantee — Contractual</strong> that documents ROI in writing within 6 months. Jennifer Radu, CPPM, fCAIOX, founded Patient eXperience Consulting in <strong className="text-white">Bradenton, FL</strong>, and serves independent practices across Sarasota, Manatee County, and the 16 Central + Southern Florida counties PXC supports — plus nationwide — through the <strong className="text-[#47d8ff]">Practice Clarity &amp; AI Readiness Assessment™</strong>, <strong className="text-[#47d8ff]">PXC IMPACT Blueprint™</strong>, <strong className="text-[#47d8ff]">EXCEL Transformation Partnership™</strong>, and <strong className="text-[#47d8ff]">Practice Professionals Playground™</strong>.
+              Because no other firm combines 21+ years of hands-on medical practice management with custom AI builds, the Triple Perspective lens (Educator, Operator, Patient — 6 surgeries), and a <strong className="text-[#47d8ff]">Self-Funding Guarantee — Contractual</strong> that documents ROI in writing within 6 months. Jennifer Radu, CPPM, fCAIOX, founded Patient eXperience Consulting in <strong className="text-white">Bradenton, FL</strong>, and serves independent practices across Sarasota, Manatee County, and the 16 Central + Southern Florida counties PXC supports — plus nationwide — through the <strong className="text-[#47d8ff]">Practice Clarity &amp; AI Readiness Assessment</strong>, the <strong className="text-[#47d8ff]">Puzzle Pyramid Strategy Session</strong>, <strong className="text-[#47d8ff]">From Patients to Profits</strong>, <strong className="text-[#47d8ff]">Practice Professionals Playground</strong>, and <strong className="text-[#47d8ff]">Blueprint Workshops</strong>.
             </p>
           </div>
         </div>

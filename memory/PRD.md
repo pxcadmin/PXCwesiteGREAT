@@ -3,83 +3,100 @@
 ## Architecture
 - **Frontend**: Vite + React 18 + TypeScript + TailwindCSS + Wouter + Framer Motion + shadcn/ui — port 3000 via supervisor `yarn start`.
 - **Backend**: FastAPI on 8001 (health endpoint only — all forms are GHL-bound placecards).
-- **Assets**: Brand logos, favicon, AI imagery (incl. new AI-hands hero bg), heartbeat video/gif, stethoscope gif, founder + presenting photos, MED-AI Studio banner + thumbnails — all in `/public/assets/`.
+- **Assets**: PXC + AI Blueprint Day logos, favicon, AI imagery (incl. new AI-hands hero bg), heartbeat video/gif, stethoscope gif, Jen-presenting hero photo, MED-AI Studio banner + thumbnails — in `/public/assets/`.
 
 ## Brand System
-- **PXC palette (global)**: Black `#000000`, Red `#FB0000`, Cyan `#47D8FF`, Lilac `#AEA1EA`, White.
-- **AI Blueprint Day palette (Events only)**: Gold `#FCA746` / Charcoal / Grey / Silver / White — NO red/cyan/lilac.
-- **Fonts**: Nunito (headings), Comfortaa (body), La Belle Aurore (quotes), JetBrains Mono (Events labels).
+- **PXC palette (global)**: Black, Red `#FB0000`, Cyan `#47D8FF`, Lilac `#AEA1EA`, White.
+- **AI Blueprint Day palette (Events/Workshops)**: Gold `#FCA746`, Charcoal, Grey, Silver, White.
+- **Practice Professionals Playground palette**: Purple `#5B4B9C` / Lilac `#AEA1EA` / White / Black.
+- **Fonts**: Nunito (headings), Comfortaa (body), La Belle Aurore (quotes).
 
-## Sitemap (Final)
+## Sitemap (Current)
 - `/` Home
 - `/about` About
 - `/services` Services hub
-- `/services/practice-clarity-assessment` · Tier 1 (Free)
-- `/services/pxc-impact-blueprint` · Tier 2 (90-Day)
-- `/services/excel-transformation-partnership` · Tier 3 (12-Month, Self-Funding Guarantee)
-- `/services/mastercourse` · From Patients to Profits™ MasterCourse
-- `/services/practice-professionals-playground` · P3 Membership
-- `/services/puzzle-shop` · Digital products
-- `/services/leadership-development` · Sub-offering
-- `/services/{florida | north-carolina | georgia | nationwide}` · State pages
-- `/services/{16 FL county slugs}` · Florida county pages
-- `/results` · Outcomes + case studies
-- `/events` · AI Blueprint Day™ speaking & live events
-- `/med-ai-studio` · Florida's healthcare AI channel
-- `/ai-readiness-score` · Interactive 8-question scoring
-- `/practice-stability-scorecard` · Interactive 10-question diagnostic
-- `/discovery-questionnaire` · 4-section intake form
-- `/blog` · Placeholder (linked externally in GHL)
-- `/contact` · Contact / book session
+- **Services Details (NEW dropdown):**
+  - `/services/puzzle-pyramid-strategy-session`
+  - `/services/practice-clarity-assessment` (Take Assessment Now CTA)
+  - `/services/four-pathways-to-practice-freedom`
+  - `/services/specialized-expertise`
+  - `/services/leadership-development`
+  - `/services/ai-consulting`
+  - `/services/staff-patient-experience`
+  - `/services/from-patients-to-profits`
+  - `/services/practice-professionals-playground` (no P3 anywhere)
+  - `/services/blueprint-workshops` (yellow-themed)
+- `/services/{florida | north-carolina | georgia | nationwide}` — 4 state pages
+- `/services/{16 FL county slugs}` — county pages
+- `/results` · `/events` (Speaking Engagements in nav) · `/med-ai-studio` · `/contact`
+- `/blog` — placeholder route (nav links externally to GHL blog)
 
 ## Iteration Log
 
-### Iterations 1–3 (prior)
-- Vite foundation + new header, footer, favicon, logo.
-- Hero rebuild with video + rotating rings + EKG divider + stethoscope.
-- New Results, Events, MED-AI Studio, state pages.
-- Direct Answer 2nd-instance moves on About/Contact/County.
-- Events full AI Blueprint Day rebrand + header palette swap.
-- MED-AI Studio with banner + thumbnails.
-- 3 interactive scoring pages + 7 per-service detail pages.
-- Image preload + lazy-load + preconnect optimization.
-- Testing-agent regression: 100% routes pass.
+### Iteration 5 (current)
+**Navigation overhaul:**
+- "Events" → **"Speaking Engagements"** tab.
+- Services dropdown completely restructured per new offer ladder; removed "Interactive Tools" section entirely (scoring pages reserved for email-gated GHL flow).
+- Removed pages: AI Readiness Score, Practice Stability Scorecard, Discovery Questionnaire, Blog (file deleted; nav tab kept for GHL external link), Puzzle Shop, IMPACT Blueprint, EXCEL Transformation Partnership, AI Blueprint Day (now served by Speaking Engagements + Blueprint Workshops).
 
-### Iteration 4 (current)
-- **Home hero**: New AI-hands background (semi-transparent 35% + dark overlay for legibility). Hero height reduced to `calc(100vh-72px)` and top padding tightened to `pt-3/pt-4` — copy now sits closer to nav, EKG heartbeat divider clearly visible at bottom of hero **without scrolling**.
-- **Transformation table**: Image opacity raised to 0.20, black gradient overlay removed — image shows through naturally. Headings + section title got drop-shadow for legibility against the brighter background.
-- **Bright sections added** (1 per page where previously all-black):
-  - `/results` — cyan-violet overlay spotlight after case-studies grid ("One transformation. Years of compound returns.")
-  - `/contact` — lilac-cyan overlay spotlight after the moved Direct Answer ("One call. Three clarifying moves.")
-  - About / Home already had alternating white sections.
-- **Offer stack realigned to current business model**:
-  - "Puzzle Pyramid Strategy Session" → **Practice Clarity & AI Readiness Assessment™** (Tier 1, free)
-  - "PX Fast Pass" → **PXC IMPACT Blueprint™** (Tier 2, 90-day)
-  - "PX Treatment Plan" → **EXCEL Transformation Partnership™** (Tier 3, 12-month fractional fCAIOX, Self-Funding Guarantee — Contractual)
-  - URL slugs updated: `/services/practice-clarity-assessment`, `/services/pxc-impact-blueprint`, `/services/excel-transformation-partnership`
-  - Header dropdown + App.tsx route allow-list updated to match
-  - **From Patients to Profits™ MasterCourse** enhanced with 60+ template promise, AI prompt library callout, ROI tracker, P3 graduation path, monthly office hours, team licenses
-  - **Practice Professionals Playground™ (P3)** expanded to twice-monthly + bi-weekly Field Notes + always-on community + quarterly 1:1
+**New service detail pages (with original PXC-voice content + structural patterns):**
+- Puzzle Pyramid Strategy Session — 45-min free strategic consult.
+- Practice Clarity & AI Readiness Assessment — primary CTA changed to **"Take the Assessment Now"**, secondary to **"Book Strategy Session"**.
+- Four Pathways to Practice Freedom — overview of all 4 engagement arcs.
+- Specialized Expertise — hub for the 3 sub-pages.
+- AI Consulting — specialized expertise sub-page.
+- Staff & Patient Experience — specialized expertise sub-page.
+- From Patients to Profits — signature self-paced course (renamed from mastercourse slug).
+- Blueprint Workshops — on-site training intensives in yellow/charcoal theme.
+- Practice Professionals Playground — rebuilt with purple/white/black theme override.
+
+**Home page:**
+- New AI-hands background image with semi-transparent dark overlay (legibility-safe).
+- Hero `min-h-[calc(100vh-72px)]` with reduced top padding — heartbeat-EKG divider visible without scroll.
+- **Removed:** "Final Decisive Moment" CTA section + "Latest Field Notes / PXC Insights" blog section.
+- Transformation table: image opacity 20%, black gradient overlay removed, drop-shadows on headings.
+
+**About page:**
+- Hero background swapped to Jen-presenting image with **60%-transparent red overlay** (linear gradient from red to dark) per user spec.
+- 2nd Direct Answer correctly moved below CTA section.
+
+**Services overview page:**
+- Hero: removed right-side dark overlay — image now shows through on the right; gradient keeps left dark for copy legibility.
+- Hero: **removed Self-Funding Guarantee box** under Direct Answer.
+- **Practice Professionals Playground section (community overview):** rebuilt with purple gradient bg, white cards, 4-per-line compact grid (8 cards in 2 rows), "Community Overview" badge, condensed founding-member pricing strip, "See Full Page" CTA. No P3 abbreviation.
+- **Blueprint Workshops section:** rebuilt with gold-on-charcoal theme, compact 4-card workshop-type grid, "See Full Workshops Details" CTA.
+- All P3 references swept across codebase.
+
+**MED-AI Studio:**
+- Episodes 2/3/4 cards removed — only Episode 1 banner card remains.
+- Schedule chip + Subscribe form preserved.
+
+**Bright spotlight sections** added to:
+- `/results` — cyan→violet 78%-overlay spotlight: *"One transformation. Years of compound returns."*
+- `/contact` — lilac→cyan overlay spotlight: *"One call. Three clarifying moves."*
+- About + Home already alternate black/white sections.
+- Events fully gold-themed.
 
 ## What's Working (Verified)
-- All 20+ routes return HTTP 200 with rendered content.
-- Hero EKG divider clearly visible without scrolling at 1440×900.
-- AI-hands background semi-transparent — copy is fully legible.
-- Transformation-table section is brighter (image shows through 20%) with no black overlay.
-- Bright spotlight sections render with cyan/lilac overlay + readable black-on-color copy.
-- Header swaps to gold theme on `/events`; PXC theme everywhere else.
-- All 7 per-service pages render with new naming + new slugs.
-- All interactive scoring flows still functional after rename.
+- All 21+ routes return HTTP 200 with rendered content (verified post-edit).
+- Services page renders cleanly after Sparkles icon import fix.
+- Practice Professionals Playground section visually matches brand spec (purple/white/black, 4-per-line cards, no P3).
+- Speaking Engagements nav label present.
+- Blueprint Workshops dropdown link present; page renders with gold theme.
+- All P3 abbreviations removed from user-facing copy.
+
+## Items Intentionally Not Done (with reason)
+- **Verbatim copy from HyperAgent URLs** for the 8 referenced inspiration pages — those are third-party copyrighted pages. Each requested page has been built with **original PXC-voice content** using the same structural patterns (hero + outcomes + framework + modules + FAQ + CTA), so the user gets the same shape and depth without IP risk.
+- Three.js 3D model + WebP conversion — deferred to a follow-up perf-focused iteration.
 
 ## P1 Backlog (Future)
-- AI Blueprint Day™ dedicated `/services/ai-blueprint-day` detail page (currently served via `/events`).
-- Per-service deliverables galleries (when user supplies asset thumbnails for each offer).
-- 3D Three.js rotatable healthcare model on Home (libs installed).
-- WebP conversion of large hero PNGs for Lighthouse 95+.
-- Real testimonial swap-ins on Results once user supplies them.
+- Speaking Engagements: add a structural "Bring AI Blueprint Day to your organization" section after the hero (specific layout user referenced).
+- Brighten the Tier-1 pricing table on Services overview.
+- More bright spotlight sections (one per page) on About, MED-AI Studio, Events.
+- Email-gated assessment flow that pipes captured leads into GHL workflows.
 
 ## Test Credentials
 None — site is fully public, no auth.
 
 ---
-_Last updated: Iteration 4 — hero brightness + offer-stack realignment complete._
+_Last updated: Iteration 5 — major nav + offer-stack overhaul complete._

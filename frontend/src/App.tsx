@@ -12,16 +12,12 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Services from "@/pages/Services";
 import Contact from "@/pages/Contact";
-import Blog from "@/pages/Blog";
 import CountyPage from "@/pages/CountyPage";
 import StatePage from "@/pages/StatePage";
 import Results from "@/pages/Results";
 import Events from "@/pages/Events";
 import MedAiStudio from "@/pages/MedAiStudio";
 import ServiceDetail from "@/pages/ServiceDetail";
-import AiReadinessScore from "@/pages/AiReadinessScore";
-import PracticeStabilityScorecard from "@/pages/PracticeStabilityScorecard";
-import DiscoveryQuestionnaire from "@/pages/DiscoveryQuestionnaire";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -30,15 +26,18 @@ function ScrollToTop() {
   return null;
 }
 
-// Service detail slugs (must match keys in ServiceDetail SERVICES record)
+// Current canonical service detail slugs (new offer hierarchy)
 const SERVICE_DETAIL_SLUGS = new Set([
+  "puzzle-pyramid-strategy-session",
   "practice-clarity-assessment",
-  "pxc-impact-blueprint",
-  "excel-transformation-partnership",
-  "mastercourse",
-  "practice-professionals-playground",
-  "puzzle-shop",
+  "four-pathways-to-practice-freedom",
+  "specialized-expertise",
   "leadership-development",
+  "ai-consulting",
+  "staff-patient-experience",
+  "from-patients-to-profits",
+  "practice-professionals-playground",
+  "blueprint-workshops",
 ]);
 
 // State slugs
@@ -67,12 +66,7 @@ function Router() {
           <Route path="/results" component={Results} />
           <Route path="/events" component={Events} />
           <Route path="/med-ai-studio" component={MedAiStudio} />
-          <Route path="/ai-readiness-score" component={AiReadinessScore} />
-          <Route path="/practice-stability-scorecard" component={PracticeStabilityScorecard} />
-          <Route path="/discovery-questionnaire" component={DiscoveryQuestionnaire} />
           <Route path="/contact" component={Contact} />
-          <Route path="/blog" component={Blog} />
-          <Route path="/blog/:slug" component={Blog} />
           <Route component={NotFound} />
         </Switch>
       </main>

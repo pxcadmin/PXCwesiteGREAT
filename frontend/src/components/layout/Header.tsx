@@ -39,19 +39,16 @@ const STATE_LINKS = [
 ];
 
 const SERVICE_DETAIL_LINKS = [
-  { name: "Practice Clarity & AI Readiness Assessment™ (Free)", slug: "practice-clarity-assessment" },
-  { name: "PXC IMPACT Blueprint™ (90-Day)", slug: "pxc-impact-blueprint" },
-  { name: "EXCEL Transformation Partnership™ (12-Month)", slug: "excel-transformation-partnership" },
-  { name: "From Patients to Profits™ MasterCourse", slug: "mastercourse" },
-  { name: "Practice Professionals Playground™ (P3)", slug: "practice-professionals-playground" },
-  { name: "The Puzzle Shop", slug: "puzzle-shop" },
-  { name: "Leadership Development", slug: "leadership-development" },
-];
-
-const SCORING_TOOLS = [
-  { name: "AI Readiness Score™", path: "/ai-readiness-score" },
-  { name: "Practice Stability Scorecard™", path: "/practice-stability-scorecard" },
-  { name: "Discovery Questionnaire", path: "/discovery-questionnaire" },
+  { name: "Puzzle Pyramid Strategy Session", slug: "puzzle-pyramid-strategy-session" },
+  { name: "Practice Clarity & AI Readiness Assessment", slug: "practice-clarity-assessment" },
+  { name: "Four Pathways to Practice Freedom", slug: "four-pathways-to-practice-freedom" },
+  { name: "Specialized Expertise", slug: "specialized-expertise" },
+  { name: "↳ Leadership Development", slug: "leadership-development" },
+  { name: "↳ AI Consulting", slug: "ai-consulting" },
+  { name: "↳ Staff & Patient Experience", slug: "staff-patient-experience" },
+  { name: "From Patients to Profits", slug: "from-patients-to-profits" },
+  { name: "Practice Professionals Playground", slug: "practice-professionals-playground" },
+  { name: "Blueprint Workshops", slug: "blueprint-workshops" },
 ];
 
 export function Header() {
@@ -78,7 +75,7 @@ export function Header() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services", hasDropdown: true },
     { href: "/results", label: "Results" },
-    { href: "/events", label: "Events" },
+    { href: "/events", label: "Speaking Engagements" },
     { href: "/med-ai-studio", label: "MED-AI Studio" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
@@ -128,16 +125,7 @@ export function Header() {
                       </DropdownMenuItem>
                       <DropdownMenuSeparator className="bg-white/10" />
                       <div className="px-2 py-1.5">
-                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">Free Interactive Tools</div>
-                      </div>
-                      {SCORING_TOOLS.map((t) => (
-                        <DropdownMenuItem key={t.path} asChild className="text-white hover:text-[#FB0000] hover:bg-white/5 focus:bg-white/5 focus:text-[#FB0000]">
-                          <Link href={t.path} data-testid={`link-tool-${t.path}`}>{t.name}</Link>
-                        </DropdownMenuItem>
-                      ))}
-                      <DropdownMenuSeparator className="bg-white/10" />
-                      <div className="px-2 py-1.5">
-                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">Service Details</div>
+                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#AEA1EA]">Services Details</div>
                       </div>
                       {SERVICE_DETAIL_LINKS.map((s) => (
                         <DropdownMenuItem key={s.slug} asChild className="text-white hover:text-[#47d8ff] hover:bg-white/5 focus:bg-white/5 focus:text-[#47d8ff]">

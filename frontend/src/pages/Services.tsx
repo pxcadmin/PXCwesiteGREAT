@@ -15,7 +15,7 @@ import {
   Shield, Award, Brain, Users, Target, Zap, Clock, TrendingUp,
   BookOpen, Cpu, MessageSquare, BarChart3, Flame, Heart, RefreshCw,
   Lock, Phone, Mail, Play, Calendar, Mic, Building2, Layers,
-  FileText, Search, Lightbulb, Workflow, GraduationCap, Bot
+  FileText, Search, Lightbulb, Workflow, GraduationCap, Bot, Sparkles
 } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -421,8 +421,9 @@ export default function Services() {
       {/* ===== HERO ===== */}
       <section className="relative min-h-[72vh] bg-black flex items-center overflow-hidden" aria-label="Services Hero">
         <div className="absolute inset-0">
-          <img src={twoFemaleDocs} alt="" className="w-full h-full object-cover opacity-15" aria-hidden />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/92 to-black/65" />
+          <img src={twoFemaleDocs} alt="" className="w-full h-full object-cover opacity-55" aria-hidden loading="eager" fetchPriority="high" />
+          {/* Dark gradient stays on the LEFT for copy legibility; image shows through on the RIGHT */}
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 35%, rgba(0,0,0,0.30) 65%, rgba(0,0,0,0.05) 100%)" }} />
         </div>
         <AuroraBackdrop opacity={0.1} />
 
@@ -458,16 +459,7 @@ export default function Services() {
               </p>
             </div>
 
-            {/* Self-Funding Guarantee banner */}
-            <div className="bg-[#47d8ff]/8 border border-[#47d8ff]/25 rounded-xl p-5 mb-8 max-w-2xl">
-              <div className="flex items-start gap-3">
-                <Shield className="h-5 w-5 text-[#47d8ff] flex-shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-[#47d8ff] font-black text-sm mb-1" style={{ fontFamily: 'Nunito, sans-serif' }}>The Self-Funding Guarantee</p>
-                  <p className="text-white/75 text-sm leading-relaxed">Documented savings WILL exceed your investment within 6 months — or PXC continues at no additional charge until they do. This is a contractual commitment.</p>
-                </div>
-              </div>
-            </div>
+            {/* Self-Funding Guarantee banner removed per content decision */}
 
             <div className="flex flex-wrap gap-4">
               <MagneticButton>
@@ -1316,7 +1308,8 @@ export default function Services() {
       <SectionDivider color="#FB0000" />
 
       {/* ===== PLAYGROUND SECTION ===== */}
-      <section id="playground" className="py-24 bg-black border-b border-white/5" aria-label="Practice Professionals Playground">
+      {/* ===== PRACTICE PROFESSIONALS PLAYGROUND SECTION — purple/white/black overview ===== */}
+      <section id="playground" className="py-16 border-b border-white/5" aria-label="Practice Professionals Playground" style={{ background: "linear-gradient(135deg, #1a0d2e 0%, #2a1748 50%, #1a0d2e 100%)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <motion.div
@@ -1325,309 +1318,137 @@ export default function Services() {
             className="mb-12"
           >
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <Badge className="bg-[#AEA1EA]/15 text-[#AEA1EA] border border-[#AEA1EA]/30 text-xs font-bold">Community · Offering 4</Badge>
-              <Badge className="bg-white/8 text-white/60 border border-white/10 text-xs">Monthly Membership</Badge>
+              <Badge className="bg-white text-[#5B4B9C] text-xs font-bold border border-[#AEA1EA]" data-testid="playground-overview-badge">Community Overview</Badge>
+              <Badge className="bg-[#AEA1EA]/30 text-white border border-[#AEA1EA]/50 text-xs">Monthly Membership · See full page for details</Badge>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Nunito, sans-serif' }}>
-              Practice Professionals Playground™
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-3" style={{ fontFamily: 'Nunito, sans-serif' }}>
+              Practice Professionals Playground
             </h2>
-            <p className="text-white/70 max-w-3xl leading-relaxed">
+            <p className="text-white/85 max-w-3xl leading-relaxed text-sm sm:text-base">
               The private community where Florida's best practice leaders, managers, and administrators come together to learn, share, and implement — with Jennifer in the room and AI tools arriving first.
             </p>
           </motion.div>
 
-          {/* Founding member pricing callout */}
+          {/* Compact founding member callout */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="bg-[#AEA1EA]/6 border border-[#AEA1EA]/30 rounded-2xl p-8 mb-12 text-center"
+            className="bg-white rounded-xl p-5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+            style={{ border: "2px solid #AEA1EA" }}
           >
-            <Badge className="bg-[#AEA1EA] text-black font-black text-xs mb-4">Limited Time · Founding Member Offer</Badge>
-            <div className="flex items-center justify-center gap-4 mb-3">
-              <div>
-                <div className="text-5xl font-black text-white" style={{ fontFamily: 'Nunito, sans-serif' }}>$99</div>
-                <div className="text-white/50 text-sm">/month</div>
-              </div>
-              <div className="text-white/30 text-sm">vs</div>
-              <div>
-                <div className="text-3xl font-black text-white/40 line-through" style={{ fontFamily: 'Nunito, sans-serif' }}>$197</div>
-                <div className="text-white/30 text-sm">/month standard</div>
+            <div className="flex items-center gap-4">
+              <Badge className="bg-[#5B4B9C] text-white font-black text-xs">Founding Member · 50% Off</Badge>
+              <div className="flex items-baseline gap-2">
+                <span className="text-3xl font-black" style={{ color: "#1a1a1a", fontFamily: 'Nunito, sans-serif' }}>$99</span>
+                <span className="text-sm" style={{ color: "#4a4a4a" }}>/mo</span>
+                <span className="text-lg line-through" style={{ color: "#a0a0a0" }}>$197</span>
               </div>
             </div>
-            <p className="text-[#AEA1EA] text-sm font-semibold mb-1">50% off for the first 10–15 founding members. Lock in your rate permanently.</p>
-            <p className="text-white/45 text-xs">Rate never increases as long as membership remains active.</p>
+            <Button asChild className="font-black text-sm px-5 py-3" style={{ background: "#5B4B9C", color: "#fff" }} data-testid="playground-cta">
+              <Link href="/services/practice-professionals-playground">See Full Page <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
           </motion.div>
 
-          {/* 6 Feature cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          {/* 6 Feature cards — 4 per line, compact */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             {[
-              { icon: Bot, color: "#47d8ff", title: "AI Updates First", desc: "Every new AI tool, workflow, and GPT Jennifer builds comes to Playground members first — with community support for implementation." },
-              { icon: Mic, color: "#AEA1EA", title: "Monthly AI Q&A", desc: "AI-specific monthly office hours where Jennifer answers questions about implementing AI in your specific practice situation. Not generic advice — your practice." },
-              { icon: FileText, color: "#47d8ff", title: "Templates & SOPs", desc: "Done-for-you templates for common practice management challenges — ready to implement without starting from scratch." },
-              { icon: Users, color: "#AEA1EA", title: "Community of Peers", desc: "Private community of practice managers and leaders who understand exactly what you're dealing with — because they're dealing with it too." },
-              { icon: GraduationCap, color: "#47d8ff", title: "Monthly Training", desc: "A monthly training session or workshop on topics voted on by the community — practical, actionable, and specific to the realities of medical practice management." },
-              { icon: Flame, color: "#AEA1EA", title: "Hot Seat Coaching", desc: "Regular hot seat opportunities to bring your specific challenge to Jennifer and the group for real-time coaching and solutions." },
-            ].map(({ icon: Icon, color, title, desc }) => (
+              { icon: Bot, title: "AI Updates First", desc: "Every new AI tool, workflow, and GPT — to members first." },
+              { icon: Mic, title: "Monthly AI Q&A", desc: "AI-specific office hours with Jennifer — your practice, not generic advice." },
+              { icon: FileText, title: "Templates & SOPs", desc: "Done-for-you templates ready to deploy without starting from scratch." },
+              { icon: Users, title: "Community of Peers", desc: "Private community of practice managers dealing with what you're dealing with." },
+              { icon: GraduationCap, title: "Monthly Training", desc: "Practical, actionable monthly workshops voted on by the community." },
+              { icon: Flame, title: "Hot Seat Coaching", desc: "Real-time coaching slots for your specific challenge — with the group + Jennifer." },
+              { icon: Sparkles, title: "AI Field Notes", desc: "Bi-weekly newsletter — Jennifer's implementation notebook, straight to inbox." },
+              { icon: ArrowRight, title: "Quarterly 1:1", desc: "Private 45-min office hours slot — one per quarter for every active member." },
+            ].map(({ icon: Icon, title, desc }) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5 }}
+                viewport={{ once: true }} transition={{ duration: 0.4 }}
               >
-                <Card className="bg-black border border-white/10 card-glow-lilac hover-elevate transition-all duration-300 h-full">
-                  <CardContent className="p-6">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: `${color}15`, border: `1px solid ${color}30` }}>
-                  <Icon className="h-5 w-5" style={{ color }} />
+                <div className="rounded-xl p-4 h-full bg-white border-2 border-[#AEA1EA] transition-all duration-300 hover:-translate-y-1" style={{ boxShadow: "0 0 0 1px rgba(174,161,234,0.3)" }}>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3" style={{ backgroundColor: "#AEA1EA20", border: "1px solid #AEA1EA60" }}>
+                    <Icon className="h-4 w-4" style={{ color: "#5B4B9C" }} />
+                  </div>
+                  <h4 className="font-black text-sm mb-1" style={{ fontFamily: 'Nunito, sans-serif', color: "#1a1a1a" }}>{title}</h4>
+                  <p className="text-xs leading-snug" style={{ color: "#4a4a4a" }}>{desc}</p>
                 </div>
-                <h4 className="text-white font-black text-base mb-2" style={{ fontFamily: 'Nunito, sans-serif' }}>{title}</h4>
-                <p className="text-white/60 text-sm leading-relaxed">{desc}</p>
-                  </CardContent>
-                </Card>
               </motion.div>
             ))}
           </div>
 
-          {/* Who it's for + What you walk away with */}
-          <div className="grid md:grid-cols-2 gap-8 mb-10">
-            <Card className="bg-black border border-[#AEA1EA]/20 card-glow-lilac hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-              <p className="text-[#AEA1EA] text-xs font-bold uppercase tracking-widest mb-4">Who the Playground Is For</p>
-              {["Practice managers and administrators", "Physician owners and partners", "Office managers at single and multi-location practices", "Healthcare team leads building new skills", "Anyone who wants to learn AI before their competitors do"].map(item => (
-                <div key={item} className="flex items-start gap-3 mb-3">
-                  <CheckCircle2 className="h-4 w-4 text-[#AEA1EA] flex-shrink-0 mt-0.5" />
-                  <span className="text-white/70 text-sm">{item}</span>
-                </div>
-              ))}
-              </CardContent>
-            </Card>
-            <Card className="bg-black border border-[#AEA1EA]/20 card-glow-lilac hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-              <p className="text-[#47d8ff] text-xs font-bold uppercase tracking-widest mb-4">What You'll Walk Away With Each Month</p>
-              {["1 new AI tool or workflow tested and ready to implement", "1 live training (recordings included)", "Answers to your specific AI questions", "A community of people solving the same problems", "Early access to everything PXC builds"].map(item => (
-                <div key={item} className="flex items-start gap-3 mb-3">
-                  <CheckCircle2 className="h-4 w-4 text-[#47d8ff] flex-shrink-0 mt-0.5" />
-                  <span className="text-white/70 text-sm">{item}</span>
-                </div>
-              ))}
-              </CardContent>
-            </Card>
+          {/* Compact who/what summary */}
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+            <div className="rounded-xl p-5 bg-white" style={{ border: "2px solid #AEA1EA" }}>
+              <p className="text-[#5B4B9C] text-[10px] font-black uppercase tracking-widest mb-3">Who the Playground Is For</p>
+              <p className="text-sm leading-relaxed" style={{ color: "#1a1a1a" }}>
+                Practice managers, administrators, physician-owners, office managers, and anyone who wants to learn AI before their competitors do.
+              </p>
+            </div>
+            <div className="rounded-xl p-5 bg-[#5B4B9C]" style={{ border: "2px solid #AEA1EA" }}>
+              <p className="text-[#AEA1EA] text-[10px] font-black uppercase tracking-widest mb-3">What You'll Walk Away With</p>
+              <p className="text-sm leading-relaxed text-white">
+                One new AI tool tested · One live training · Answers to your specific questions · A community solving the same problems · Early access to everything PXC builds.
+              </p>
+            </div>
           </div>
 
           <div className="text-center">
-            <div className="text-5xl font-black text-white mb-1" style={{ fontFamily: 'Nunito, sans-serif' }}>$197 <span className="text-2xl text-white/50 font-normal">/month</span></div>
-            <p className="text-white/45 text-sm mb-6">Cancel anytime. No long-term commitment. · Founding member rate: $99/month</p>
-            <Button
-              variant="outline"
-              className="cta-bounce-lilac border-white bg-[#AEA1EA]/20 text-white font-black px-10 py-6 text-base"
-              style={{ fontFamily: 'Nunito, sans-serif' }}
-              asChild
-              data-testid="playground-cta"
-            >
-              <Link href="/contact">
-                Join the Playground
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild className="font-black px-8 py-5 text-base" style={{ background: "#fff", color: "#1a1a1a", border: "2px solid #AEA1EA" }} data-testid="playground-fullpage-cta">
+              <Link href="/services/practice-professionals-playground">
+                See Full Playground Details <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* ===== AI BLUEPRINT DAY SECTION ===== */}
-      <section id="blueprint-day" className="py-24 bg-black border-b border-white/5" aria-label="AI Blueprint Day Workshop">
+      {/* ===== BLUEPRINT WORKSHOPS / AI BLUEPRINT DAY SECTION — yellow/charcoal/white compact overview ===== */}
+      <section id="blueprint-day" className="py-16 border-b border-white/5" aria-label="Blueprint Workshops Overview" style={{ background: "linear-gradient(135deg, #fca74633 0%, #2a2008 50%, #fca74633 100%)" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="mb-12"
+            className="mb-8"
           >
             <div className="flex items-center gap-3 mb-5 flex-wrap">
-              <Badge className="bg-[#47d8ff]/15 text-[#47d8ff] border border-[#47d8ff]/30 text-xs font-bold">Speaking / Workshop · Offering 5</Badge>
-              <Badge className="bg-white/8 text-white/60 border border-white/10 text-xs">Florida + National</Badge>
-              <Badge className="bg-[#47d8ff]/10 text-[#47d8ff] border border-[#47d8ff]/20 text-xs">$4,000–$18,000</Badge>
+              <Badge className="text-xs font-bold" style={{ background: "#fca746", color: "#1a1a1a", border: "1px solid #fca746" }}>Workshops Overview</Badge>
+              <Badge className="text-xs" style={{ background: "rgba(252,167,70,0.15)", color: "#fca746", border: "1px solid rgba(252,167,70,0.4)" }}>Florida + Nationwide · See full page</Badge>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Nunito, sans-serif' }}>
-              AI Blueprint Day™ Workshop
+            <h2 className="text-3xl sm:text-4xl font-black mb-3" style={{ fontFamily: 'Nunito, sans-serif', color: "#fca746" }}>
+              Blueprint Workshops
             </h2>
-            <p className="text-[#AEA1EA] text-lg font-semibold mb-4" style={{ fontFamily: 'Nunito, sans-serif' }}>
-              "A high-impact, intensive session that leaves your practice, association, or team with an actionable AI roadmap — and Jennifer's 21+ years of healthcare expertise in the room."
-            </p>
-            <p className="text-white/70 max-w-3xl leading-relaxed">
-              Jennifer's signature workshop experience — designed for medical associations, hospital systems, multi-practice groups, conferences, and leadership teams. This is NOT a generic AI keynote. Participants leave with a plan, not just inspiration.
+            <p className="text-white/90 text-sm sm:text-base max-w-3xl leading-relaxed">
+              Custom on-site (or virtual) training intensives Jennifer brings directly to your practice — focused on AI deployment, patient experience, and practice-leadership development.
             </p>
           </motion.div>
 
-          {/* 5 Topics */}
-          <div className="mb-12">
-            <p className="text-[#47d8ff] text-xs font-bold uppercase tracking-widest mb-6">Topics Available — Jennifer Speaks and Trains on All of These</p>
-            <div className="space-y-4">
-              {[
-                {
-                  num: "TOPIC 1",
-                  title: "AI Integration in Healthcare — Safe, Effective, and Human-Led",
-                  desc: '"How to implement AI tools without disrupting care, violating HIPAA, or burning out your staff. The exact frameworks PXC uses with practices across Florida."'
-                },
-                {
-                  num: "TOPIC 2",
-                  title: "Leadership Development for Practice Leaders",
-                  desc: '"The leadership skills that separate thriving practices from struggling ones — and the frameworks that make great leaders, not just managers."'
-                },
-                {
-                  num: "TOPIC 3",
-                  title: "Culture Transformation in Medical Practices",
-                  desc: '"How to build a culture where staff stay, patients feel it, and leaders aren\'t constantly firefighting. From the person who\'s done it in 8+ Florida practices."'
-                },
-                {
-                  num: "TOPIC 4",
-                  title: "Patient Experience Excellence",
-                  desc: '"What actually moves patient satisfaction scores — and why it\'s not what most consultants sell. The PX frameworks built from 21+ years in the room AND the patient bed."'
-                },
-                {
-                  num: "TOPIC 5",
-                  title: "The Unified PXC System™ for Organizations",
-                  desc: '"A workshop adaptation of PXC\'s full transformation framework for medical associations, hospital systems, or multi-practice groups looking to create consistent improvement."'
-                },
-              ].map(({ num, title, desc }, i) => (
-                <motion.div
-                  key={num}
-                  initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }}
-                >
-                  <Card className="bg-black border border-[#AEA1EA]/20 card-glow-lilac hover-elevate transition-all duration-300">
-                    <CardContent className="p-6 flex gap-4">
-                  <div className="text-[#47d8ff] text-xs font-black uppercase tracking-widest w-16 flex-shrink-0 pt-0.5">{num}</div>
-                  <div>
-                    <h4 className="text-white font-black text-base mb-2" style={{ fontFamily: 'Nunito, sans-serif' }}>{title}</h4>
-                    <p className="text-white/55 text-sm italic leading-relaxed font-quote">{desc}</p>
-                  </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Workshop pricing table */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="mb-10"
-          >
-            <h3 className="text-sm font-bold text-white/50 uppercase tracking-widest mb-4">Workshop Pricing</h3>
-            <div className="overflow-hidden rounded-xl border border-white/10">
-              <table className="w-full">
-                <thead>
-                  <tr className="bg-white/5">
-                    <th className="text-left px-6 py-3 text-white/60 text-xs font-bold uppercase tracking-wider">Format</th>
-                    <th className="text-right px-6 py-3 text-white/60 text-xs font-bold uppercase tracking-wider">Investment</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { format: "Virtual, 2–4 hours (solo / micro practice)", price: "$4,000–$5,000" },
-                    { format: "Virtual, half-day (group practice or small association)", price: "$6,000–$8,000" },
-                    { format: "Virtual, full day (large group or association)", price: "$9,000–$12,000" },
-                    { format: "Onsite, half-day", price: "$10,000–$14,000 + travel & expenses" },
-                    { format: "Onsite, full day", price: "$14,000–$18,000 + travel & expenses" },
-                    { format: "Conference / keynote (adapted)", price: "Custom quote" },
-                  ].map(({ format, price }) => (
-                    <tr key={format} className="border-t border-white/5">
-                      <td className="px-6 py-4 text-white/80 text-sm">{format}</td>
-                      <td className="px-6 py-4 text-right text-[#47d8ff] font-bold text-sm">{price}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </motion.div>
-
-          {/* What's included */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="mb-10"
-          >
-            <Card className="bg-black border border-[#AEA1EA]/20 card-glow-lilac hover-elevate transition-all duration-300">
-              <CardContent className="p-7">
-            <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-5">What's Included — Core Deliverables Across All Formats</p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {[
-                "Pre-workshop discovery call to customize content",
-                "Participant AI Readiness Assessment (group version)",
-                "Custom AI Integration Opportunity Map for the group",
-                "AI Governance Overview (HIPAA guardrails)",
-                "90-Day Implementation Roadmap",
-                "Lost Revenue & Wasted Time Projection Report",
-                "Workshop slide deck and materials",
-                "Post-workshop Q&A (30 min virtual, 7 days post-event)",
-              ].map(item => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="h-4 w-4 text-[#47d8ff] flex-shrink-0 mt-0.5" />
-                  <span className="text-white/70 text-sm">{item}</span>
-                </div>
-              ))}
-            </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Natural pathway quote */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.6 }}
-            className="bg-[#47d8ff]/6 border border-[#47d8ff]/20 rounded-2xl p-8 mb-10"
-          >
-            <p className="font-quote text-[#47d8ff] text-xl leading-relaxed mb-3">
-              "You leave today with the roadmap. You can implement it yourselves — your team now has the tools to do that. Or, if you'd like PXC to serve as your Fractional Chief AI Experience Officer and build these systems alongside you over the next 6–12 months, we can talk about that today."
-            </p>
-            <p className="text-white/45 text-sm">— Jennifer Radu, closing every AI Blueprint Day™</p>
-          </motion.div>
-
-          {/* Stats bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-10">
+          {/* 4 compact workshop type cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
             {[
-              { val: "21+ Years", label: "Clinical Operations & Management" },
-              { val: "6", label: "Personal Surgeries + Patient Perspective" },
-              { val: "326+", label: "Florida Practitioners Transformed" },
-              { val: "5", label: "Topic Areas Available" },
-              { val: "FL + National", label: "Speaking Availability" },
-            ].map(({ val, label }) => (
-              <div key={label} className="text-center p-4 border border-white/8 rounded-xl bg-white/2">
-                <div className="text-[#47d8ff] font-black text-lg mb-1" style={{ fontFamily: 'Nunito, sans-serif' }}>{val}</div>
-                <div className="text-white/45 text-xs leading-relaxed">{label}</div>
-              </div>
+              { title: "AI Blueprint Day", desc: "Full-day AI + ops blueprint architected for your practice." },
+              { title: "Leadership Recalibration", desc: "Half- or full-day intensive for managers stepping into executive roles." },
+              { title: "Patient Experience Intensive", desc: "Full IMPACT™ Framework applied to YOUR patient journey." },
+              { title: "Custom Multi-Day", desc: "Combine workshop types into a 2- or 3-day tailored intensive." },
+            ].map(({ title, desc }) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }} transition={{ duration: 0.4 }}
+              >
+                <div className="rounded-xl p-4 h-full transition-all duration-300 hover:-translate-y-1" style={{ background: "#fff", border: "2px solid #fca746", boxShadow: "0 0 0 1px rgba(252,167,70,0.2)" }}>
+                  <h4 className="font-black text-sm mb-1" style={{ fontFamily: 'Nunito, sans-serif', color: "#1a1a1a" }}>{title}</h4>
+                  <p className="text-xs leading-snug" style={{ color: "#4a4a4a" }}>{desc}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Book Jennifer CTA */}
           <div className="text-center">
-            <p className="text-white/60 text-sm mb-6">Jennifer speaks and trains on AI, leadership, culture, and patient experience — for medical practices, associations, conferences, and healthcare organizations.</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <MagneticButton>
-                <Button
-                  className="cta-bounce bg-[#FB0000] text-white font-black px-10 py-6 text-base"
-                  style={{ fontFamily: 'Nunito, sans-serif' }}
-                  asChild
-                  data-testid="blueprint-cta-book"
-                >
-                  <Link href="/contact">
-                    Book Jennifer for Your Organization
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </MagneticButton>
-              <Button
-                variant="outline"
-                className="cta-bounce-lilac border-white bg-[#AEA1EA]/20 text-white font-black px-8 py-6"
-                style={{ fontFamily: 'Nunito, sans-serif' }}
-                asChild
-                data-testid="blueprint-cta-phone"
-              >
-                <a href="tel:+19412392309">
-                  <Phone className="mr-2 h-4 w-4" />
-                  (941) 239-2309
-                </a>
-              </Button>
-            </div>
+            <Button asChild className="font-black px-8 py-5 text-base" style={{ background: "#fca746", color: "#1a1a1a" }} data-testid="blueprint-fullpage-cta">
+              <Link href="/services/blueprint-workshops">See Full Workshops Details <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
           </div>
         </div>
       </section>

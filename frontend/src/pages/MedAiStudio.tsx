@@ -203,37 +203,8 @@ export default function MedAiStudio() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {FEATURED_EPISODES.slice(1).map((ep, i) => {
-              const colors = ["#47d8ff", "#AEA1EA", "#FB0000"];
-              return (
-                <motion.div
-                  key={ep.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08 }}
-                  data-testid={`medai-episode-${i + 1}`}
-                >
-                  <BeamCard className={i === 0 ? "pxc-beam-cyan" : ""}>
-                    <div className="bg-[#0F0F0F] rounded-xl p-5">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="font-black text-3xl" style={{ color: colors[i], fontFamily: "Nunito, sans-serif" }}>{ep.n}</div>
-                        <div className="flex-1">
-                          <Badge className="text-[10px] uppercase tracking-[0.18em]" style={{ background: `${colors[i]}20`, color: colors[i], borderColor: `${colors[i]}50` }}>{ep.tag}</Badge>
-                          <span className="text-[10px] text-white/50 ml-2">· {ep.duration}</span>
-                        </div>
-                      </div>
-                      <h3 className="font-black text-base text-white mb-2 leading-tight" style={{ fontFamily: "Nunito, sans-serif" }}>{ep.title}</h3>
-                      <p className="text-xs text-[#AEA1EA] mb-4 leading-relaxed">{ep.description}</p>
-                      <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10" data-testid={`medai-listen-${i + 1}`}>
-                        Listen / Watch <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                      </Button>
-                    </div>
-                  </BeamCard>
-                </motion.div>
-              );
-            })}
+          <div className="text-center mt-10">
+            <p className="text-sm text-[#AEA1EA]">More episodes drop every Tuesday & Thursday — subscribe below to get every new release delivered the moment it goes live.</p>
           </div>
         </div>
       </section>

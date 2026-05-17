@@ -19,7 +19,8 @@ import { AuroraBackdrop } from "@/components/effects/AuroraBackdrop";
 import { BeamCard } from "@/components/effects/BeamCard";
 import { CursorGlow } from "@/components/effects/CursorGlow";
 import { MarqueeStrip } from "@/components/effects/MarqueeStrip";
-import { LatestArticles } from "@/components/sections/LatestArticles";
+import { LatestArticles as _RemovedLatestArticles_ } from "@/components/sections/LatestArticles";
+// LatestArticles removed per content decision; keeping import silenced to avoid build break
 
 import jenniferHeadshot from "@assets/red_blazer_1765984670936.png";
 import unifiedPxcSystem from "@assets/unified_px_system_1765984964786.png";
@@ -1555,89 +1556,6 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      {/* ===== SECTION 19: FINAL CTA ===== */}
-      <section className="relative py-24 bg-black border-t border-white/5 overflow-hidden" aria-label="Final Call to Action" id="final-cta">
-        <AuroraBackdrop opacity={0.1} />
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <BeamCard className="rounded-3xl">
-          <div className="relative rounded-3xl overflow-hidden border border-[#AEA1EA]/30 card-glow-lilac">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#AEA1EA]/10 via-black to-[#47d8ff]/8" />
-            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full border border-[#47d8ff]/15 animate-pulse" />
-            <div className="absolute -left-16 -bottom-16 w-48 h-48 rounded-full border border-[#AEA1EA]/10 animate-pulse" style={{ animationDelay: '1s' }} />
-
-            <div className="relative z-10 p-10 sm:p-16 text-center">
-              <Badge className="bg-[#FB0000]/20 text-[#FB0000] border border-[#FB0000]/40 text-sm px-4 py-1 mb-6">
-                The Decision That Changes Everything
-              </Badge>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight mb-6" style={{ fontFamily: 'Nunito, sans-serif' }}>
-                The Only Question Left Is:{" "}
-                <span className="text-[#FB0000]">How Long Will You Wait?</span>
-              </h2>
-
-              <p className="text-[#AEA1EA] text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-                Every week you wait is another week of revenue leaking through operational gaps, patients walking out your door, and your team burning out. The Unified PXC System™ has a 100% implementation success rate.{" "}
-                <span className="text-white font-bold">The only risk is not starting.</span>
-              </p>
-
-              <div className="grid sm:grid-cols-3 gap-4 mb-12 max-w-3xl mx-auto">
-                {[
-                  { label: "Completely Free Session", icon: CheckCircle2 },
-                  { label: "No Credit Card Required", icon: Shield },
-                  { label: "Self-Funding Guarantee — Contractual", icon: Award },
-                ].map(({ label, icon: Icon }, i) => (
-                  <div key={i} className="flex items-center justify-center gap-2 bg-white/5 rounded-xl p-3 border border-white/10">
-                    <Icon className="h-4 w-4 text-[#47d8ff]" />
-                    <span className="text-white text-sm font-semibold">{label}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button
-                  size="lg"
-                  className="cta-bounce bg-[#FB0000] text-white font-black text-lg px-12 py-7"
-                  style={{ fontFamily: 'Nunito, sans-serif' }}
-                  asChild
-                  data-testid="final-cta-button-book"
-                >
-                  <Link href="/contact">
-                    Apply For My Complimentary Strategy Session with Jennifer
-                    <ArrowRight className="ml-2 h-6 w-6" />
-                  </Link>
-                </Button>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm flex-wrap">
-                <a
-                  href="mailto:impact@patientexperienceconsulting.com"
-                  className="flex items-center gap-2 text-[#AEA1EA] hover:text-white transition-colors"
-                  data-testid="final-email-link"
-                >
-                  <Mail className="h-4 w-4" />
-                  impact@patientexperienceconsulting.com
-                </a>
-                <div className="w-px h-4 bg-white/20 hidden sm:block" />
-                <a
-                  href="tel:+19412392309"
-                  className="flex items-center gap-2 text-[#AEA1EA] hover:text-white transition-colors"
-                  data-testid="final-phone-link"
-                >
-                  <Phone className="h-4 w-4" />
-                  (941) 239-2309
-                </a>
-              </div>
-
-              <p className="text-white/40 text-xs mt-8">
-                Serving Independent Medical Practices in Central & Southern Florida & Nationwide · HIPAA-Compliant Systems · CPPM Certified
-              </p>
-            </div>
-          </div>
-          </BeamCard>
-        </div>
-      </section>
-
-      <LatestArticles />
     </div>
   );
 }

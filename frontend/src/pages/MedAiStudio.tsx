@@ -223,6 +223,24 @@ export default function MedAiStudio() {
         </div>
       </section>
 
+      {/* BRIGHT SPOTLIGHT — image-with-overlay (red→lilac) for MED-AI Studio */}
+      <section className="relative py-20 lg:py-24 overflow-hidden" aria-label="MED-AI Spotlight">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/ai-doc.jpg" alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(251,0,0,0.74) 0%, rgba(174,161,234,0.78) 50%, rgba(251,0,0,0.74) 100%)" }} />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="bg-white text-[#0a0a0a] border border-white mb-4 font-bold tracking-wider px-3 py-1">Why MED-AI Studio Exists</Badge>
+          <h2 className="text-3xl sm:text-5xl font-black mb-5 text-white" style={{ fontFamily: "Nunito, sans-serif", textShadow: "0 4px 16px rgba(0,0,0,0.5)" }}>
+            The independent voice <span className="text-[#fff8dc]">medicine actually needs.</span>
+          </h2>
+          <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed mb-6 font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+            Built by operators, for operators. No Silicon Valley jargon. No enterprise SaaS sales pitches. No AI fearmongering. Just signal — translated for the practices actually running medicine.
+          </p>
+          <p className="font-quote text-2xl text-white" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}>"AI that serves humans — never replaces them."</p>
+        </div>
+      </section>
+
       {/* SUBSCRIBE CTA */}
       <section id="subscribe" className="relative py-20 border-t border-white/10 bg-[#050505]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

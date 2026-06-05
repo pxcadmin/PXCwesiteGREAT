@@ -622,19 +622,19 @@ export default function Services() {
             </p>
           </motion.div>
 
-          {/* Pricing table */}
+          {/* Pricing table — BRIGHT version */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6 }}
             className="mb-14"
           >
-            <h3 className="text-sm font-bold text-white/50 uppercase tracking-widest mb-4">Pricing Options</h3>
-            <div className="overflow-hidden rounded-xl border border-white/10">
+            <h3 className="text-sm font-black uppercase tracking-widest mb-4" style={{ color: "#47d8ff" }}>Pricing Options</h3>
+            <div className="overflow-hidden rounded-2xl border-2" style={{ background: "#fff", borderColor: "#47d8ff", boxShadow: "0 8px 40px rgba(71,216,255,0.25), 0 0 0 1px rgba(71,216,255,0.2)" }}>
               <table className="w-full" role="table">
                 <thead>
-                  <tr className="bg-white/5">
-                    <th className="text-left px-6 py-3 text-white/60 text-xs font-bold uppercase tracking-wider">Format</th>
-                    <th className="text-right px-6 py-3 text-white/60 text-xs font-bold uppercase tracking-wider">Investment</th>
+                  <tr style={{ background: "linear-gradient(90deg, #47d8ff 0%, #AEA1EA 100%)" }}>
+                    <th className="text-left px-6 py-4 text-black text-xs font-black uppercase tracking-wider" style={{ fontFamily: "Nunito, sans-serif" }}>Format</th>
+                    <th className="text-right px-6 py-4 text-black text-xs font-black uppercase tracking-wider" style={{ fontFamily: "Nunito, sans-serif" }}>Investment</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -645,16 +645,26 @@ export default function Services() {
                     { format: "2-Day Onsite", price: "$3,997 + travel & expenses" },
                     { format: "3-Day Onsite", price: "$5,497 + travel & expenses" },
                   ].map(({ format, price }, i) => (
-                    <tr key={format} className={`border-t border-white/5 ${i === 0 ? "bg-[#47d8ff]/5" : ""}`}>
-                      <td className="px-6 py-4 text-white font-semibold text-sm">{format}</td>
+                    <tr
+                      key={format}
+                      className="transition-colors duration-200 hover:bg-[#47d8ff]/10"
+                      style={{
+                        borderTop: i === 0 ? "none" : "1px solid #e5e7eb",
+                        background: i === 0 ? "linear-gradient(90deg, rgba(71,216,255,0.15) 0%, rgba(174,161,234,0.10) 100%)" : "#fff",
+                      }}
+                    >
+                      <td className="px-6 py-4 font-bold text-sm" style={{ color: "#1a1a1a", fontFamily: "Nunito, sans-serif" }}>{format}</td>
                       <td className="px-6 py-4 text-right">
-                        <span className={`font-black text-sm ${i === 0 ? "text-[#47d8ff]" : "text-white"}`}>{price}</span>
-                        {i === 0 && <Badge className="ml-2 bg-[#47d8ff] text-black text-xs">Start Here</Badge>}
+                        <span className="font-black text-base" style={{ color: i === 0 ? "#0080a8" : "#1a1a1a", fontFamily: "Nunito, sans-serif" }}>{price}</span>
+                        {i === 0 && <Badge className="ml-2 text-xs font-black" style={{ background: "#FB0000", color: "#fff" }}>Start Here</Badge>}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
+              <div className="px-6 py-3 text-xs text-center" style={{ background: "#f9fafb", color: "#4a4a4a" }}>
+                All formats include the Practice Clarity &amp; AI Readiness Assessment, documented blueprint, and 30-day implementation calendar.
+              </div>
             </div>
           </motion.div>
 

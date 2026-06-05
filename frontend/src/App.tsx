@@ -18,6 +18,7 @@ import Results from "@/pages/Results";
 import Events from "@/pages/Events";
 import MedAiStudio from "@/pages/MedAiStudio";
 import ServiceDetail from "@/pages/ServiceDetail";
+import AssessmentGate from "@/pages/AssessmentGate";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -66,6 +67,7 @@ function Router() {
           <Route path="/results" component={Results} />
           <Route path="/events" component={Events} />
           <Route path="/med-ai-studio" component={MedAiStudio} />
+          <Route path="/assessment" component={AssessmentGate} />
           <Route path="/contact" component={Contact} />
           <Route component={NotFound} />
         </Switch>

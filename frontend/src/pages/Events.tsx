@@ -112,6 +112,75 @@ export default function Events() {
         </div>
       </section>
 
+      {/* BRING AI BLUEPRINT DAY TO YOUR ORGANIZATION — structural section after hero */}
+      <section className="relative py-20 lg:py-24 overflow-hidden border-b" style={{ background: "#FFF", borderColor: GOLD + "60" }} aria-label="Bring AI Blueprint Day to Your Organization">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 20% 20%, ${GOLD}22, transparent 55%), radial-gradient(ellipse at 80% 80%, ${GOLD}22, transparent 55%)` }} />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-center">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+              <Badge className="px-3 py-1 mb-4 font-bold tracking-wider" style={{ background: GOLD, color: CHARCOAL, borderColor: GOLD }} data-testid="events-bring-eyebrow">
+                Bring AI Blueprint Day™ to Your Organization
+              </Badge>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.05] mb-5" style={{ fontFamily: "Nunito, sans-serif", color: CHARCOAL }} data-testid="events-bring-headline">
+                One day. Your entire leadership team. <span style={{ color: "#b87510" }}>One operational blueprint.</span>
+              </h2>
+              <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ color: GREY }}>
+                AI Blueprint Day™ is Jennifer Radu's signature on-site (or virtual) intensive — designed for healthcare associations, multi-site practice groups, and any organization ready to give its leaders one focused day of AI architecture, frameworks, and real-time playbook authoring.
+              </p>
+              <p className="text-sm leading-relaxed mb-7" style={{ color: GREY }}>
+                Walk in with overwhelm and competing priorities. Walk out with a fully costed AI roadmap, a leadership rhythm calendar tuned to your team, and two priority workflows scaffolded for pilot the week after.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button
+                  size="lg"
+                  className="font-black px-7 py-6 transition-all duration-200 hover:-translate-y-1"
+                  style={{ background: CHARCOAL, color: GOLD, fontFamily: "Nunito, sans-serif", boxShadow: `0 0 24px ${GOLD}66` }}
+                  asChild
+                  data-testid="events-bring-cta-primary"
+                >
+                  <Link to="/contact#book-blueprint">Bring AI Blueprint Day to Us <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="font-black px-7 py-6"
+                  style={{ borderColor: CHARCOAL, color: CHARCOAL, fontFamily: "Nunito, sans-serif" }}
+                  asChild
+                  data-testid="events-bring-cta-secondary"
+                >
+                  <Link to="/services/blueprint-workshops">See Full Workshops Details</Link>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  { n: "01", t: "Pre-Day Discovery", d: "30-min intake call to map your organization's specific friction points and goals before Jennifer arrives." },
+                  { n: "02", t: "Morning · Architecture", d: "Half-day deep-dive into your operational landscape — frameworks taught, leadership rhythm modeled, AI readiness audited." },
+                  { n: "03", t: "Afternoon · Authoring", d: "Working session where your team co-authors two priority workflows, with Jennifer hands-on in the room." },
+                  { n: "04", t: "Day After Delivery", d: "Documented blueprint, costed roadmap, and 90-day implementation calendar — all in your team's hands by EOB the next day." },
+                ].map((m) => (
+                  <div key={m.n} className="rounded-xl p-5 border-2 transition-all duration-300 hover:-translate-y-1" style={{ background: CHARCOAL, borderColor: GOLD }} data-testid={`events-bring-step-${m.n}`}>
+                    <div className="text-3xl font-black mb-2" style={{ color: GOLD, fontFamily: "Nunito, sans-serif" }}>{m.n}</div>
+                    <h3 className="text-lg font-black text-white mb-2" style={{ fontFamily: "Nunito, sans-serif" }}>{m.t}</h3>
+                    <p className="text-xs leading-relaxed" style={{ color: SILVER }}>{m.d}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 rounded-xl p-4" style={{ background: GOLD + "22", border: `1px solid ${GOLD}` }}>
+                <p className="text-sm font-black mb-1" style={{ color: CHARCOAL, fontFamily: "Nunito, sans-serif" }}>Guarantee</p>
+                <p className="text-xs leading-relaxed" style={{ color: CHARCOAL }}>
+                  If your team doesn't walk away with a documented, actionable playbook ready to deploy the week after — Jennifer continues at no charge until they do.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* MARQUEE — past venues */}
       <section className="border-y py-6" style={{ background: CHARCOAL, borderColor: SILVER + "20" }}>
         <div className="text-center mb-3">

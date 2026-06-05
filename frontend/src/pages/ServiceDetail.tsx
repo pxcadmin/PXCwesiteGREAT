@@ -106,7 +106,7 @@ const SERVICES: Record<string, ServiceConfig> = {
       { q: "How is this different from a generic 'AI quiz'?", a: "It's built specifically for independent medical practices, scored by Jennifer Radu's frameworks, and benchmarked against 326+ provider engagements." },
     ],
     primaryCtaLabel: "Take the Assessment Now",
-    primaryCtaHref: "/contact#take-assessment",
+    primaryCtaHref: "/assessment",
     secondaryCtaLabel: "Book Strategy Session",
     secondaryCtaHref: "/contact#book-session",
   },

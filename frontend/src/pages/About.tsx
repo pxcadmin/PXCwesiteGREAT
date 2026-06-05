@@ -360,6 +360,24 @@ export default function About() {
         </div>
       </section>
 
+      {/* BRIGHT SPOTLIGHT — image-with-overlay (cyan→white) for About */}
+      <section className="relative py-20 lg:py-24 overflow-hidden" aria-label="About Spotlight">
+        <div className="absolute inset-0 z-0">
+          <img src="/assets/med-staff.jpg" alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(71,216,255,0.78) 0%, rgba(255,255,255,0.55) 50%, rgba(71,216,255,0.78) 100%)" }} />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge className="bg-white text-[#0a0a0a] border border-white mb-4 font-bold tracking-wider px-3 py-1">The PXC Difference</Badge>
+          <h2 className="text-3xl sm:text-5xl font-black mb-5 text-[#0a0a0a]" style={{ fontFamily: "Nunito, sans-serif" }}>
+            Three perspectives. <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">One operator.</span>
+          </h2>
+          <p className="text-lg text-[#0a0a0a] max-w-3xl mx-auto leading-relaxed mb-6 font-semibold">
+            Most healthcare consultants bring one perspective. Jennifer Radu brings three — educator, practice operator, and complex-care patient (6 surgeries, extended hospitalizations). That's why PXC engagements move metrics that other firms can't reach.
+          </p>
+          <p className="font-quote text-2xl text-[#0a0a0a]">"Powered by AI. Driven by People. Designed for Impact."</p>
+        </div>
+      </section>
+
       <SectionDivider color="#FB0000" />
       {/* CTA Section - BLACK background */}
       <section className="py-20 bg-black">

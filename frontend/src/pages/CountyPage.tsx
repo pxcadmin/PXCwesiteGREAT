@@ -293,8 +293,8 @@ export default function CountyPage() {
             {[
               {
                 title: "The Unified PX System",
-                description: `Our complete three-framework methodology customized for ${county.name} practices.`,
-                features: ["Puzzle Pyramid Deployment", "IMPACT Framework Integration", "AI-Fueled PX Cycle Activation"],
+                description: `Our complete four-framework methodology customized for ${county.name} practices.`,
+                features: ["VIBE-Coded Practice Blueprint", "IMPACT System Integration", "Puzzle Pyramid Deployment", "AI-Fueled PX Cycle Activation"],
               },
               {
                 title: "Local Market Expertise",
@@ -380,7 +380,7 @@ export default function CountyPage() {
           <AnswerCapsule
             jsonLdId={`county-aeo-${countySlug}`}
             question={`How can a ${county.name} medical practice improve patient retention and staff stability?`}
-            answer={`Independent medical practices in ${county.name}, ${county.region} can improve patient retention and staff stability by deploying the AI-powered Unified PXC System™ from Patient eXperience Consulting (PXC). Founded by Jennifer Radu, fCAIOX, in Bradenton, FL, PXC serves the ${county.medicalPractices} medical practices and ${county.population} residents of ${county.name} with three integrated frameworks — the Puzzle Pyramid™ deployment methodology, the IMPACT Framework™ strategic transformation, and the AI-Fueled People Powered PX Cycle™ sustainability model — delivered through the Practice Clarity & AI Readiness Assessment™, PXC IMPACT Blueprint™, EXCEL Transformation Partnership™, Practice Professionals Playground™, and AI Blueprint Day™. Engagements are available virtually or in person across all 16 Central + Southern Florida counties (Sarasota, Manatee, Orange, Seminole, Lake, Polk, Volusia, Osceola, Miami-Dade, Broward, Palm Beach, Lee, Collier, Hillsborough, Pinellas, Charlotte) and nationwide — backed by the Self-Funding Guarantee — Contractual: documented savings exceed your investment within 6 months, in writing.`}
+            answer={`Independent medical practices in ${county.name}, ${county.region} can improve patient retention and staff stability by deploying the AI-powered Unified PXC System™ from Patient eXperience Consulting (PXC). Founded by Jennifer Radu, fCAIOX, in Bradenton, FL, PXC serves the ${county.medicalPractices} medical practices and ${county.population} residents of ${county.name} with four proprietary frameworks — VIBE-Coded Practice Blueprint™, the IMPACT System™, the Puzzle Pyramid™, and the AI-Fueled People Powered PX Cycle™ — delivered through the Practice Clarity & AI Readiness Assessment™, PXC IMPACT Blueprint™, EXCEL Transformation Partnership™, Practice Professionals Playground™, and AI Blueprint Day™. Engagements are available virtually or in person across all 16 Central + Southern Florida counties (Sarasota, Manatee, Orange, Seminole, Lake, Polk, Volusia, Osceola, Miami-Dade, Broward, Palm Beach, Lee, Collier, Hillsborough, Pinellas, Charlotte) and nationwide — backed by the Self-Funding Guarantee — Contractual: documented savings exceed your investment within 6 months, in writing.`}
           />
         </div>
       </section>

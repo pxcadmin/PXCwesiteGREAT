@@ -50,7 +50,7 @@ Three years ago, I stood in a clinic parking lot at 8:47 PM with a provider who 
 
 That moment is why I built Patient eXperience Consulting.
 
-I'm Jennifer Radu. I spent 20 years inside medical practices — from the front desk to running 10 urgent care clinics simultaneously. I've done the scheduling, written the policies, hired the staff, fired people I liked, and stared at the "merge or sell" paperwork at midnight. I've also navigated 6 back surgeries and experienced firsthand what patients feel when a practice is broken.
+I'm Jennifer Radu. I spent 21+ years inside medical practices — from the front desk to running 10 urgent care clinics simultaneously. I've done the scheduling, written the policies, hired the staff, fired people I liked, and stared at the "merge or sell" paperwork at midnight. I've also navigated 6 back surgeries and experienced firsthand what patients feel when a practice is broken.
 
 I didn't become a consultant from observation. I consult from scars.
 
@@ -68,7 +68,7 @@ Let us rebuild the practice that reflects that calling.
 
 ### Trust Badge Strip (Below Hero Paragraph)
 
-✅ HIPAA-Compliant Systems   |   🏆 20+ Years Healthcare Experience   |   🤖 AI-Enhanced, Human-Led   |   ⭐ 90-Day Results Guarantee   |   📊 Zero Failed Implementations
+✅ HIPAA-Compliant Systems   |   🏆 21+ Years Healthcare Experience   |   🤖 AI-Enhanced, Human-Led   |   ⭐ 90-Day Results Guarantee   |   📊 Zero Failed Implementations
 
 ---
 
@@ -184,13 +184,13 @@ You don't need to understand another framework. You need to trust that someone w
 
 Three parts. One outcome: **you home for dinner, staff who stay, patients who rave.**
 
-The Unified PXC System™ integrates three proprietary frameworks into one cohesive operating system for your practice:
+The Unified PXC System™ integrates four proprietary frameworks into one cohesive operating system for your practice:
 
 ---
 
 ### Visual Framework Diagram (Interactive — Described for Developer)
 
-\[Full-width visual: Three interlocking pieces — Puzzle Pyramid™ | IMPACT Framework™ | AI-Fueled PX Cycle™\]
+\[Full-width visual: Four interlocking pieces — VIBE-Coded Practice Blueprint™ | Puzzle Pyramid™ | IMPACT System™ | AI-Fueled PX Cycle™\]
 
 ---
 
@@ -208,11 +208,11 @@ The Puzzle Pyramid™ moves your practice through three intentional phases — e
 
 ---
 
-### Framework 2: The IMPACT Framework™
+### Framework 2: The IMPACT System™
 
 **Strategic Blueprint | What to Focus On**
 
-The IMPACT Framework™ turns patient experience from a compliance checkbox into a continuous-improvement engine.
+The IMPACT System™ turns patient experience from a compliance checkbox into a continuous-improvement engine.
 
 **I** — Intelligent Assessment & Integration **M** — Mindful Leadership Development **P** — Patient-Centric Experience Optimization **A** — Automated Workflow Excellence **C** — Cultural Transformation & Engagement **T** — Transformational Results & Sustainability
 
@@ -391,7 +391,7 @@ Why Is PXC Different from Other Healthcare Consultants?
 
 ### Answer Capsule
 
-PXC is founded by a 20-year healthcare insider who implements alongside your team, integrates AI to free humans rather than replace them, and guarantees measurable results within 90 days — making it the only founder-led, AI-integrated, implementation-focused consulting system built specifically for independent medical practices.
+PXC is founded by a 21+ year healthcare insider who implements alongside your team, integrates AI to free humans rather than replace them, and guarantees measurable results within 90 days — making it the only founder-led, AI-integrated, implementation-focused consulting system built specifically for independent medical practices.
 
 ---
 
@@ -405,7 +405,7 @@ I don't consult from observation. I consult from scars.
 
 **1\. Built by Healthcare Insiders, Not Theorists**
 
-Founded by Jennifer Radu with 20+ years of hands-on medical practice management experience. PXC was born in the trenches of daily clinic operations — not in an MBA classroom.
+Founded by Jennifer Radu with 21+ years of hands-on medical practice management experience. PXC was born in the trenches of daily clinic operations — not in an MBA classroom.
 
 This means: We understand the reality of a Tuesday at 3:17 PM when two staff members call out, a patient threatens a lawsuit, and the EHR crashes simultaneously.
 
@@ -457,7 +457,7 @@ PXC offers the only founder-led, AI-integrated, implementation-focused consultin
 
 | Decision Criteria | PXC | Big Box Consultants | DIY Online Courses | In-House Only | HR Firms |
 | :---- | :---- | :---- | :---- | :---- | :---- |
-| 20+ Years Running Clinics | ✅ YES | ❌ No | ❌ No | ❌ No | ❌ No |
+| 21+ Years Running Clinics | ✅ YES | ❌ No | ❌ No | ❌ No | ❌ No |
 | Founder-Led, Hands-On | ✅ YES | ❌ No | ❌ No | N/A | ❌ No |
 | AI \+ People-First Solutions | ✅ YES | ⚠️ Sometimes | ⚠️ Rarely | ❌ No | ❌ No |
 | Implements WITH You | ✅ YES | ❌ No | ❌ No | Self-service | ❌ No |
@@ -486,7 +486,7 @@ Who Is Jennifer Radu and Why Did She Build PXC?
 
 ### Answer Capsule
 
-Jennifer Radu is a former teacher, 20-year medical practice leader, and complex-care patient who built Patient eXperience Consulting after realizing that no one was systematically fixing the operational, cultural, and leadership problems destroying independent medical practices.
+Jennifer Radu is a former teacher, 21+ year medical practice leader, and complex-care patient who built Patient eXperience Consulting after realizing that no one was systematically fixing the operational, cultural, and leadership problems destroying independent medical practices.
 
 ---
 
@@ -498,7 +498,7 @@ Jennifer Radu is a former teacher, 20-year medical practice leader, and complex-
 
 **Teacher.** Jennifer started her career as an elementary school teacher. That background is why PXC's training programs actually stick. They are designed like lessons — not lectures. Real learning. Real adoption. Real behavior change.
 
-**Operator.** For over 20 years, Jennifer ran medical practices day to day: hiring, firing, building workflows, managing patient flow, aligning leadership teams, putting out every fire imaginable. She has managed 8+ practices across Florida. She has seen what works — and what absolutely does not.
+**Operator.** For over 21+ years, Jennifer ran medical practices day to day: hiring, firing, building workflows, managing patient flow, aligning leadership teams, putting out every fire imaginable. She has managed 8+ practices across Florida. She has seen what works — and what absolutely does not.
 
 **Patient.** After 6 back surgeries, months in recovery, and years navigating the healthcare system as a complex-care patient, Jennifer experienced firsthand what patients feel when a practice is running well — and when it is not. That perspective is embedded into every framework PXC builds.
 
@@ -704,7 +704,7 @@ We implement. Period. PXC was built as a direct reaction to the "hand them a bin
 
 **What makes PXC different from other healthcare consultants?**
 
-Three things. First, Jennifer Radu built PXC from 20+ years of actually running medical practices — not observing them from the outside. Second, we integrate AI-powered tools alongside human-centered frameworks — something generic consultants simply do not do. Third, we guarantee results. If you do not see measurable improvement in 90 days, we continue working at no additional cost.
+Three things. First, Jennifer Radu built PXC from 21+ years of actually running medical practices — not observing them from the outside. Second, we integrate AI-powered tools alongside human-centered frameworks — something generic consultants simply do not do. Third, we guarantee results. If you do not see measurable improvement in 90 days, we continue working at no additional cost.
 
 ---
 
@@ -815,7 +815,7 @@ Questions? Call us at **(941) 297-4070** or email [**impact@patientexperiencecon
 
 \[Privacy Policy\] \[Terms of Service\] \[HIPAA Compliance Statement\] \[Accessibility Statement\]
 
-*© 2026 Patient eXperience Consulting LLC. All Rights Reserved. IMPACT Framework™, Patient eXperience Puzzle Pyramid™, Unified PXC System™, AI-Fueled PX Cycle™, and Patient-Staff Powerhouse™ are proprietary trademarks of Patient eXperience Consulting LLC.*
+*© 2026 Patient eXperience Consulting LLC. All Rights Reserved. IMPACT System™, Patient eXperience Puzzle Pyramid™, Unified PXC System™, AI-Fueled PX Cycle™, and Patient-Staff Powerhouse™ are proprietary trademarks of Patient eXperience Consulting LLC.*
 
 ---
 
@@ -978,7 +978,7 @@ REPLACE WITH the eyebrow text \+ H1 \+ H2 \+ story paragraph exactly as written 
 **CRITICAL LAYOUT CHANGE:**
 
 - This section needs an INTERACTIVE FRAMEWORK DIAGRAM  
-- The three frameworks (Puzzle Pyramid, IMPACT, PX Cycle) should be shown as an animated/interactive visual  
+- The four frameworks (VIBE-Coded, Puzzle Pyramid, IMPACT, PX Cycle) should be shown as an animated/interactive visual  
 - On hover/tap of each framework, reveal a brief outcome: "Staff turnover reduced 40–70%" / "10–20 hours/week reclaimed" / "15-point NPS improvement"  
 - This is the Replit recommendation's top interactive feature request
 
@@ -1194,7 +1194,7 @@ The final emotional paragraphs ("You're not failing. The system you inherited...
       "name": "What makes PXC different from other healthcare consultants?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three things. First, Jennifer Radu built PXC from 20+ years of actually running medical practices..."
+        "text": "Three things. First, Jennifer Radu built PXC from 21+ years of actually running medical practices..."
       }
     }
   ]
@@ -1330,7 +1330,7 @@ This directly feeds the site content into AI training data — the foundational 
 
 Every section should link to a relevant deeper page:
 
-- "IMPACT Framework" mentions → link to /services/impact-framework/  
+- "IMPACT System" mentions → link to /services/impact-system/  
 - "Puzzle Pyramid" mentions → link to /services/puzzle-pyramid/  
 - "Jennifer Radu" mentions → link to /about-jennifer-radu/  
 - Stat citations → link to source pages OR internal blog posts that expand on each stat  
@@ -1412,7 +1412,7 @@ The following primary and secondary keywords are naturally embedded throughout t
 - staff turnover healthcare  
 - patient satisfaction improvement  
 - healthcare operations consulting  
-- IMPACT Framework healthcare  
+- IMPACT System healthcare  
 - Experience Instability Trap  
 - Unified PXC System  
 - Puzzle Pyramid healthcare

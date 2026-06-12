@@ -37,11 +37,11 @@ Together, they create a nucleus of **sustainable excellence** for any medical pr
 
 ---
 
-## **2\. The IMPACT Framework™**
+## **2\. The IMPACT System™**
 
 **Purpose:** The **strategic structure** for total transformation. Each letter is a pillar of lasting change
 
-The IMPACT Framework
+The IMPACT System
 
 .
 
@@ -115,7 +115,7 @@ The IMPACT Framework
 
 * Outcome: quick wins, staff alignment, and patient buy-in.
 
-### **The IMPACT Framework™ – *Strategic Blueprint***
+### **The IMPACT System™ – *Strategic Blueprint***
 
 * Six interconnected pillars (I–M–P–A–C–T).
 
@@ -162,7 +162,7 @@ The IMPACT Framework
 
 ---
 
-## **2️⃣ The IMPACT Framework™ – *Strategic Blueprint***
+## **2️⃣ The IMPACT System™ – *Strategic Blueprint***
 
 **Six Pillars of Transformation**
 
@@ -239,7 +239,7 @@ The IMPACT Framework
 
 1. **The Puzzle Pyramid™** – Engage, Educate, Excel. A deployment model that ensures change is practical, adopted, and embraced by both staff and patients.
 
-2. **The IMPACT Framework™** – Intelligent Assessment, Mindful Leadership, Patient-Centric Optimization, Automated Workflow Excellence, Cultural Transformation, and Transformational Results. This is the strategic blueprint that addresses burnout, inefficiency, and low satisfaction at their roots.
+2. **The IMPACT System™** – Intelligent Assessment, Mindful Leadership, Patient-Centric Optimization, Automated Workflow Excellence, Cultural Transformation, and Transformational Results. This is the strategic blueprint that addresses burnout, inefficiency, and low satisfaction at their roots.
 
 3. **The AI-Fueled People Powered PX Cycle™** – A sustainability loop (Engage → Educate → Excel → Impact) with a central nucleus: **Sustain & Scale**. It ensures progress doesn’t fade but compounds, creating a patient-staff powerhouse for the long term.
 
@@ -249,7 +249,7 @@ The IMPACT Framework
 
 * **Hands-on transformation, not check-the-box consulting.** We don’t hand you binders. We roll up our sleeves and implement alongside your team.
 
-* **Rooted in lived experience.** With 20+ years of running practices, we know the chaos firsthand—and we’ve built systems to replace it with clarity and growth.
+* **Rooted in lived experience.** With 21+ years of running practices, we know the chaos firsthand—and we’ve built systems to replace it with clarity and growth.
 
 * **Sustainable excellence.** Our frameworks are designed to evolve with your practice, so improvements last.
 

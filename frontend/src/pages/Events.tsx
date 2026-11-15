@@ -22,7 +22,7 @@ const SIGNATURE_TALKS = [
     title: "From Burnout to Buy-In: The Inside-Out Practice Transformation",
     duration: "45 min keynote · 90 min workshop available",
     audience: "Practice owners, managers, leadership teams",
-    description: "Why every external patient experience problem is actually an internal staff experience leak — and the IMPACT Framework™ that fixes both at the same time.",
+    description: "Why every external patient experience problem is actually an internal staff experience leak — and the IMPACT System™ that fixes both at the same time.",
   },
   {
     title: "The Puzzle Pyramid™: Engage. Educate. Excel.",

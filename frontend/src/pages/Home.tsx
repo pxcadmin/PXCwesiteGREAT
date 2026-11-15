@@ -83,8 +83,8 @@ const faqData = [
     a: "Absolutely. While Jennifer's deepest local market expertise is in Central and Southern Florida, PXC actively serves clients nationwide. Jennifer has worked regularly with practices in North Carolina, Georgia, and across the Southeast. Virtual engagements are available for any practice in the US. In-person intensive engagements are available nationally by arrangement — reach out to discuss what's right for your practice."
   },
   {
-    q: "What makes the IMPACT Framework different from other practice management frameworks?",
-    a: "The IMPACT Framework — Inspire, Motivate, Provide, Achieve, Communicate, Transform — is the only patient experience framework built simultaneously around clinical leadership development, AI-powered patient journey mapping, team culture engineering, and operational efficiency. It doesn't treat these as separate pillars — it integrates them into a single, sustainable cycle. No other framework on the market does all of this in a single, unified system designed for independent practices."
+    q: "What makes the IMPACT System different from other practice management frameworks?",
+    a: "The IMPACT System — Inspire, Motivate, Provide, Achieve, Communicate, Transform — is the only patient experience system built simultaneously around clinical leadership development, AI-powered patient journey mapping, team culture engineering, and operational efficiency. It doesn't treat these as separate pillars — it integrates them into a single, sustainable transformation engine. No other system on the market does all of this in a single, unified operating system designed for independent practices."
   },
 ];
 
@@ -93,7 +93,7 @@ export default function Home() {
     title: "PXC | AI-Powered Medical Practice Transformation in Florida — Self-Funding Guarantee",
     description: "Patient eXperience Consulting (PXC) helps independent medical practices in Florida cut staff turnover, end burnout, and grow revenue with the AI-powered Unified PXC System™. Backed by a contractual Self-Funding Guarantee — your transformation pays for itself in 6 months, in writing. Founded by Jennifer Radu, CPPM, fCAIOX, in Bradenton, FL. Serving Sarasota, Manatee, Orange, Miami-Dade, Broward, Palm Beach, Hillsborough, Pinellas, Lee, Collier, and 6+ more Florida counties — and nationwide.",
     path: "/",
-    keywords: "medical practice consulting Florida, patient experience consulting, AI for medical practices, Unified PXC System, Self-Funding Guarantee healthcare consulting, healthcare consultant Florida, fractional Chief AI Experience Officer, fCAIOX, Jennifer Radu CPPM, IMPACT Framework, Puzzle Pyramid, EXCEL Transformation Partnership, PXC IMPACT Blueprint, Practice Clarity AI Readiness Assessment, Bradenton healthcare consulting, Sarasota medical practice consultant, Manatee County medical consulting, independent medical practice transformation",
+    keywords: "medical practice consulting Florida, patient experience consulting, AI for medical practices, Unified PXC System, Self-Funding Guarantee healthcare consulting, healthcare consultant Florida, fractional Chief AI Experience Officer, fCAIOX, Jennifer Radu CPPM, VIBE-Coded Practice Blueprint, IMPACT System, Puzzle Pyramid, AI-Ready Patient Experience Practice, EXCEL Transformation Partnership, PXC IMPACT Blueprint, Practice Clarity AI Readiness Assessment, Bradenton healthcare consulting, Sarasota medical practice consultant, Manatee County medical consulting, independent medical practice transformation",
     jsonLd: [
       breadcrumbJsonLd([{ name: "Home", path: "/" }]),
       faqJsonLd(faqData.map((f) => ({ question: f.q, answer: f.a }))),
@@ -372,8 +372,22 @@ export default function Home() {
             <AnswerCapsule
               emitFaqJsonLd={false}
               question="How do independent medical practices in Florida fix patient retention and staff turnover without disrupting operations?"
-              answer="Independent medical practices in Florida fix patient retention and staff turnover by deploying the Unified PXC System™ from Patient eXperience Consulting (PXC), led by Jennifer Radu, fCAIOX. The system combines three integrated frameworks — the Puzzle Pyramid™ deployment methodology, the IMPACT Framework™ strategic transformation, and the AI-Fueled, People-Powered PX Cycle™ sustainability model — implemented alongside your existing team in 90-day phases so daily operations are never disrupted. Engagements are backed by the Self-Funding Guarantee — Contractual: documented savings exceed your investment within 6 months, in writing."
+              answer="Independent medical practices in Florida fix patient retention and staff turnover by deploying the Unified PXC System™ from Patient eXperience Consulting (PXC), led by Jennifer Radu, fCAIOX. The system combines four proprietary frameworks — VIBE-Coded Practice Blueprint™, the IMPACT System™, the Puzzle Pyramid™, and the AI-Fueled People Powered PX Cycle™ — implemented alongside your existing team in 90-day phases so daily operations are never disrupted. Engagements are backed by the Self-Funding Guarantee — Contractual: documented savings exceed your investment within 6 months, in writing."
             />
+            <div className="mt-6 grid gap-2 sm:grid-cols-3">
+              {[
+                "How do Florida medical practices improve patient retention with AI?",
+                "What is the Unified PXC System™ for independent clinics?",
+                "Where can I get a free medical practice strategy session?"
+              ].map((query, index) => (
+                <div
+                  key={index}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-[#AEA1EA] uppercase tracking-[0.2em] font-semibold"
+                >
+                  {query}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -599,15 +613,16 @@ export default function Home() {
           <div className="border-l-4 border-[#47d8ff] bg-[#47d8ff]/8 rounded-r-xl p-6 mb-14 max-w-4xl mx-auto">
             <p className="text-[#47d8ff] font-bold uppercase tracking-widest mb-3 text-[18px]">Direct Answer</p>
             <p className="text-white text-[19px]">
-              The <strong>Unified PXC System™</strong> is a three-framework proprietary methodology that transforms independent medical practices by simultaneously engineering patient experience, building high-performance team culture, and implementing AI-powered operational systems — all in one integrated, results-driven engagement with measurable wins inside the first 30–60 days. It is not a course, a playbook, or a template. It is a full-scale implementation partnership built for independent clinics — and every engagement is backed by the <strong className="text-[#47d8ff]">Self-Funding Guarantee — Contractual</strong>: documented ROI within 6 months, in writing.
+              The <strong>Unified PXC System™</strong> is a four-framework proprietary methodology that transforms independent medical practices by simultaneously engineering patient experience, building high-performance team culture, implementing AI-powered operational systems, and locking in sustainable, repeatable performance — all in one integrated, results-driven engagement with measurable wins inside the first 30–60 days. It is not a course, a playbook, or a template. It is a full-scale implementation partnership built for independent clinics — and every engagement is backed by the <strong className="text-[#47d8ff]">Self-Funding Guarantee — Contractual</strong>: documented ROI within 6 months, in writing.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-14">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
             {[
-              { icon: Target, label: "Framework 1", title: "The Puzzle Pyramid™", tagline: "Engage → Educate → Excel", desc: "The deployment architecture that takes your practice from reactive chaos to proactive mastery in three structured phases — each building on the last.", metric: "Avg. 47% improvement in patient satisfaction in Phase 1", color: "#47d8ff" },
-              { icon: BarChart3, label: "Framework 2", title: "The IMPACT Framework™", tagline: "Inspire · Motivate · Provide · Achieve · Communicate · Transform", desc: "The strategic engine that aligns leadership, staff culture, patient communication, and operational efficiency into a single, integrated transformation system.", metric: "Avg. 31% reduction in staff turnover within 90 days", color: "#AEA1EA" },
-              { icon: Cpu, label: "Framework 3", title: "AI-Fueled People Powered PX Cycle™", tagline: "The Sustainability Engine", desc: "The continuous improvement system that ensures your transformation doesn't stall after the engagement ends — using AI tools layered on a strong human culture foundation.", metric: "Avg. 68% improvement in long-term retention sustainability", color: "#FB0000" },
+              { icon: Target, label: "Framework 1", title: "VIBE-Coded Practice Blueprint™", tagline: "Diagnose the truth, expose hidden leaks, map the right next step", desc: "The discovery engine that uncovers operational, patient, and AI readiness gaps so every decision is based on reality — not guesswork.", metric: "Avg. 3x faster clarity on priority fixes", color: "#47d8ff" },
+              { icon: BarChart3, label: "Framework 2", title: "IMPACT System™", tagline: "Strategize leadership, culture, patient flow, and AI in one unified plan", desc: "The strategic system that aligns your leadership, team, patient journey, and operations into a single transformation roadmap.", metric: "Avg. 31% reduction in staff turnover within 90 days", color: "#AEA1EA" },
+              { icon: BookOpen, label: "Framework 3", title: "Puzzle Pyramid™", tagline: "Deploy change in practice-safe, phase-based implementation waves", desc: "The implementation architecture that brings strategy into the clinic through structured deployment, accountability, and clinical momentum.", metric: "Avg. 47% improvement in patient satisfaction in Phase 1", color: "#FB0000" },
+              { icon: Cpu, label: "Framework 4", title: "AI-Fueled People Powered PX Cycle™", tagline: "Sustain excellence with AI intelligence and human systems", desc: "The continuous improvement loop that ensures the gains you make are reinforced, optimized, and compound over time.", metric: "Avg. 68% improvement in long-term retention sustainability", color: "#AEF0FF" },
             ].map(({ icon: Icon, label, title, tagline, desc, metric, color }, i) => (
               <motion.div
                 key={i}
@@ -685,7 +700,7 @@ export default function Home() {
               { target: 31, suffix: "%", label: "Average reduction in staff turnover within 90 days", color: "#AEA1EA" },
               { target: 68, suffix: "%", label: "Improvement in long-term patient retention sustainability", color: "#47d8ff" },
               { target: 326, suffix: "+", label: "Practitioners transformed across Central & Southern Florida", color: "#FB0000" },
-              { target: 1000, suffix: "+", label: "Healthcare professionals trained in the IMPACT Framework", color: "#AEA1EA" },
+              { target: 1000, suffix: "+", label: "Healthcare professionals trained in the IMPACT System", color: "#AEA1EA" },
               { target: 6, suffix: " Mo", label: "Self-Funding payback window — contractual ROI, in writing", color: "#FB0000" },
             ].map(({ target, suffix, label, color }, i) => (
               <motion.div
@@ -877,7 +892,7 @@ export default function Home() {
           <div className="border-l-4 border-[#AEA1EA] rounded-r-xl p-6 mb-10 max-w-4xl mx-auto bg-[#a46bff29]">
             <p className="text-[#AEA1EA] font-bold uppercase tracking-widest mb-3 text-[19px]">Direct Answer</p>
             <p className="text-white text-[19px]">
-              PXC is the <strong>only consulting firm in Florida</strong> that combines 21+ years of hands-on independent practice leadership experience, proprietary three-framework AI-enhanced transformation methodology, founder-led implementation (not junior associates), and a commitment to measurable results starting at 90 days — specifically built for independent and small-to-mid-size medical practices.
+              PXC is the <strong>only consulting firm in Florida</strong> that combines 21+ years of hands-on independent practice leadership experience, proprietary four-framework AI-enhanced transformation methodology, founder-led implementation (not junior associates), and a commitment to measurable results starting at 90 days — specifically built for independent and small-to-mid-size medical practices.
             </p>
           </div>
 
@@ -1169,11 +1184,12 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
             {[
-              { tier: "Entry", name: "Practice Clarity & AI Readiness Assessment™", tagline: "Diagnosis + AI Readiness", synopsis: "A dual-purpose assessment that tells you exactly where your practice is losing time, money, and AI opportunity. You receive an AI Readiness Score™, a dollar-specific Lost Revenue Report, a custom AI Opportunity Map, and an AI Governance Starter Kit. Jennifer personally analyzes every finding.", highlight: "From $997 · Clarity Guarantee or Full Refund", color: "#47d8ff", badge: "Start Here" },
-              { tier: "Tier 2", name: "PXC IMPACT Blueprint™", tagline: "Fractional fCAIOX · 3–4 Months", synopsis: "Jennifer Radu embedded as your Fractional Chief AI Experience Officer for 3–4 months. 2–3 custom AI builds, AI Governance Framework, AI Champions Program, leadership development, culture redesign, and a Self-Funding Guarantee — Contractual.", highlight: "$8,500–$12,500/mo · Self-Funding Guarantee", color: "#AEA1EA", badge: "Most Popular" },
-              { tier: "Tier 3", name: "EXCEL Transformation Partnership™", tagline: "Fractional fCAIOX · 12 Months", synopsis: "The full 12-month embedded transformation — Jennifer as your fCAIOX building the PXC AI Experience OS, 4–6 custom AI builds, full AI governance management, quarterly on-site visits, and compounding ROI documented every quarter. Most practices extend.", highlight: "$13,500–$17,500/mo · Self-Funding Guarantee", color: "#FB0000", badge: "Maximum Results" },
+              { tier: "Engage Essentials™", name: "Practice Clarity & AI Readiness Assessment™", tagline: "Diagnosis + AI readiness + quick-win playbook", synopsis: "A dual-purpose assessment that tells you exactly where your practice is losing patients, staff, and revenue — plus the first three actionable fixes to stabilize the operation fast.", highlight: "From $997 · Clarity Guarantee or Full Refund", color: "#47d8ff", badge: "Start Here" },
+              { tier: "Educate Advantage™", name: "PXC IMPACT Blueprint™", tagline: "Fractional fCAIOX · 3–4 Months", synopsis: "Jennifer embedded as your fractional Chief AI Experience Officer to align leadership, staff, and AI strategy while the practice learns a durable new operating system.", highlight: "$8,500–$12,500/mo · Self-Funding Guarantee", color: "#AEA1EA", badge: "Most Popular" },
+              { tier: "Excel Transformation™", name: "EXCEL Transformation Partnership™", tagline: "Fractional fCAIOX · 12 Months", synopsis: "The complete embedded transformation with full AI governance, quarterly on-site reviews, and a sustained operational engine built to scale.", highlight: "$13,500–$17,500/mo · Self-Funding Guarantee", color: "#FB0000", badge: "Maximum Results" },
+              { tier: "Signature Sprint", name: "AI-Ready Patient Experience Practice™", tagline: "12–16 Week Signature Sprint", synopsis: "A fast, intensive program to engineer the patient experience, stabilize operations, and launch AI-enabled patient journey improvements in a focused 12–16 week sprint.", highlight: "Signature 12–16 week sprint · fast-track results", color: "#8EFFCC", badge: "Signature" },
             ].map(({ tier, name, tagline, synopsis, highlight, color, badge }, i) => (
               <motion.div
                 key={i}
@@ -1259,17 +1275,18 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white" style={{ fontFamily: 'Nunito, sans-serif' }}>
               How the{" "}
               <span className="text-[#47d8ff]">Unified PXC System™</span>{" "}
-              Works in 3 Phases
+              Works in 4 Phases
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-[3.5rem] left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-0.5 bg-gradient-to-r from-[#47d8ff]/50 via-[#AEA1EA]/50 to-[#FB0000]/50 z-0" />
+          <div className="grid md:grid-cols-4 gap-8 relative">
+            <div className="hidden md:block absolute top-[3.5rem] left-[calc(12.5%+1rem)] right-[calc(12.5%+1rem)] h-0.5 bg-gradient-to-r from-[#47d8ff]/50 via-[#AEA1EA]/50 to-[#FB0000]/50 z-0" />
 
             {[
-              { step: "01", phase: "Engage", title: "Practice Clarity & AI Readiness Assessment™", desc: "We start with a comprehensive diagnostic of your practice AND your AI readiness. You walk away with an AI Readiness Score™, a dollar-specific Lost Revenue Report, a custom AI Opportunity Map, and a precise transformation plan. The Clarity Guarantee applies — full refund if it doesn't deliver clarity.", color: "#47d8ff", icon: Target },
-              { step: "02", phase: "Educate", title: "Practice Diagnosis + System Deployment", desc: "We go deep. Full practice assessment, team training, IMPACT Framework integration, workflow redesign, and the first wave of AI tool deployment — all implemented alongside your existing team with zero disruption.", color: "#AEA1EA", icon: BookOpen },
-              { step: "03", phase: "Excel", title: "Transformation, Accountability & Results", desc: "The metrics come in. Patient satisfaction scores rise. Staff turnover drops. No-shows decline. Revenue stabilizes. And the AI-Fueled PX Cycle ensures it doesn't stop — building momentum long after the engagement ends.", color: "#FB0000", icon: TrendingUp },
+              { step: "01", phase: "Diagnose", title: "VIBE-Coded Practice Blueprint™", desc: "Discover your practice truth with a diagnostic audit that reveals patient, staff, and AI readiness leaks so every next step is rooted in facts.", color: "#47d8ff", icon: Target },
+              { step: "02", phase: "Strategize", title: "IMPACT System™", desc: "Build a unified strategy for leadership, culture, patient flow, and AI deployment — all aligned to the business outcomes your practice needs.", color: "#AEA1EA", icon: BarChart3 },
+              { step: "03", phase: "Deploy", title: "Puzzle Pyramid™", desc: "Implement the strategy in practice-safe phases that move your team, workflows, and patient experience forward together.", color: "#FB0000", icon: BookOpen },
+              { step: "04", phase: "Sustain", title: "AI-Fueled People Powered PX Cycle™", desc: "Lock in the results with a continuous improvement loop that keeps performance growing and culture strong.", color: "#AEF0FF", icon: Cpu },
             ].map(({ step, phase, title, desc, color, icon: Icon }, i) => (
               <motion.div
                 key={i}
